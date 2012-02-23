@@ -2,97 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4db140d2-9557-4e7b-a361-aa88642aaa9b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/css/indicator.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/butterf.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/dog.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/flower.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/frog-with-grid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/lawn.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/msoffice.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/data/rouble.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jscolor/arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jscolor/cross.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jscolor/hs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jscolor/hv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_flat_15_cd0a0a_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_flat_30_cccccc_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_flat_50_5c5c5c_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_glass_100_e4f1fb_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_glass_40_ffc73d_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_glass_50_3baae3_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_glass_80_d7ebf9_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-hard_20_0972a5_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-hard_70_000000_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_100_deedf7_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_33_003147_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_35_222222_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_44_444444_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_highlight-soft_80_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-bg_loop_25_000000_21x21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_2694e8_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_3d80b3_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_4b8e0b_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_72a7cf_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_a83300_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_cccccc_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Pavel_Talanov.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/css/jquery.simpledialog.0.1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/dilation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/dust.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/erosion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/filter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/ip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jquery-1.5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jquery.json-2.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jquery.simpledialog.0.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/jscolor/jscolor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/linear-filter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/median-filter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/pixastic.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/js/white-noise.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kotlin-image-processor.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/css/jquery-ui-1.8.17.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/canvas_helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/ip_helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/jquery/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/jquery/jquery-ui-1.8.17.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/kotlin_lib.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/pixastic/pixastic.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/builder.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/filters.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/history.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/native_defs.helper/ip.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/native_defs/pixastic/pixastic.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util.kt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/date.kt" />
       <change type="DELETED" beforePath="C:\Dev\Projects\KotlinJs\jslib\src\helper\ip.kt" afterPath="" />
       <change type="DELETED" beforePath="C:\Dev\Projects\KotlinJs\jslib\src\pixastic\pixastic.kt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/annotations.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/annotations.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javalang.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javalang.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javautil.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javautil.kt" />
@@ -194,7 +107,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="kotlin_lib.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="kotlin_lib.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.5524109">
@@ -261,10 +174,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="builder.kt" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="builder.kt" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/builder.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="65" column="38" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.5774947">
+                <state line="51" column="48" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.32484075">
                   <folding />
                 </state>
               </provider>
@@ -777,7 +690,11 @@
       <created>1330011370404</created>
       <updated>1330011370404</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="initial commit">
+      <created>1330011800100</created>
+      <updated>1330011800100</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -792,6 +709,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="CodeWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -808,7 +726,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.49812934" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -848,7 +765,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -865,6 +782,7 @@
     <MESSAGE value="added load/save &#10;added blueprint css and jq UI" />
     <MESSAGE value="Change color theme&#10;basic style&#10;basic interface setUp in Kotlin" />
     <MESSAGE value="1" />
+    <MESSAGE value="initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -966,16 +884,16 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder.kt">
+    <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="38" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.5774947">
+        <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.5524109">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
+    <entry file="file://$PROJECT_DIR$/src/builder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.5524109">
+        <state line="51" column="48" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.32484075">
           <folding />
         </state>
       </provider>
