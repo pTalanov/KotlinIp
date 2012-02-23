@@ -1,6 +1,6 @@
 var classes = function(){
-  var tmp$0 = Kotlin.Class.create({initialize:function(filter, timeInMs){
-    this.$filter = filter;
+  var tmp$0 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
+    this.$filterName = filterName;
     this.$timeInMs = timeInMs;
     this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
     {
@@ -8,8 +8,8 @@ var classes = function(){
       ip.get_History().render();
     }
   }
-  , get_filter:function(){
-    return this.$filter;
+  , get_filterName:function(){
+    return this.$filterName;
   }
   , get_timeInMs:function(){
     return this.$timeInMs;
@@ -297,6 +297,76 @@ var html = Kotlin.Namespace.create({initialize:function(){
 }
 }, {Element_0:classes.Element_0, TextElement:classes.TextElement, Tag:classes.Tag, TagWithText:classes.TagWithText, HTML:classes.HTML, Head:classes.Head, Title:classes.Title, BodyTag:classes.BodyTag, Body:classes.Body, UL:classes.UL, IMG:classes.IMG, B:classes.B, LI:classes.LI, P:classes.P, H1:classes.H1, A:classes.A, Button:classes.Button});
 var ip = Kotlin.Namespace.create({initialize:function(){
+  $Filters = Kotlin.object.create({initialize:function(){
+    this.$all = new Kotlin.ArrayList;
+    {
+      this.get_all().add(new ip.PredefinedFilter('invert'));
+    }
+  }
+  , get_all:function(){
+    return this.$all;
+  }
+  , apply:function(filter){
+    {
+      var tmp$0;
+      var time = ip.measureTimeInMillis((tmp$0 = this , function(){
+        {
+          $('#canvas').pixastic(filter.get_name());
+        }
+      }
+      ));
+      new ip.HistoryEntry(filter.get_name(), time);
+    }
+  }
+  });
+  $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
+    {
+      var tmp$0;
+      {
+        tmp$0 = width - 2 + 1;
+        for (var x = 1; x != tmp$0; ++x) {
+          var tmp$1;
+          {
+            tmp$1 = height - 2 + 1;
+            for (var y = 1; y != tmp$1; ++y) {
+              var tmp$2;
+              {
+                tmp$2 = 2 + 1;
+                for (var offset = 0; offset != tmp$2; ++offset) {
+                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  );
+  $erosion = new ip.StandardFilter('erosion', function(oldData, newData, width, height){
+    {
+      var tmp$0;
+      {
+        tmp$0 = width - 2 + 1;
+        for (var x = 1; x != tmp$0; ++x) {
+          var tmp$1;
+          {
+            tmp$1 = height - 2 + 1;
+            for (var y = 1; y != tmp$1; ++y) {
+              var tmp$2;
+              {
+                tmp$2 = 2 + 1;
+                for (var offset = 0; offset != tmp$2; ++offset) {
+                  newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  );
   $History = Kotlin.object.create({initialize:function(){
     this.$entries = new Kotlin.ArrayList;
     this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0 = this , function(){
@@ -396,7 +466,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
                     this.button((tmp$0 = tmp$1 , function(){
                       {
                         this.set_id('history_item_' + i);
-                        this.plus(entry.get_filter().get_name() + '(' + entry.get_timeInMs() + ')');
+                        this.plus(entry.get_filterName() + '(' + entry.get_timeInMs() + ')');
                         i++;
                       }
                     }
@@ -413,76 +483,6 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   });
-  $Filters = Kotlin.object.create({initialize:function(){
-    this.$all = new Kotlin.ArrayList;
-    {
-      this.get_all().add(new ip.PredefinedFilter('invert'));
-    }
-  }
-  , get_all:function(){
-    return this.$all;
-  }
-  , apply:function(filter){
-    {
-      var tmp$0;
-      var time = ip.measureTimeInMillis((tmp$0 = this , function(){
-        {
-          $('#canvas').pixastic(filter.get_name());
-        }
-      }
-      ));
-      new ip.HistoryEntry(filter, time);
-    }
-  }
-  });
-  $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
-    {
-      var tmp$0;
-      {
-        tmp$0 = width - 2 + 1;
-        for (var x = 1; x != tmp$0; ++x) {
-          var tmp$1;
-          {
-            tmp$1 = height - 2 + 1;
-            for (var y = 1; y != tmp$1; ++y) {
-              var tmp$2;
-              {
-                tmp$2 = 2 + 1;
-                for (var offset = 0; offset != tmp$2; ++offset) {
-                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  );
-  $erosion = new ip.StandardFilter('erosion', function(oldData, newData, width, height){
-    {
-      var tmp$0;
-      {
-        tmp$0 = width - 2 + 1;
-        for (var x = 1; x != tmp$0; ++x) {
-          var tmp$1;
-          {
-            tmp$1 = height - 2 + 1;
-            for (var y = 1; y != tmp$1; ++y) {
-              var tmp$2;
-              {
-                tmp$2 = 2 + 1;
-                for (var offset = 0; offset != tmp$2; ++offset) {
-                  newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  );
 }
 , setUpFileLoader:function(){
   {
@@ -503,6 +503,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
                   var context = getContext();
                   context.drawImage(image, 0, 0, image.width, image.height);
                   ip.get_History().clean();
+                  new ip.HistoryEntry('Loaded file', 0);
                 }
               }
               ;
@@ -539,12 +540,23 @@ var ip = Kotlin.Namespace.create({initialize:function(){
       for (var tmp$2 = 0; tmp$2 != tmp$1; ++tmp$2) {
         var f = tmp$0[tmp$2];
         {
-          $('#format_' + f).click(function(it){
+          (function(){
             {
-              format = f;
+              var curF = f;
+              return $(function(){
+                {
+                  $('#format_' + curF).click(function(it){
+                    {
+                      format = curF;
+                    }
+                  }
+                  );
+                }
+              }
+              );
             }
           }
-          );
+          ());
         }
       }
     }
@@ -603,18 +615,6 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     ip.get_History().render();
   }
 }
-, get_History:function(){
-  return $History;
-}
-, get_Filters:function(){
-  return $Filters;
-}
-, get_dilation:function(){
-  return $dilation;
-}
-, get_erosion:function(){
-  return $erosion;
-}
 , array:function(items){
   {
     return items;
@@ -633,6 +633,18 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     var end = new Date;
     return end.getTime() - start.getTime();
   }
+}
+, get_Filters:function(){
+  return $Filters;
+}
+, get_dilation:function(){
+  return $dilation;
+}
+, get_erosion:function(){
+  return $erosion;
+}
+, get_History:function(){
+  return $History;
 }
 }, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, HistoryEntry:classes.HistoryEntry});
 html.initialize();

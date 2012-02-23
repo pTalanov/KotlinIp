@@ -16,7 +16,7 @@ object Filters {
         val time = measureTimeInMillis {
             jq("#canvas").pixastic(filter.name)
         }
-        HistoryEntry(filter, time)
+        HistoryEntry(filter.name, time)
     }
 }
 

@@ -32,6 +32,7 @@ fun setUpFileLoader() {
                     val context = getContext()
                     context.drawImage(image, 0.0, 0.0, image.width as Double, image.height as Double)
                     History.clean()
+                    HistoryEntry("Loaded file", 0)
                 }
                 image.src = fileReader.result as String
             }
@@ -49,11 +50,17 @@ fun setUpSaveImage() {
         var data = getCanvas().toDataURL("image/$format")
         jq("#result").html(resultingImageHtml(data)).dialog()
     }
+
     val formats = array("png", "bmp", "jpeg")
     for (f in formats) {
-        jq("#format_$f").click {
-            format = f
-        }
+            {
+                val curF = f
+                jq {
+                    jq("#format_$curF").click {
+                        format = curF
+                    }
+                }
+            }()
     }
 }
 

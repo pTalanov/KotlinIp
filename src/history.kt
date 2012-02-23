@@ -60,7 +60,7 @@ object History {
             li {
                 button {
                     id = "history_item_$i"
-                    + "${entry.filter.name}(${entry.timeInMs})"
+                    + "${entry.filterName}(${entry.timeInMs})"
                     i++
                 }
             }
@@ -68,7 +68,7 @@ object History {
     }
 }
 
-class HistoryEntry(val filter : Filter, val timeInMs : Int) {
+class HistoryEntry(val filterName : String, val timeInMs : Int) {
     val savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
     {
         History.entries.add(this)
