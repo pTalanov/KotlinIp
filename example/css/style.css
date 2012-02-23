@@ -1,0 +1,113 @@
+.hidden {
+    display: none;
+}
+
+section ul {
+    margin: 0;
+    padding: 0;
+}
+
+section li {
+    list-style: none;
+    margin: 0 0 3px 0;
+    padding: 0;
+}
+
+section a {
+    color: #3399ff;
+    text-decoration: none;
+    border-bottom: 1px dotted #3399ff;
+}
+
+body {
+    background: #fafdff;
+    font-family: "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
+    font-size: 90%;
+    color: #333333;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 1.4em;
+    width: 1260px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+header, section, footer {
+    padding: 5px;
+    margin: 5px;
+}
+
+article {
+    margin: 5px;
+}
+
+header, section, footer {
+    border-radius: 2px;
+    border: 1px solid #e7e2d7;
+}
+
+header {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+
+nav {
+    text-align: center;
+    display: block;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    display: inline;
+}
+
+nav li {
+    margin: 0 10px;
+    padding: 0;
+    list-style-type: none;
+    display: inline;
+}
+
+section#actions {
+    float: left;
+    width: 228px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+section#right {
+    float: right;
+    width: 178px;
+    text-align: left;
+}
+
+article {
+    float: left;
+    width: 800px;
+    overflow: auto;
+    text-align: left;
+}
+
+td {
+    width: 20px;
+}
+
+footer {
+    display: block;
+    clear: both !important;
+    width: 1238px;
+}
+
+.sd_content {
+    text-align: left;
+}

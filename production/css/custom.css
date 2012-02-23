@@ -1,0 +1,71 @@
+
+body {
+      background: #f2f5f7 url(images/ui-bg_highlight-hard_100_f2f5f7_1x100.png) 50% top repeat-x;
+      font-family: Arial,Helvetica,FreeSans,sans-serif;
+      color: #5D71B8;
+      text-align: center;
+}
+
+#header {
+    color: #5D71B8;
+    font-family: Arial,Helvetica,FreeSans,sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+}
+
+.border {
+    border-bottom: 2px solid #CCCCCC;
+    border-right: 2px solid #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    border-left: 2px solid #CCCCCC;
+}
+
+.toolbar {
+    background: #DFE7E8;
+    font-size: 12px;
+    margin-right: 1px;
+    width: 100%;
+}
+
+h3 {
+  padding-top: 3px;
+}
+
+.fill_parent {
+    height : 100%;
+    width : 100%;
+}
+
+#left_panel {
+    width : 15%;
+    height : 700px;
+    float : left;
+}
+
+
+#right_panel {
+    width : 13%;
+    height : 700px;
+    float : right;
+}
+
+#history {
+    overflow-y : scroll;
+    overflow-x : visible;
+}
+
+#history li {
+    margin-right : 10px;
+}
+
+#image {
+    width:70%;
+    float: left;
+    margin-left: 20px;
+}
+
+ul li {
+    list-style-type: none;
+}

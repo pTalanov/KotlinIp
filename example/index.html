@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple image processor</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpledialog.0.1.css"/>
+</head>
+<body>
+
+<header>
+    <hgroup>
+        <h1>Simple image processor</h1>
+    </hgroup>
+</header>
+
+<section id="actions">
+    <h3>Load file</h3>
+
+    <div id="files">
+        <input type='file' id="file_loader" size="10"/>
+    </div>
+    <div id="filters">
+        <h3>Binary filters</h3>
+
+        <div id="binary_filters">
+            <ul>
+                <li><a href="#" id="inversion">Inversion</a></li>
+                <li><a href="#" id="dilation">Dilation</a></li>
+                <li><a href="#" id="erosion">Erosion</a></li>
+            </ul>
+        </div>
+
+        <h3>Distortion filters</h3>
+
+        <div id="distortion_filters">
+            <ul>
+                <li>
+                    <a href="#" id="white_noise">White noise</a> (<a href="#" id="white_noise_options_link">options</a>)
+                    <div id="white_noise_options" class="hidden">
+                        <label>Probability: <input type="text" value="0.1" size="1" id="white_noise_probability">
+                            (0 &mdash; 1)</label><br>
+                        <label>Amount:
+                            <input type="text" value="100" size="2" id="white_noise_amount">
+                            (0 &mdash; 255)</label><br>
+                        <label>Mono: <input type="checkbox" id="white_noise_mono" checked="true"></label>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="dust">Dust</a> (<a href="#" id="dust_options_link">options</a>)
+                    <div id="dust_options" class="hidden">
+                        <label>Probability: <input type="text" value="0.1" size="1" id="dust_probability">
+                            (0 &mdash; 1)</label><br>
+                        <label>Min:
+                            <input type="text" value="100" size="2" id="dust_min">
+                            (0 &mdash; 255)</label><br>
+                        <label>Mono: <input type="checkbox" id="dust_mono" checked="true"></label>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="grid">Grid</a> (<a href="#" id="grid_options_link">options</a>)
+                    <div id="grid_options" class="hidden">
+                        <label>Color: <input type="text" id="grid_color" class="color" value="FFFFFF"></label><br>
+                        <label>W: <input type="text" id="grid_step_x" value="40" size="2"></label><br>
+                        <label>H: <input type="text" id="grid_step_y" value="40" size="2"></label><br>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Nonlinear filters</h3>
+
+        <div id="nonlinear_filters">
+            <ul>
+                <li>
+                    <a href="#" id="median_filter">Median filter</a> (<a href="#" id="median_filter_options_link">options</a>)
+                    <div id="median_filter_options" class="hidden">
+                        <label>Size: <input type="text" id="median_filter_size" value="1" size="2"></label><br>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Linear filters</h3>
+
+        <div id="linear_filters">
+            <ul id="linear_filters_list"></ul>
+            <hr/>
+            <ul>
+                <li><a href="#" rel="add_3x3_filter_form" id="add_3x3_filter_dialog">Add 3x3 filter</a></li>
+                <li><a href="#" rel="add_5x5_filter_form" id="add_5x5_filter_dialog">Add 5x5 filter</a></li>
+            </ul>
+            <hr/>
+            <a href="#" id="clear_all">Delete all custom filters</a>
+        </div>
+    </div>
+
+    <h3>Manipulations</h3>
+
+    <div id="manipulations">
+        <ul>
+            <li><a href="#" id="convert_to_png">Convert to PNG</a></li>
+        </ul>
+    </div>
+</section>
+
+<article>
+    <canvas id="canvas"></canvas>
+    <div id="result"></div>
+</article>
+
+<section id="right">
+    <h3>History</h3>
+
+    <div id="history">
+        <ul></ul>
+    </div>
+</section>
+
+<footer>
+    <div>&copy; 2011 Sergey Ignatov</div>
+</footer>
+
+<div id="add_3x3_filter_form" class="hidden">
+    <label>
+        Name: <input type="text" value="Name" size="10" id="3x3_filter_name">
+    </label>
+    <br>
+    <label>
+        Divider: <input type="text" value="1" size="10" id="3x3_filter_divider">
+    </label>
+    <table id="3x3_filter_kernel"></table>
+    <br>
+    <input type='submit' value="Save"
+           onclick="ip.createFilter('#3x3_filter_name', '#3x3_filter_kernel', '#3x3_filter_divider')" class="close"/>
+    <input type='submit' value="Cancel" class="close"/>
+</div>
+
+<div id="add_5x5_filter_form" class="hidden">
+    <label>
+        Name: <input type="text" value="Name" size="10" id="5x5_filter_name">
+    </label>
+    <br>
+    <label>
+        Divider: <input type="text" value="1" size="10" id="5x5_filter_divider">
+    </label>
+    <table id="5x5_filter_kernel"></table>
+    <br>
+    <input type='submit' value="Save"
+           onclick="ip.createFilter('#5x5_filter_name', '#5x5_filter_kernel', '#5x5_filter_divider')" class="close"/>
+    <input type='submit' value="Cancel" class="close"/>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.5.js"></script>
+<script type="text/javascript" src="js/jscolor/jscolor.js"></script>
+<script type="text/javascript" src="js/jquery.simpledialog.0.1.js"></script>
+<script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/pixastic.custom.js"></script>
+<script type="text/javascript" src="js/dilation.js"></script>
+<script type="text/javascript" src="js/erosion.js"></script>
+<script type="text/javascript" src="js/linear-filter.js"></script>
+<script type="text/javascript" src="js/white-noise.js"></script>
+<script type="text/javascript" src="js/dust.js"></script>
+<script type="text/javascript" src="js/grid.js"></script>
+<script type="text/javascript" src="js/median-filter.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/ip.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+
+</body>
+</html>

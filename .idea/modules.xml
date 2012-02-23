@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../KotlinJs/jslib/jslib.iml" filepath="$PROJECT_DIR$/../KotlinJs/jslib/jslib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jet-contrib/k2js/jslib/jslib.iml" filepath="$PROJECT_DIR$/../jet-contrib/k2js/jslib/jslib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlin-image-processor.iml" filepath="$PROJECT_DIR$/kotlin-image-processor.iml" />
+    </modules>
+  </component>
+</project>
+
