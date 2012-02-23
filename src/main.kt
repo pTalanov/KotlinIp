@@ -18,7 +18,6 @@ import html.*
 import html.htmlFragment
 
 fun setUpFileLoader() {
-    val canvas = getCanvas()
     val input = getInputElement()
     input.onchange = {
         val fileList = input.files
@@ -28,10 +27,11 @@ fun setUpFileLoader() {
             fileReader.onloadend = {
                 val image = Image()
                 image.onload = {
-                    canvas.height = image.height
-                    canvas.width = image.width
+                    getCanvas().height = image.height
+                    getCanvas().width = image.width
                     val context = getContext()
                     context.drawImage(image, 0.0, 0.0, image.width as Double, image.height as Double)
+                    History.clean()
                 }
                 image.src = fileReader.result as String
             }

@@ -6,6 +6,10 @@
       <change type="DELETED" beforePath="C:\Dev\Projects\KotlinJs\jslib\src\helper\ip.kt" afterPath="" />
       <change type="DELETED" beforePath="C:\Dev\Projects\KotlinJs\jslib\src\pixastic\pixastic.kt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builder.kt" afterPath="$PROJECT_DIR$/src/builder.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/history.kt" afterPath="$PROJECT_DIR$/src/history.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip.js" afterPath="$PROJECT_DIR$/src/ip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/annotations.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/annotations.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javalang.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javalang.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javautil.kt" afterPath="$PROJECT_DIR$/../KotlinJs/jslib/src/core/javautil.kt" />
@@ -74,7 +78,7 @@
           <file leaf-file-name="filters.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/filters.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="76" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0">
+                <state line="46" column="76" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-8.22">
                   <folding />
                 </state>
               </provider>
@@ -89,10 +93,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/production/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="77" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+                <state line="62" column="47" selection-start="1964" selection-end="1964" vertical-scroll-proportion="0.79849136">
                   <folding />
                 </state>
               </provider>
@@ -101,16 +105,16 @@
           <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/history.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="40" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+                <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="-8.16">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="kotlin_lib.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="kotlin_lib.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.5524109">
+                <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -168,16 +172,16 @@
           <file leaf-file-name="main.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="53" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+                <state line="30" column="8" selection-start="770" selection-end="770" vertical-scroll-proportion="-20.4">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="builder.kt" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="builder.kt" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/builder.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="48" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.32484075">
+                <state line="4" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.072186835">
                   <folding />
                 </state>
               </provider>
@@ -187,15 +191,6 @@
             <entry file="file://$PROJECT_DIR$/../KotlinJs/jslib/src/html5/files.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="javautil.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../KotlinJs/jslib/src/core/javautil.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="169" column="68" selection-start="7064" selection-end="7064" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -231,7 +226,7 @@
           <file leaf-file-name="ip.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ip.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="355" column="24" selection-start="8974" selection-end="8974" vertical-scroll-proportion="0.0">
+                <state line="306" column="24" selection-start="7527" selection-end="7527" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -275,17 +270,17 @@
         <option value="$PROJECT_DIR$/src/filters.kt" />
         <option value="$PROJECT_DIR$/src/util.kt" />
         <option value="$PROJECT_DIR$/example/index.html" />
-        <option value="$PROJECT_DIR$/src/builder.kt" />
         <option value="$PROJECT_DIR$/production/js/jquery/jquery.scrollview.js" />
         <option value="$PROJECT_DIR$/src/native_defs/scrollbar/scrollbar.kt" />
         <option value="$PROJECT_DIR$/src/native_defs/scrollview/scrollview.kt" />
         <option value="$PROJECT_DIR$/production/index.html" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
         <option value="$PROJECT_DIR$/../KotlinJs/jslib/src/html5/canvas.kt" />
         <option value="$PROJECT_DIR$/production/js/ip_helper.js" />
         <option value="$PROJECT_DIR$/production/css/custom.css" />
-        <option value="$PROJECT_DIR$/src/history.kt" />
         <option value="$PROJECT_DIR$/production/js/kotlin_lib.js" />
+        <option value="$PROJECT_DIR$/src/history.kt" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
+        <option value="$PROJECT_DIR$/src/builder.kt" />
       </list>
     </option>
   </component>
@@ -346,6 +341,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="KotlinIp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin-image-processor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KotlinIp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -694,7 +703,11 @@
       <created>1330011800100</created>
       <updated>1330011800100</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="initial commit">
+      <created>1330011836147</created>
+      <updated>1330011836147</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -788,44 +801,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/js/ip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="0" selection-start="5233" selection-end="5318" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/production/js/ip_helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="12" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../KotlinJs/jslib/src/html5/canvas.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="34" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../KotlinJs/jslib/src/jquery/ui.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="44" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="53" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -858,13 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="355" column="24" selection-start="8974" selection-end="8974" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="21" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
@@ -886,14 +857,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.5524109">
+        <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/filters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="76" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-8.22">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/history.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="-8.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="8" selection-start="770" selection-end="770" vertical-scroll-proportion="-20.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="306" column="24" selection-start="7527" selection-end="7527" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/builder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="48" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.32484075">
+        <state line="4" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.072186835">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="47" selection-start="1964" selection-end="1964" vertical-scroll-proportion="0.79849136">
           <folding />
         </state>
       </provider>

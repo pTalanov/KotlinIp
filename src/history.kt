@@ -49,6 +49,11 @@ object History {
         }
     }
 
+    fun clean() {
+        removeAllLaterEntries(-1)
+        render()
+    }
+
     fun entriesHtml() = htmlFragment(UL()) {
         var i = 0
         for (entry in entries) {
