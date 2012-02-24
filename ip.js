@@ -1,5 +1,31 @@
 var classes = function(){
-  var tmp$0 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
+  var tmp$0 = Kotlin.Trait.create({get_name:function(){
+    return this.$name;
+  }
+  });
+  var tmp$1 = Kotlin.Class.create(tmp$0, {initialize:function(name_0){
+    this.$name = name_0;
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  });
+  var tmp$2 = Kotlin.Class.create(tmp$0, {initialize:function(name_0, process){
+    this.$name = name_0;
+    this.$process = process;
+    {
+      addAction(this.get_name(), this.get_process());
+      ip.get_Filters().get_all().add(this);
+    }
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  , get_process:function(){
+    return this.$process;
+  }
+  });
+  var tmp$3 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
     this.$filterName = filterName;
     this.$timeInMs = timeInMs;
     this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
@@ -16,32 +42,6 @@ var classes = function(){
   }
   , get_savedData:function(){
     return this.$savedData;
-  }
-  });
-  var tmp$1 = Kotlin.Trait.create({get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$2 = Kotlin.Class.create(tmp$1, {initialize:function(name_0){
-    this.$name = name_0;
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$3 = Kotlin.Class.create(tmp$1, {initialize:function(name_0, process){
-    this.$name = name_0;
-    this.$process = process;
-    {
-      addAction(this.get_name(), this.get_process());
-      ip.get_Filters().get_all().add(this);
-    }
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  , get_process:function(){
-    return this.$process;
   }
   });
   var tmp$4 = Kotlin.Trait.create({render:function(builder, indent){
@@ -272,7 +272,7 @@ var classes = function(){
     }
   }
   });
-  return {TextElement:tmp$20, P:tmp$11, H1:tmp$10, B:tmp$13, LI:tmp$12, IMG:tmp$14, A:tmp$9, UL:tmp$15, Body:tmp$16, Title:tmp$17, Head:tmp$18, Tag:tmp$5, HTML:tmp$19, TagWithText:tmp$6, BodyTag:tmp$7, Button:tmp$8, Filter:tmp$1, PredefinedFilter:tmp$2, StandardFilter:tmp$3, Element_0:tmp$4, HistoryEntry:tmp$0};
+  return {TextElement:tmp$20, P:tmp$11, H1:tmp$10, B:tmp$13, LI:tmp$12, IMG:tmp$14, A:tmp$9, UL:tmp$15, Body:tmp$16, Title:tmp$17, Head:tmp$18, Tag:tmp$5, HTML:tmp$19, TagWithText:tmp$6, BodyTag:tmp$7, Button:tmp$8, PredefinedFilter:tmp$1, StandardFilter:tmp$2, HistoryEntry:tmp$3, Element_0:tmp$4, Filter:tmp$0};
 }
 ();
 var html = Kotlin.Namespace.create({initialize:function(){
@@ -323,16 +323,18 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     {
       var tmp$0;
       {
-        tmp$0 = width - 2 + 1;
-        for (var x = 1; x != tmp$0; ++x) {
+        tmp$0 = 2 + 1;
+        for (var offset = 0; offset != tmp$0; ++offset) {
           var tmp$1;
+          ip.corners_d(oldData, newData, width, height, offset);
+          ip.sides_d(oldData, newData, width, height, offset);
           {
-            tmp$1 = height - 2 + 1;
-            for (var y = 1; y != tmp$1; ++y) {
+            tmp$1 = width - 2 + 1;
+            for (var x = 1; x != tmp$1; ++x) {
               var tmp$2;
               {
-                tmp$2 = 2 + 1;
-                for (var offset = 0; offset != tmp$2; ++offset) {
+                tmp$2 = height - 2 + 1;
+                for (var y = 1; y != tmp$2; ++y) {
                   newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
                 }
               }
@@ -347,16 +349,18 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     {
       var tmp$0;
       {
-        tmp$0 = width - 2 + 1;
-        for (var x = 1; x != tmp$0; ++x) {
+        tmp$0 = 2 + 1;
+        for (var offset = 0; offset != tmp$0; ++offset) {
           var tmp$1;
+          ip.corners_e(oldData, newData, width, height, offset);
+          ip.sides_e(oldData, newData, width, height, offset);
           {
-            tmp$1 = height - 2 + 1;
-            for (var y = 1; y != tmp$1; ++y) {
+            tmp$1 = width - 2 + 1;
+            for (var x = 1; x != tmp$1; ++x) {
               var tmp$2;
               {
-                tmp$2 = 2 + 1;
-                for (var offset = 0; offset != tmp$2; ++offset) {
+                tmp$2 = height - 2 + 1;
+                for (var y = 1; y != tmp$2; ++y) {
                   newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
                 }
               }
@@ -483,6 +487,115 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   });
+}
+, get_Filters:function(){
+  return $Filters;
+}
+, corners_d:function(oldData, newData, width, height, offset){
+  {
+    newData[offset] = Math.max(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
+    var x = width - 1;
+    var y = 0;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
+    x = 0;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+    x = width - 1;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
+  }
+}
+, sides_d:function(oldData, newData, width, height, offset){
+  {
+    var tmp$3;
+    var tmp$2;
+    var tmp$1;
+    var tmp$0;
+    var x = 0;
+    {
+      tmp$0 = height - 2 + 1;
+      for (var y = 1; y != tmp$0; ++y) {
+        newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+      }
+    }
+    x = width - 1;
+    {
+      tmp$1 = height - 2 + 1;
+      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
+        newData[(y$0 * width + x) * 4 + offset] = Math.max(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
+      }
+    }
+    var y$1 = 0;
+    {
+      tmp$2 = width - 2 + 1;
+      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
+        newData[(y$1 * width + x$0) * 4 + offset] = Math.max(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
+      }
+    }
+    y$1 = height - 1;
+    {
+      tmp$3 = width - 2 + 1;
+      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
+        newData[(y$1 * width + x$1) * 4 + offset] = Math.max(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
+      }
+    }
+  }
+}
+, get_dilation:function(){
+  return $dilation;
+}
+, corners_e:function(oldData, newData, width, height, offset){
+  {
+    newData[offset] = Math.min(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
+    var x = width - 1;
+    var y = 0;
+    newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
+    x = 0;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.min(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+    x = width - 1;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
+  }
+}
+, sides_e:function(oldData, newData, width, height, offset){
+  {
+    var tmp$3;
+    var tmp$2;
+    var tmp$1;
+    var tmp$0;
+    var x = 0;
+    {
+      tmp$0 = height - 2 + 1;
+      for (var y = 1; y != tmp$0; ++y) {
+        newData[(y * width + x) * 4 + offset] = Math.min(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+      }
+    }
+    x = width - 1;
+    {
+      tmp$1 = height - 2 + 1;
+      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
+        newData[(y$0 * width + x) * 4 + offset] = Math.min(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
+      }
+    }
+    var y$1 = 0;
+    {
+      tmp$2 = width - 2 + 1;
+      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
+        newData[(y$1 * width + x$0) * 4 + offset] = Math.min(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
+      }
+    }
+    y$1 = height - 1;
+    {
+      tmp$3 = width - 2 + 1;
+      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
+        newData[(y$1 * width + x$1) * 4 + offset] = Math.min(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
+      }
+    }
+  }
+}
+, get_erosion:function(){
+  return $erosion;
 }
 , setUpFileLoader:function(){
   {
@@ -634,19 +747,10 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     return end.getTime() - start.getTime();
   }
 }
-, get_Filters:function(){
-  return $Filters;
-}
-, get_dilation:function(){
-  return $dilation;
-}
-, get_erosion:function(){
-  return $erosion;
-}
 , get_History:function(){
   return $History;
 }
-}, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, HistoryEntry:classes.HistoryEntry});
+}, {HistoryEntry:classes.HistoryEntry, Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter});
 html.initialize();
 ip.initialize();
 
