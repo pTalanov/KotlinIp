@@ -116,10 +116,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="custom.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/production/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.6704362">
+                <state line="41" column="21" selection-start="750" selection-end="750" vertical-scroll-proportion="0.6429725">
                   <folding />
                 </state>
               </provider>
@@ -129,7 +129,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.kt" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.kt" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="98" column="25" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.25589225">
@@ -632,7 +632,11 @@
       <created>1330370402662</created>
       <updated>1330370402662</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ui impovements">
+      <created>1330370409179</created>
+      <updated>1330370409179</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -799,16 +803,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.6704362">
+        <state line="98" column="25" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.25589225">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
+    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="25" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.25589225">
+        <state line="41" column="21" selection-start="750" selection-end="750" vertical-scroll-proportion="0.6429725">
           <folding />
         </state>
       </provider>
