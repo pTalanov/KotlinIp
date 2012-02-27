@@ -748,10 +748,24 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     ip.setUpFileLoader();
     ip.setUpSaveImage();
     ip.setUpButtons();
+    ip.setupHistoryToolbar();
+    ip.setupToolsToolbar();
     ip.get_History().render();
+    $('#image').dialog();
+  }
+}
+, setupHistoryToolbar:function(){
+  {
     var width = 300;
-    var options = Kotlin.jsonFromTuples([['maxWidth', width], ['minWidth', width], ['width', width], ['show', 'slide'], ['position', 'right top'], ['hide', 'slide'], ['title', 'History']]);
+    var options = Kotlin.jsonFromTuples([['maxWidth', width], ['minWidth', width], ['width', width], ['show', 'slide'], ['position', 'right top'], ['hide', 'slide'], ['title', 'History'], ['minHeight', 500], ['height', 500]]);
     $('#history').dialog(options);
+  }
+}
+, setupToolsToolbar:function(){
+  {
+    var width = 400;
+    var options = Kotlin.jsonFromTuples([['maxWidth', width], ['minWidth', width], ['width', width], ['show', 'slide'], ['position', 'left top'], ['hide', 'slide'], ['title', 'Tools'], ['minHeight', 500], ['height', 500]]);
+    $('#tools').dialog(options);
   }
 }
 }, {HistoryEntry:classes.HistoryEntry, Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter});

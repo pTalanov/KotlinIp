@@ -16,6 +16,7 @@ import java.util.Collections
 import js.json
 import html.*
 import html.htmlFragment
+import jquery.*
 
 fun setUpFileLoader() {
     val input = getInputElement()
@@ -92,11 +93,28 @@ fun main(args : Array<String>) {
     setUpFileLoader()
     setUpSaveImage()
     setUpButtons()
+    setupHistoryToolbar()
+    setupToolsToolbar()
     History.render()
+    jq("#image").dialog()
+}
+
+
+//TODO: add a way to build json nicely
+fun setupHistoryToolbar() {
     val width = 300
     val options = json(#("maxWidth", width), #("minWidth", width),
-                       #("width", width), #("show", "slide"),
-                       #("position", "right top"), #("hide", "slide"),
-                       #("title", "History"))
+    #("width", width), #("show", "slide"),
+    #("position", "right top"), #("hide", "slide"),
+    #("title", "History"), #("minHeight", 500), #("height", 500))
     jq("#history").dialog(options)
+}
+
+fun setupToolsToolbar() {
+    val width = 400
+    val options = json(#("maxWidth", width), #("minWidth", width),
+    #("width", width), #("show", "slide"),
+    #("position", "left top"), #("hide", "slide"),
+    #("title", "Tools"), #("minHeight", 500), #("height", 500))
+    jq("#tools").dialog(options)
 }

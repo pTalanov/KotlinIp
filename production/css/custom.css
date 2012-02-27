@@ -12,7 +12,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    width: 90%;
+    width: 100%;
 }
 
 .border {
@@ -38,23 +38,9 @@ h3 {
     width : 100%;
 }
 
-#left_panel {
-    width : 15%;
-    height : 700px;
-    float : left;
-}
-
-
-#right_panel {
-    width : 200px;
-    height : 700px;
-}
-
-
 #image {
     width:80%;
-    float: left;
-    margin-left: 20px;
+    float: center;
 }
 
 ul li {
