@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4db140d2-9557-4e7b-a361-aa88642aaa9b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/css/custom.css" afterPath="$PROJECT_DIR$/production/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/index.html" afterPath="$PROJECT_DIR$/production/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/history.kt" afterPath="$PROJECT_DIR$/src/history.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip.js" afterPath="$PROJECT_DIR$/src/ip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
     </list>
     <ignored path="kotlin-image-processor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,16 +74,16 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="6" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-26.538462">
+                <state line="29" column="47" selection-start="1002" selection-end="1002" vertical-scroll-proportion="-11.5">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/history.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="0.34343433">
+                <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="24.52">
                   <folding />
                 </state>
               </provider>
@@ -121,10 +116,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/production/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="50" column="24" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
+                <state line="42" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.6704362">
                   <folding />
                 </state>
               </provider>
@@ -137,7 +132,7 @@
           <file leaf-file-name="main.kt" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="94" column="46" selection-start="2457" selection-end="2457" vertical-scroll-proportion="1.3063973">
+                <state line="98" column="25" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.25589225">
                   <folding />
                 </state>
               </provider>
@@ -173,7 +168,7 @@
           <file leaf-file-name="ip.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ip.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="361" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.0">
+                <state line="375" column="24" selection-start="9828" selection-end="9828" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -224,9 +219,9 @@
         <option value="$PROJECT_DIR$/src/filters.kt" />
         <option value="$PROJECT_DIR$/src/ss.kt" />
         <option value="$PROJECT_DIR$/../KotlinJs/js/js.lib/src/jquery/ui.kt" />
-        <option value="$PROJECT_DIR$/production/css/custom.css" />
         <option value="$PROJECT_DIR$/src/history.kt" />
         <option value="$PROJECT_DIR$/production/index.html" />
+        <option value="$PROJECT_DIR$/production/css/custom.css" />
         <option value="$PROJECT_DIR$/src/main.kt" />
       </list>
     </option>
@@ -629,7 +624,15 @@
       <created>1330011836147</created>
       <updated>1330011836147</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="reworked history dialog">
+      <created>1330369255766</created>
+      <updated>1330369255766</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ui impovements">
+      <created>1330370402662</created>
+      <updated>1330370402662</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -701,7 +704,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="reworked history dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui impovements" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -720,6 +723,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="reworked history dialog" />
+    <MESSAGE value="ui impovements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -752,7 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="361" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.0">
+        <state line="375" column="24" selection-start="9828" selection-end="9828" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -781,30 +785,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/src/history.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="24" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
+        <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="24.52">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/production/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="6" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-26.538462">
+        <state line="29" column="47" selection-start="1002" selection-end="1002" vertical-scroll-proportion="-11.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/history.kt">
+    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="0.34343433">
+        <state line="42" column="18" selection-start="769" selection-end="769" vertical-scroll-proportion="0.6704362">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="46" selection-start="2457" selection-end="2457" vertical-scroll-proportion="1.3063973">
+        <state line="98" column="25" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.25589225">
           <folding />
         </state>
       </provider>
