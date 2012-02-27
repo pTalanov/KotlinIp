@@ -60,6 +60,7 @@ object History {
             li {
                 button {
                     id = "history_item_$i"
+                    cssClass = "fill_parent"
                     + "${entry.filterName}(${entry.timeInMs})"
                     i++
                 }

@@ -46,22 +46,13 @@ h3 {
 
 
 #right_panel {
-    width : 13%;
+    width : 200px;
     height : 700px;
-    float : right;
 }
 
-#history {
-    overflow-y : scroll;
-    overflow-x : visible;
-}
-
-#history li {
-    margin-right : 10px;
-}
 
 #image {
-    width:70%;
+    width:80%;
     float: left;
     margin-left: 20px;
 }

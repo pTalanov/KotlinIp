@@ -93,4 +93,10 @@ fun main(args : Array<String>) {
     setUpSaveImage()
     setUpButtons()
     History.render()
+    val width = 300
+    val options = json(#("maxWidth", width), #("minWidth", width),
+                       #("width", width), #("show", "slide"),
+                       #("position", "right top"), #("hide", "slide"),
+                       #("title", "History"))
+    jq("#history").dialog(options)
 }

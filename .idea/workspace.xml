@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4db140d2-9557-4e7b-a361-aa88642aaa9b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters.kt" afterPath="$PROJECT_DIR$/src/filters.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/css/custom.css" afterPath="$PROJECT_DIR$/production/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/index.html" afterPath="$PROJECT_DIR$/production/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/history.kt" afterPath="$PROJECT_DIR$/src/history.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip.js" afterPath="$PROJECT_DIR$/src/ip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
     </list>
     <ignored path="kotlin-image-processor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,13 +64,13 @@
     <favorites_list name="kotlin-image-processor" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5546688">
+    <splitter split-orientation="horizontal" split-proportion="0.55252606">
       <split-first>
         <leaf>
-          <file leaf-file-name="filters.kt" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="filters.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/filters.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="154" column="41" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.926803">
+                <state line="21" column="36" selection-start="416" selection-end="416" vertical-scroll-proportion="-14.28">
                   <folding />
                 </state>
               </provider>
@@ -77,16 +79,16 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="47" column="55" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0">
+                <state line="53" column="6" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-26.538462">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/history.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="34" selection-start="1837" selection-end="1837" vertical-scroll-proportion="-32.44">
+                <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="0.34343433">
                   <folding />
                 </state>
               </provider>
@@ -122,7 +124,7 @@
           <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="34" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
+                <state line="50" column="24" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -132,10 +134,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.kt" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="main.kt" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="21" selection-start="882" selection-end="882" vertical-scroll-proportion="0.30570507">
+                <state line="94" column="46" selection-start="2457" selection-end="2457" vertical-scroll-proportion="1.3063973">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ui.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../KotlinJs/js/js.lib/src/jquery/ui.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="22" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -162,7 +173,7 @@
           <file leaf-file-name="ip.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ip.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="334" column="24" selection-start="8272" selection-end="8272" vertical-scroll-proportion="0.0">
+                <state line="361" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -201,22 +212,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ip.js" />
-        <option value="$PROJECT_DIR$/../KotlinJs/jslib/src/core/annotations.kt" />
         <option value="$PROJECT_DIR$/src/util.kt" />
         <option value="$PROJECT_DIR$/example/index.html" />
         <option value="$PROJECT_DIR$/production/js/jquery/jquery.scrollview.js" />
         <option value="$PROJECT_DIR$/src/native_defs/scrollbar/scrollbar.kt" />
         <option value="$PROJECT_DIR$/src/native_defs/scrollview/scrollview.kt" />
-        <option value="$PROJECT_DIR$/production/index.html" />
         <option value="$PROJECT_DIR$/../KotlinJs/jslib/src/html5/canvas.kt" />
         <option value="$PROJECT_DIR$/production/js/ip_helper.js" />
-        <option value="$PROJECT_DIR$/production/css/custom.css" />
         <option value="$PROJECT_DIR$/production/js/kotlin_lib.js" />
         <option value="$PROJECT_DIR$/src/builder.kt" />
-        <option value="$PROJECT_DIR$/src/history.kt" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
         <option value="$PROJECT_DIR$/src/filters.kt" />
+        <option value="$PROJECT_DIR$/src/ss.kt" />
+        <option value="$PROJECT_DIR$/../KotlinJs/js/js.lib/src/jquery/ui.kt" />
+        <option value="$PROJECT_DIR$/production/css/custom.css" />
+        <option value="$PROJECT_DIR$/src/history.kt" />
+        <option value="$PROJECT_DIR$/production/index.html" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
       </list>
     </option>
   </component>
@@ -225,6 +236,40 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -312,12 +357,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="production" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filters.kt" />
-              <option name="myItemType" value="org.jetbrains.jet.plugin.projectView.JetFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -331,6 +372,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="production" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,16 +404,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.lastSelected" value="preferences.fileTypes" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -410,6 +459,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -436,24 +503,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -514,7 +563,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -584,7 +633,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -595,12 +644,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32656333" sideWeight="0.8809055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977018" sideWeight="0.67027557" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="ExceptionAnalyzer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -608,11 +658,10 @@
       <window_info id="CodeWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="ResolveWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.49812934" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -652,7 +701,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="reworked history dialog" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -670,16 +719,12 @@
     <MESSAGE value="Change color theme&#10;basic style&#10;basic interface setUp in Kotlin" />
     <MESSAGE value="1" />
     <MESSAGE value="initial commit" />
+    <MESSAGE value="reworked history dialog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/production/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="55" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="350" column="53" selection-start="9753" selection-end="9753" vertical-scroll-proportion="0.0" />
@@ -695,11 +740,6 @@
         <state line="23" column="12" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="34" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/builder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="17" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.0" />
@@ -708,6 +748,13 @@
     <entry file="file://$PROJECT_DIR$/src/native_defs/pixastic/pixastic.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="49" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="361" column="24" selection-start="9261" selection-end="9261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util.kt">
@@ -720,30 +767,44 @@
         <state line="150" column="88" selection-start="5384" selection-end="5384" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip.js">
+    <entry file="file://$PROJECT_DIR$/src/filters.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="24" selection-start="8272" selection-end="8272" vertical-scroll-proportion="0.0">
+        <state line="21" column="36" selection-start="416" selection-end="416" vertical-scroll-proportion="-14.28">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
+    <entry file="file://$PROJECT_DIR$/../KotlinJs/js/js.lib/src/jquery/ui.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="21" selection-start="882" selection-end="882" vertical-scroll-proportion="0.30570507">
+        <state line="22" column="22" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="24" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="6" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-26.538462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/history.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="34" selection-start="1837" selection-end="1837" vertical-scroll-proportion="-32.44">
+        <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="0.34343433">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/filters.kt">
+    <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="41" selection-start="4508" selection-end="4508" vertical-scroll-proportion="0.926803">
+        <state line="94" column="46" selection-start="2457" selection-end="2457" vertical-scroll-proportion="1.3063973">
           <folding />
         </state>
       </provider>
@@ -777,6 +838,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>asm-util-3.3.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -800,7 +862,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>kotlin-image-processor</last-edited>
+          <last-edited>jslib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
