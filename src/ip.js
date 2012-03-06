@@ -1,50 +1,5 @@
 var classes = function(){
-  var tmp$0 = Kotlin.Trait.create({get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$1 = Kotlin.Class.create(tmp$0, {initialize:function(name_0){
-    this.$name = name_0;
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$2 = Kotlin.Class.create(tmp$0, {initialize:function(name_0, process){
-    this.$name = name_0;
-    this.$process = process;
-    {
-      addAction(this.get_name(), this.get_process());
-      ip.get_Filters().get_all().add(this);
-    }
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  , get_process:function(){
-    return this.$process;
-  }
-  });
-  var tmp$3 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
-    this.$filterName = filterName;
-    this.$timeInMs = timeInMs;
-    this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
-    {
-      ip.get_History().get_entries().add(this);
-      ip.get_History().render();
-    }
-  }
-  , get_filterName:function(){
-    return this.$filterName;
-  }
-  , get_timeInMs:function(){
-    return this.$timeInMs;
-  }
-  , get_savedData:function(){
-    return this.$savedData;
-  }
-  });
-  var tmp$4 = Kotlin.Trait.create({render:function(builder, indent){
+  var tmp$0 = Kotlin.Trait.create({render:function(builder, indent){
   }
   , toString:function(){
     {
@@ -54,7 +9,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$5 = Kotlin.Class.create(tmp$4, {initialize:function(name_0){
+  var tmp$1 = Kotlin.Class.create(tmp$0, {initialize:function(name_0){
     this.$name = name_0;
     this.$children = new Kotlin.ArrayList;
     this.$attributes = new Kotlin.HashMap;
@@ -108,7 +63,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$6 = Kotlin.Class.create(tmp$5, {initialize:function(name_0){
+  var tmp$2 = Kotlin.Class.create(tmp$1, {initialize:function(name_0){
     this.super_init(name_0);
   }
   , plus:function(receiver){
@@ -117,7 +72,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$7 = Kotlin.Class.create(tmp$6, {initialize:function(name_0){
+  var tmp$3 = Kotlin.Class.create(tmp$2, {initialize:function(name_0){
     this.super_init(name_0);
   }
   , get_cssClass:function(){
@@ -172,11 +127,11 @@ var classes = function(){
     }
   }
   });
-  var tmp$8 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$4 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('button');
   }
   });
-  var tmp$9 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$5 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('a');
   }
   , get_href:function(){
@@ -190,23 +145,23 @@ var classes = function(){
     }
   }
   });
-  var tmp$10 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$6 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('h1');
   }
   });
-  var tmp$11 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$7 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('p');
   }
   });
-  var tmp$12 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$8 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('li');
   }
   });
-  var tmp$13 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$9 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('b');
   }
   });
-  var tmp$14 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$10 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('img');
   }
   , get_src:function(){
@@ -220,7 +175,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$15 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$11 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('ul');
   }
   , li:function(init){
@@ -229,15 +184,15 @@ var classes = function(){
     }
   }
   });
-  var tmp$16 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$12 = Kotlin.Class.create(tmp$3, {initialize:function(){
     this.super_init('body');
   }
   });
-  var tmp$17 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$13 = Kotlin.Class.create(tmp$2, {initialize:function(){
     this.super_init('title');
   }
   });
-  var tmp$18 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$14 = Kotlin.Class.create(tmp$2, {initialize:function(){
     this.super_init('head');
   }
   , title:function(init){
@@ -246,7 +201,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$19 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$15 = Kotlin.Class.create(tmp$2, {initialize:function(){
     this.super_init('html');
   }
   , head:function(init){
@@ -260,7 +215,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$20 = Kotlin.Class.create(tmp$4, {initialize:function(text){
+  var tmp$16 = Kotlin.Class.create(tmp$0, {initialize:function(text){
     this.$text = text;
   }
   , get_text:function(){
@@ -272,30 +227,54 @@ var classes = function(){
     }
   }
   });
-  return {TextElement:tmp$20, P:tmp$11, H1:tmp$10, B:tmp$13, LI:tmp$12, IMG:tmp$14, A:tmp$9, UL:tmp$15, Body:tmp$16, Title:tmp$17, Head:tmp$18, Tag:tmp$5, HTML:tmp$19, TagWithText:tmp$6, BodyTag:tmp$7, Button:tmp$8, PredefinedFilter:tmp$1, StandardFilter:tmp$2, HistoryEntry:tmp$3, Element_0:tmp$4, Filter:tmp$0};
+  var tmp$17 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
+    this.$filterName = filterName;
+    this.$timeInMs = timeInMs;
+    this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
+    {
+      ip.get_History().get_entries().add(this);
+      ip.get_History().render();
+    }
+  }
+  , get_filterName:function(){
+    return this.$filterName;
+  }
+  , get_timeInMs:function(){
+    return this.$timeInMs;
+  }
+  , get_savedData:function(){
+    return this.$savedData;
+  }
+  });
+  var tmp$18 = Kotlin.Trait.create({get_name:function(){
+    return this.$name;
+  }
+  });
+  var tmp$19 = Kotlin.Class.create(tmp$18, {initialize:function(name_0){
+    this.$name = name_0;
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  });
+  var tmp$20 = Kotlin.Class.create(tmp$18, {initialize:function(name_0, process){
+    this.$name = name_0;
+    this.$process = process;
+    {
+      addAction(this.get_name(), this.get_process());
+      ip.get_Filters().get_all().add(this);
+    }
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  , get_process:function(){
+    return this.$process;
+  }
+  });
+  return {StandardFilter:tmp$20, UL:tmp$11, IMG:tmp$10, Title:tmp$13, Body:tmp$12, Head:tmp$14, B:tmp$9, HTML:tmp$15, TextElement:tmp$16, HistoryEntry:tmp$17, Filter:tmp$18, A:tmp$5, PredefinedFilter:tmp$19, H1:tmp$6, P:tmp$7, LI:tmp$8, Tag:tmp$1, TagWithText:tmp$2, BodyTag:tmp$3, Button:tmp$4, Element_0:tmp$0};
 }
 ();
-var html = Kotlin.Namespace.create({initialize:function(){
-}
-, html_1:function(init){
-  {
-    var html_0 = new html.HTML;
-    init.call(html_0);
-    return html_0;
-  }
-}
-, htmlFragment:function(rootTag, init){
-  {
-    init.call(rootTag);
-    return rootTag;
-  }
-}
-, set:function(receiver, key, value){
-  {
-    return receiver.put(key, value);
-  }
-}
-}, {Element_0:classes.Element_0, TextElement:classes.TextElement, Tag:classes.Tag, TagWithText:classes.TagWithText, HTML:classes.HTML, Head:classes.Head, Title:classes.Title, BodyTag:classes.BodyTag, Body:classes.Body, UL:classes.UL, IMG:classes.IMG, B:classes.B, LI:classes.LI, P:classes.P, H1:classes.H1, A:classes.A, Button:classes.Button});
 var ip = Kotlin.Namespace.create({initialize:function(){
   $Filters = Kotlin.object.create({initialize:function(){
     this.$all = new Kotlin.ArrayList;
@@ -373,7 +352,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
   );
   $History = Kotlin.object.create({initialize:function(){
     this.$entries = new Kotlin.ArrayList;
-    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0 = this , function(){
+    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0_2 = this , function(){
       {
         this.plus('No history');
       }
@@ -488,6 +467,16 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   });
+  $height = 0;
+  $width = 0;
+  $Tools = Kotlin.object.create({initialize:function(){
+    {
+      ip.setUpButtons();
+      ip.setUpFileLoader();
+      ip.setUpSaveImage();
+    }
+  }
+  });
 }
 , get_Filters:function(){
   return $Filters;
@@ -598,8 +587,40 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 , get_erosion:function(){
   return $erosion;
 }
-, get_History:function(){
-  return $History;
+, defaultParams:function(){
+  {
+    return Kotlin.jsonFromTuples([ip.to('show', 'slide'), ip.to('hide', 'slide')]);
+  }
+}
+, initialHeight:function(receiver, height){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('minHeight', 500), ip.to('height', 500)]));
+  }
+}
+, fixedWidth:function(receiver, width){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('maxWidth', width), ip.to('minWidth', width), ip.to('width', width)]));
+  }
+}
+, position:function(receiver, str){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('position', str)]));
+  }
+}
+, position$0:function(receiver, x, y){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('position', [x, y])]));
+  }
+}
+, title:function(receiver, str){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('title', str)]));
+  }
+}
+, setDialogSize:function(receiver, width, height){
+  {
+    receiver.dialog('option', 'width', width).dialog('option', 'height', height);
+  }
 }
 , array:function(items){
   {
@@ -620,6 +641,65 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     return end.getTime() - start.getTime();
   }
 }
+, to:function(receiver, value){
+  {
+    return [receiver, value];
+  }
+}
+, get_History:function(){
+  return $History;
+}
+, resultingImageHtml:function(data){
+  {
+    return html.htmlFragment(new html.IMG, function(){
+      {
+        this.set_src(data);
+        this.plus("Right click the image and choose 'Save Image As...'");
+      }
+    }
+    );
+  }
+}
+, main:function(args){
+  {
+    $(function(){
+      {
+        ip.setupHistoryToolbar();
+        ip.setupToolsToolbar();
+        ip.get_History().render();
+        ip.setupImageToolbar(Kotlin.sure(ip.get_height()), Kotlin.sure(ip.get_width()));
+      }
+    }
+    );
+  }
+}
+, setupHistoryToolbar:function(){
+  {
+    $('#history').dialog(ip.title(ip.position(ip.fixedWidth(ip.initialHeight(ip.defaultParams(), 500), 300), 'right top'), 'History'));
+  }
+}
+, setupToolsToolbar:function(){
+  {
+    $('#tools').dialog(ip.initialHeight(ip.position(ip.title(ip.fixedWidth(ip.defaultParams(), 300), 'Tools'), 'left top'), 600));
+  }
+}
+, setupImageToolbar:function(width, height){
+  {
+    $('#image').dialog(ip.initialHeight(ip.position$0(ip.title(ip.defaultParams(), 'Image'), 350, 120), 100));
+  }
+}
+, get_height:function(){
+  return $height;
+}
+, set_height:function(tmp$0){
+  $height = tmp$0;
+}
+, get_width:function(){
+  return $width;
+}
+, set_width:function(tmp$0){
+  $width = tmp$0;
+}
 , setUpFileLoader:function(){
   {
     var input = getInputElement();
@@ -634,10 +714,13 @@ var ip = Kotlin.Namespace.create({initialize:function(){
               var image = new Image;
               image.onload = function(){
                 {
-                  getCanvas().height = image.height;
-                  getCanvas().width = image.width;
+                  ip.set_height(image.height);
+                  ip.set_width(image.width);
+                  getCanvas().height = Kotlin.sure(ip.get_height());
+                  getCanvas().width = Kotlin.sure(ip.get_width());
                   var context = getContext();
-                  context.drawImage(image, 0, 0, image.width, image.height);
+                  context.drawImage(image, 0, 0, ip.get_width(), ip.get_height());
+                  ip.setDialogSize($('#image'), ip.get_width() + 40, ip.get_height() + 80);
                   ip.get_History().clean();
                   new ip.HistoryEntry('Loaded file', 0);
                 }
@@ -698,17 +781,6 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
 }
-, resultingImageHtml:function(data){
-  {
-    return html.htmlFragment(new html.IMG, function(){
-      {
-        this.set_src(data);
-        this.plus("Right click the image and choose 'Save Image As...'");
-      }
-    }
-    );
-  }
-}
 , setUpButtons:function(){
   {
     $(function(){
@@ -743,34 +815,33 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     );
   }
 }
-, main:function(args){
+, get_Tools:function(){
+  return $Tools;
+}
+}, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, HistoryEntry:classes.HistoryEntry});
+var html = Kotlin.Namespace.create({initialize:function(){
+}
+, html_1:function(init){
   {
-    ip.setUpFileLoader();
-    ip.setUpSaveImage();
-    ip.setUpButtons();
-    ip.setupHistoryToolbar();
-    ip.setupToolsToolbar();
-    ip.get_History().render();
-    $('#image').dialog();
+    var html_0 = new html.HTML;
+    init.call(html_0);
+    return html_0;
   }
 }
-, setupHistoryToolbar:function(){
+, htmlFragment:function(rootTag, init){
   {
-    var width = 300;
-    var options = Kotlin.jsonFromTuples([['maxWidth', width], ['minWidth', width], ['width', width], ['show', 'slide'], ['position', 'right top'], ['hide', 'slide'], ['title', 'History'], ['minHeight', 500], ['height', 500]]);
-    $('#history').dialog(options);
+    init.call(rootTag);
+    return rootTag;
   }
 }
-, setupToolsToolbar:function(){
+, set:function(receiver, key, value){
   {
-    var width = 400;
-    var options = Kotlin.jsonFromTuples([['maxWidth', width], ['minWidth', width], ['width', width], ['show', 'slide'], ['position', 'left top'], ['hide', 'slide'], ['title', 'Tools'], ['minHeight', 500], ['height', 500]]);
-    $('#tools').dialog(options);
+    return receiver.put(key, value);
   }
 }
-}, {HistoryEntry:classes.HistoryEntry, Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter});
-html.initialize();
+}, {Element_0:classes.Element_0, TextElement:classes.TextElement, Tag:classes.Tag, TagWithText:classes.TagWithText, HTML:classes.HTML, Head:classes.Head, Title:classes.Title, BodyTag:classes.BodyTag, Body:classes.Body, UL:classes.UL, IMG:classes.IMG, B:classes.B, LI:classes.LI, P:classes.P, H1:classes.H1, A:classes.A, Button:classes.Button});
 ip.initialize();
+html.initialize();
 
 var args = [];
 ip.main(args);

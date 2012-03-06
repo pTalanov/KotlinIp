@@ -17,3 +17,5 @@ fun measureTimeInMillis(f : ()->Unit) : Int {
     val end = Date()
     return end.getTime() - start.getTime()
 }
+
+fun String.to(value : Any?) = #(this, value)

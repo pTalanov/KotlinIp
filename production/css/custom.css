@@ -12,7 +12,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    width: 100%;
+    width: 60%;
 }
 
 .border {
@@ -38,9 +38,8 @@ h3 {
     width : 100%;
 }
 
-#image {
-    width:80%;
-    float: center;
+#views {
+    float:right
 }
 
 ul li {
