@@ -36,6 +36,26 @@ fun Json.title(str : String) : Json {
     return add(json("title" to str))
 }
 
+fun Json.doNotOpenYet() : Json {
+    return add(json("autoOpen" to false))
+}
+
+fun Json.modal() : Json {
+    return add(json("modal" to true))
+}
+
+fun Json.button(name : String, handler : JQuery.()->Unit) : Json {
+    var buttons  : Json? = get("buttons") as Json?
+    val button = json(name to handler)
+    if (buttons == null) {
+        buttons = button
+    } else {
+        buttons?.add(button)
+    }
+    set("buttons", buttons)
+    return this
+}
+
 fun JQuery.setDialogSize(width : Int, height : Int) {
     this.dialog("option", "width", width).dialog("option", "height", height)
 }

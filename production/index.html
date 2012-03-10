@@ -45,8 +45,8 @@
     </div>
     <div class="toolbar">
         <h3>Add custom linear filters</h3>
-        <button id="add_filter_3">Add 3x3 filter</button>
-        <button id="add_filter_5">Add 5x5 filter</button>
+        <button id="add_filter_3x3">Add 3x3 filter</button>
+        <button id="add_filter_5x5">Add 5x5 filter</button>
     </div>
     <div class="toolbar">
         <h3>Custom linear filters</h3>
@@ -88,47 +88,6 @@
         </fieldset>
     </form>
 </div>
-
-<script>
-    $(function() {
-
-
-    $( "#form3" ).dialog({
-    autoOpen: false,
-    height: 400,
-    width: 500,
-    modal: true,
-    buttons: {
-    "Enter data": function() {
-    $( this ).dialog( "close" );
-
-    },
-    Cancel: function() {
-    $( this ).dialog( "close" );
-    }
-    },
-    close: function() {
-    allFields.val( "" ).removeClass( "ui-state-error" );
-    }
-    });
-
-    $( "#add_filter_3" )
-    .button()
-    .click(function() {
-
-    var name = $("#f1_name").val()
-    var divider = $("f1_name").val()
-    divider = parseInt(divider)
-    divider = divider != 0 ? divider : 9
-    var matrix = []
-    for (var i = 0; i < 9; ++i) {
-    matrix[i] = parseInt($("f1_" + (i + 1)))
-    }
-    new ip.LinearFilter(name, 3, matrix)
-    $( "#form3" ).dialog( "open" );
-    });
-    });
-</script>
 
 </body>
 

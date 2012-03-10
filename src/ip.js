@@ -632,6 +632,31 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('title', str)]));
   }
 }
+, doNotOpenYet:function(receiver){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('autoOpen', false)]));
+  }
+}
+, modal:function(receiver){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('modal', true)]));
+  }
+}
+, button_0:function(receiver, name_0, handler){
+  {
+    var buttons = Kotlin.jsonGet(receiver, 'buttons');
+    var button = Kotlin.jsonFromTuples([ip.to(name_0, handler)]);
+    if (buttons == null) {
+      buttons = button;
+    }
+     else {
+      var tmp$0;
+      tmp$0 = buttons , tmp$0 != null?Kotlin.jsonAddProperties(tmp$0, button):null;
+    }
+    Kotlin.jsonSet(receiver, 'buttons', buttons);
+    return receiver;
+  }
+}
 , setDialogSize:function(receiver, width, height){
   {
     receiver.dialog('option', 'width', width).dialog('option', 'height', height);
@@ -825,6 +850,22 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 , get_Tools:function(){
   return $Tools;
 }
+, setupForm3:function(){
+  {
+    $('#form3').dialog(ip.button_0(ip.initialHeight(ip.fixedWidth(ip.doNotOpenYet(ip.modal(ip.defaultParams())), 500), 400), 'Cancel', function(){
+      {
+        $(this).dialog('close');
+      }
+    }
+    ));
+    $('#add_filter_3x3').button().click(function(it){
+      {
+        $('#form3').dialog('open');
+      }
+    }
+    );
+  }
+}
 , array:function(items){
   {
     return items;
@@ -875,6 +916,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
           }
         }
         );
+        ip.setupForm3();
       }
     }
     );

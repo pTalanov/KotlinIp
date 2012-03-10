@@ -4,6 +4,12 @@ import ip.Filter
 import jquery.pixastic.*
 import js.*
 
+fun LinearFilter(name : String, size : Int, matrix : Array<Double>, divider : Double) : LinearFilter {
+    return LinearFilter(name, size, Array(size * size) {
+        matrix[it] / divider
+    })
+}
+
 class LinearFilter(override val name : String, val size : Int, val matrix : Array<Double>) : Filter {
     {
         Filters.registerFilter(this)

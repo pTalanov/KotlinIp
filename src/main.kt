@@ -38,6 +38,7 @@ fun main(args : Array<String>) {
             jq("#image").dialog("open")
             jq("#tools").dialog("open")
         }
+        setupForm3()
     }
 }
 
