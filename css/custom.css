@@ -12,7 +12,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    width: 90%;
+    width: 60%;
 }
 
 .border {
@@ -38,34 +38,14 @@ h3 {
     width : 100%;
 }
 
-#left_panel {
-    width : 15%;
-    height : 700px;
-    float : left;
-}
-
-
-#right_panel {
-    width : 13%;
-    height : 700px;
-    float : right;
-}
-
-#history {
-    overflow-y : scroll;
-    overflow-x : visible;
-}
-
-#history li {
-    margin-right : 10px;
-}
-
-#image {
-    width:70%;
-    float: left;
-    margin-left: 20px;
+#views {
+    float: left
 }
 
 ul li {
     list-style-type: none;
+}
+
+.form input {
+    width : 40px;
 }

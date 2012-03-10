@@ -1,31 +1,5 @@
 var classes = function(){
-  var tmp$0 = Kotlin.Trait.create({get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$1 = Kotlin.Class.create(tmp$0, {initialize:function(name_0){
-    this.$name = name_0;
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  });
-  var tmp$2 = Kotlin.Class.create(tmp$0, {initialize:function(name_0, process){
-    this.$name = name_0;
-    this.$process = process;
-    {
-      addAction(this.get_name(), this.get_process());
-      ip.get_Filters().get_all().add(this);
-    }
-  }
-  , get_name:function(){
-    return this.$name;
-  }
-  , get_process:function(){
-    return this.$process;
-  }
-  });
-  var tmp$3 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
+  var tmp$0 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
     this.$filterName = filterName;
     this.$timeInMs = timeInMs;
     this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
@@ -44,7 +18,115 @@ var classes = function(){
     return this.$savedData;
   }
   });
-  var tmp$4 = Kotlin.Trait.create({render:function(builder, indent){
+  var tmp$1 = Kotlin.Trait.create({get_name:function(){
+    return this.$name;
+  }
+  , apply:function(){
+    {
+      $('#canvas').pixastic(this.get_name());
+    }
+  }
+  });
+  var tmp$2 = Kotlin.Class.create(tmp$1, {initialize:function(name_0, size, matrix){
+    this.$name = name_0;
+    this.$size = size;
+    this.$matrix = matrix;
+    {
+      ip.get_Filters().registerFilter(this);
+      var tmp$0_0;
+      addAction(this.get_name(), (tmp$0_0 = this , function(oldData, newData, width, height){
+        {
+          var offset = Math.floor(tmp$0_0.get_size() / 2);
+          var tmp$0;
+          {
+            tmp$0 = height - offset - 1 + 1;
+            for (var u = offset; u != tmp$0; ++u) {
+              var tmp$1;
+              {
+                tmp$1 = width - offset - 1 + 1;
+                for (var v = offset; v != tmp$1; ++v) {
+                  var sumR = 0;
+                  var sumG = 0;
+                  var sumB = 0;
+                  var tmp$2;
+                  {
+                    tmp$2 = offset + 1;
+                    for (var i = -offset; i != tmp$2; ++i) {
+                      var tmp$3;
+                      {
+                        tmp$3 = offset + 1;
+                        for (var j = -offset; j != tmp$3; ++j) {
+                          var weight = tmp$0_0.get_matrix()[(i + offset) * tmp$0_0.get_size() + j + offset];
+                          sumR += oldData[((u + i) * width + (v + j)) * 4] * weight;
+                          sumG += oldData[((u + i) * width + (v + j)) * 4 + 1] * weight;
+                          sumB += oldData[((u + i) * width + (v + j)) * 4 + 2] * weight;
+                        }
+                      }
+                    }
+                  }
+                  var tmp$4;
+                  if (Math.floor(sumR) > 255)
+                    tmp$4 = 255;
+                  else 
+                    tmp$4 = Math.floor(sumR);
+                  newData[(u * width + v) * 4] = tmp$4;
+                  var tmp$5;
+                  if (Math.floor(sumG) > 255)
+                    tmp$5 = 255;
+                  else 
+                    tmp$5 = Math.floor(sumG);
+                  newData[(u * width + v) * 4 + 1] = tmp$5;
+                  var tmp$6;
+                  if (Math.floor(sumB) > 255)
+                    tmp$6 = 255;
+                  else 
+                    tmp$6 = Math.floor(sumB);
+                  newData[(u * width + v) * 4 + 2] = tmp$6;
+                }
+              }
+            }
+          }
+        }
+      }
+      ));
+    }
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  , get_size:function(){
+    return this.$size;
+  }
+  , get_matrix:function(){
+    return this.$matrix;
+  }
+  });
+  var tmp$3 = Kotlin.Class.create(tmp$1, {initialize:function(name_0){
+    this.$name = name_0;
+    {
+      ip.get_Filters().registerFilter(this);
+    }
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  });
+  var tmp$4 = Kotlin.Class.create(tmp$1, {initialize:function(name_0, process){
+    this.$name = name_0;
+    this.$process = process;
+    {
+      addAction(this.get_name(), this.get_process());
+      ip.get_Filters().registerFilter(this);
+    }
+  }
+  , get_name:function(){
+    return this.$name;
+  }
+  , get_process:function(){
+    return this.$process;
+  }
+  });
+  var tmp$5 = Kotlin.Trait.create({render:function(builder, indent){
   }
   , toString:function(){
     {
@@ -54,7 +136,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$5 = Kotlin.Class.create(tmp$4, {initialize:function(name_0){
+  var tmp$6 = Kotlin.Class.create(tmp$5, {initialize:function(name_0){
     this.$name = name_0;
     this.$children = new Kotlin.ArrayList;
     this.$attributes = new Kotlin.HashMap;
@@ -77,8 +159,8 @@ var classes = function(){
   }
   , render:function(builder, indent){
     {
-      var tmp$0;
       builder.append(indent + '<' + this.get_name() + this.renderAttributes() + '>' + '\n');
+      var tmp$0;
       {
         tmp$0 = this.get_children().iterator();
         while (tmp$0.hasNext()) {
@@ -93,8 +175,8 @@ var classes = function(){
   }
   , renderAttributes:function(){
     {
-      var tmp$0;
       var builder = new Kotlin.StringBuilder;
+      var tmp$0;
       {
         tmp$0 = this.get_attributes().keySet().iterator();
         while (tmp$0.hasNext()) {
@@ -108,7 +190,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$6 = Kotlin.Class.create(tmp$5, {initialize:function(name_0){
+  var tmp$7 = Kotlin.Class.create(tmp$6, {initialize:function(name_0){
     this.super_init(name_0);
   }
   , plus:function(receiver){
@@ -117,7 +199,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$7 = Kotlin.Class.create(tmp$6, {initialize:function(name_0){
+  var tmp$8 = Kotlin.Class.create(tmp$7, {initialize:function(name_0){
     this.super_init(name_0);
   }
   , get_cssClass:function(){
@@ -172,11 +254,11 @@ var classes = function(){
     }
   }
   });
-  var tmp$8 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$9 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('button');
   }
   });
-  var tmp$9 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$10 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('a');
   }
   , get_href:function(){
@@ -190,23 +272,23 @@ var classes = function(){
     }
   }
   });
-  var tmp$10 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$11 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('h1');
   }
   });
-  var tmp$11 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$12 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('p');
   }
   });
-  var tmp$12 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$13 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('li');
   }
   });
-  var tmp$13 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$14 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('b');
   }
   });
-  var tmp$14 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$15 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('img');
   }
   , get_src:function(){
@@ -220,7 +302,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$15 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$16 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('ul');
   }
   , li:function(init){
@@ -229,15 +311,15 @@ var classes = function(){
     }
   }
   });
-  var tmp$16 = Kotlin.Class.create(tmp$7, {initialize:function(){
+  var tmp$17 = Kotlin.Class.create(tmp$8, {initialize:function(){
     this.super_init('body');
   }
   });
-  var tmp$17 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$18 = Kotlin.Class.create(tmp$7, {initialize:function(){
     this.super_init('title');
   }
   });
-  var tmp$18 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$19 = Kotlin.Class.create(tmp$7, {initialize:function(){
     this.super_init('head');
   }
   , title:function(init){
@@ -246,7 +328,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$19 = Kotlin.Class.create(tmp$6, {initialize:function(){
+  var tmp$20 = Kotlin.Class.create(tmp$7, {initialize:function(){
     this.super_init('html');
   }
   , head:function(init){
@@ -260,7 +342,7 @@ var classes = function(){
     }
   }
   });
-  var tmp$20 = Kotlin.Class.create(tmp$4, {initialize:function(text){
+  var tmp$21 = Kotlin.Class.create(tmp$5, {initialize:function(text){
     this.$text = text;
   }
   , get_text:function(){
@@ -272,7 +354,7 @@ var classes = function(){
     }
   }
   });
-  return {TextElement:tmp$20, P:tmp$11, H1:tmp$10, B:tmp$13, LI:tmp$12, IMG:tmp$14, A:tmp$9, UL:tmp$15, Body:tmp$16, Title:tmp$17, Head:tmp$18, Tag:tmp$5, HTML:tmp$19, TagWithText:tmp$6, BodyTag:tmp$7, Button:tmp$8, PredefinedFilter:tmp$1, StandardFilter:tmp$2, HistoryEntry:tmp$3, Element_0:tmp$4, Filter:tmp$0};
+  return {HTML:tmp$20, H1:tmp$11, A:tmp$10, LI:tmp$13, TextElement:tmp$21, P:tmp$12, B:tmp$14, Button:tmp$9, IMG:tmp$15, UL:tmp$16, Body:tmp$17, Title:tmp$18, Element_0:tmp$5, Head:tmp$19, Tag:tmp$6, TagWithText:tmp$7, BodyTag:tmp$8, Filter:tmp$1, LinearFilter:tmp$2, PredefinedFilter:tmp$3, StandardFilter:tmp$4, HistoryEntry:tmp$0};
 }
 ();
 var html = Kotlin.Namespace.create({initialize:function(){
@@ -298,62 +380,43 @@ var html = Kotlin.Namespace.create({initialize:function(){
 }, {Element_0:classes.Element_0, TextElement:classes.TextElement, Tag:classes.Tag, TagWithText:classes.TagWithText, HTML:classes.HTML, Head:classes.Head, Title:classes.Title, BodyTag:classes.BodyTag, Body:classes.Body, UL:classes.UL, IMG:classes.IMG, B:classes.B, LI:classes.LI, P:classes.P, H1:classes.H1, A:classes.A, Button:classes.Button});
 var ip = Kotlin.Namespace.create({initialize:function(){
   $Filters = Kotlin.object.create({initialize:function(){
-    this.$all = new Kotlin.ArrayList;
-    {
-      this.get_all().add(new ip.PredefinedFilter('invert'));
-    }
+    this.$allFilters = new Kotlin.ArrayList;
+  }
+  , get_allFilters:function(){
+    return this.$allFilters;
   }
   , get_all:function(){
-    return this.$all;
+    {
+      return this.get_allFilters();
+    }
   }
   , apply:function(filter){
     {
       var tmp$0;
       var time = ip.measureTimeInMillis((tmp$0 = this , function(){
         {
-          $('#canvas').pixastic(filter.get_name());
+          filter.apply();
         }
       }
       ));
       new ip.HistoryEntry(filter.get_name(), time);
     }
   }
-  });
-  $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
+  , registerFilter:function(filter){
     {
-      var tmp$0;
-      {
-        tmp$0 = 2 + 1;
-        for (var offset = 0; offset != tmp$0; ++offset) {
-          var tmp$1;
-          ip.corners_d(oldData, newData, width, height, offset);
-          ip.sides_d(oldData, newData, width, height, offset);
-          {
-            tmp$1 = width - 2 + 1;
-            for (var x = 1; x != tmp$1; ++x) {
-              var tmp$2;
-              {
-                tmp$2 = height - 2 + 1;
-                for (var y = 1; y != tmp$2; ++y) {
-                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-                }
-              }
-            }
-          }
-        }
-      }
+      this.get_allFilters().add(filter);
     }
   }
-  );
+  });
   $erosion = new ip.StandardFilter('erosion', function(oldData, newData, width, height){
     {
       var tmp$0;
       {
         tmp$0 = 2 + 1;
         for (var offset = 0; offset != tmp$0; ++offset) {
-          var tmp$1;
           ip.corners_e(oldData, newData, width, height, offset);
           ip.sides_e(oldData, newData, width, height, offset);
+          var tmp$1;
           {
             tmp$1 = width - 2 + 1;
             for (var x = 1; x != tmp$1; ++x) {
@@ -371,9 +434,59 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   );
+  $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
+    {
+      var tmp$0;
+      {
+        tmp$0 = 2 + 1;
+        for (var offset = 0; offset != tmp$0; ++offset) {
+          ip.corners_d(oldData, newData, width, height, offset);
+          ip.sides_d(oldData, newData, width, height, offset);
+          var tmp$1;
+          {
+            tmp$1 = width - 2 + 1;
+            for (var x = 1; x != tmp$1; ++x) {
+              var tmp$2;
+              {
+                tmp$2 = height - 2 + 1;
+                for (var y = 1; y != tmp$2; ++y) {
+                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  );
+  $predefSimpleFilters = ip.array([new ip.PredefinedFilter('invert'), ip.get_dilation(), ip.get_erosion()]);
+  $height = 0;
+  $width = 0;
+  $Tools = Kotlin.object.create({initialize:function(){
+    {
+      ip.setUpButtons();
+      ip.setUpFileLoader();
+      ip.setUpSaveImage();
+    }
+  }
+  });
+  $integrating3 = new ip.LinearFilter('integrating_3x3', 3, Kotlin.arrayFromFun(9, function(it){
+    {
+      return 1 / 9;
+    }
+  }
+  ));
+  $integrating5 = new ip.LinearFilter('integrating_5x5', 5, Kotlin.arrayFromFun(25, function(it){
+    {
+      return 1 / 25;
+    }
+  }
+  ));
+  $predefLinearFilters = ip.array([ip.get_integrating3(), ip.get_integrating5()]);
   $History = Kotlin.object.create({initialize:function(){
     this.$entries = new Kotlin.ArrayList;
-    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0 = this , function(){
+    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0_2 = this , function(){
       {
         this.plus('No history');
       }
@@ -393,13 +506,13 @@ var ip = Kotlin.Namespace.create({initialize:function(){
   }
   , render:function(){
     {
-      var tmp$0_1;
       if (this.get_entries().isEmpty()) {
         ip.html_0(this.get_panel(), this.get_emptyHistoryHtml());
         return;
       }
       ip.html_0(this.get_panel(), this.entriesHtml());
       var i = 0;
+      var tmp$0_1;
       {
         tmp$0_1 = this.get_entries().iterator();
         while (tmp$0_1.hasNext()) {
@@ -408,8 +521,8 @@ var ip = Kotlin.Namespace.create({initialize:function(){
             var tmp$1;
             (tmp$1 = this , function(){
               {
-                var tmp$0_0;
                 var index = i;
+                var tmp$0_0;
                 return $('#history_item_' + index).button().click((tmp$0_0 = tmp$1 , function(it){
                   {
                     var tmp$0;
@@ -456,8 +569,8 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     {
       return html.htmlFragment(new html.UL, (tmp$0_1 = this , function(){
         {
-          var tmp$0_0;
           var i = 0;
+          var tmp$0_0;
           {
             tmp$0_0 = tmp$0_1.get_entries().iterator();
             while (tmp$0_0.hasNext()) {
@@ -470,6 +583,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
                     this.button((tmp$0 = tmp$1 , function(){
                       {
                         this.set_id('history_item_' + i);
+                        this.set_cssClass('fill_parent');
                         this.plus(entry.get_filterName() + '(' + entry.get_timeInMs() + ')');
                         i++;
                       }
@@ -491,58 +605,65 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 , get_Filters:function(){
   return $Filters;
 }
-, corners_d:function(oldData, newData, width, height, offset){
+, defaultParams:function(){
   {
-    newData[offset] = Math.max(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
-    var x = width - 1;
-    var y = 0;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
-    x = 0;
-    y = height - 1;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-    x = width - 1;
-    y = height - 1;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
+    return Kotlin.jsonFromTuples([ip.to('show', 'slide'), ip.to('hide', 'slide')]);
   }
 }
-, sides_d:function(oldData, newData, width, height, offset){
+, initialHeight:function(receiver, height){
   {
-    var tmp$3;
-    var tmp$2;
-    var tmp$1;
-    var tmp$0;
-    var x = 0;
-    {
-      tmp$0 = height - 2 + 1;
-      for (var y = 1; y != tmp$0; ++y) {
-        newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-      }
-    }
-    x = width - 1;
-    {
-      tmp$1 = height - 2 + 1;
-      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
-        newData[(y$0 * width + x) * 4 + offset] = Math.max(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
-      }
-    }
-    var y$1 = 0;
-    {
-      tmp$2 = width - 2 + 1;
-      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
-        newData[(y$1 * width + x$0) * 4 + offset] = Math.max(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
-      }
-    }
-    y$1 = height - 1;
-    {
-      tmp$3 = width - 2 + 1;
-      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
-        newData[(y$1 * width + x$1) * 4 + offset] = Math.max(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
-      }
-    }
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('minHeight', 500), ip.to('height', 500)]));
   }
 }
-, get_dilation:function(){
-  return $dilation;
+, fixedWidth:function(receiver, width){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('maxWidth', width), ip.to('minWidth', width), ip.to('width', width)]));
+  }
+}
+, position:function(receiver, str){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('position', str)]));
+  }
+}
+, position$0:function(receiver, x, y){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('position', [x, y])]));
+  }
+}
+, title:function(receiver, str){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('title', str)]));
+  }
+}
+, doNotOpenYet:function(receiver){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('autoOpen', false)]));
+  }
+}
+, modal:function(receiver){
+  {
+    return Kotlin.jsonAddProperties(receiver, Kotlin.jsonFromTuples([ip.to('modal', true)]));
+  }
+}
+, button_0:function(receiver, name_0, handler){
+  {
+    var buttons = Kotlin.jsonGet(receiver, 'buttons');
+    var button = Kotlin.jsonFromTuples([ip.to(name_0, handler)]);
+    if (buttons == null) {
+      buttons = button;
+    }
+     else {
+      var tmp$0;
+      tmp$0 = buttons , tmp$0 != null?Kotlin.jsonAddProperties(tmp$0, button):null;
+    }
+    Kotlin.jsonSet(receiver, 'buttons', buttons);
+    return receiver;
+  }
+}
+, setDialogSize:function(receiver, width, height){
+  {
+    receiver.dialog('option', 'width', width).dialog('option', 'height', height);
+  }
 }
 , corners_e:function(oldData, newData, width, height, offset){
   {
@@ -560,11 +681,8 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 }
 , sides_e:function(oldData, newData, width, height, offset){
   {
-    var tmp$3;
-    var tmp$2;
-    var tmp$1;
-    var tmp$0;
     var x = 0;
+    var tmp$0;
     {
       tmp$0 = height - 2 + 1;
       for (var y = 1; y != tmp$0; ++y) {
@@ -572,6 +690,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
       }
     }
     x = width - 1;
+    var tmp$1;
     {
       tmp$1 = height - 2 + 1;
       for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
@@ -579,6 +698,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
       }
     }
     var y$1 = 0;
+    var tmp$2;
     {
       tmp$2 = width - 2 + 1;
       for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
@@ -586,6 +706,7 @@ var ip = Kotlin.Namespace.create({initialize:function(){
       }
     }
     y$1 = height - 1;
+    var tmp$3;
     {
       tmp$3 = width - 2 + 1;
       for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
@@ -596,6 +717,24 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 }
 , get_erosion:function(){
   return $erosion;
+}
+, get_dilation:function(){
+  return $dilation;
+}
+, get_predefSimpleFilters:function(){
+  return $predefSimpleFilters;
+}
+, get_height:function(){
+  return $height;
+}
+, set_height:function(tmp$0){
+  $height = tmp$0;
+}
+, get_width:function(){
+  return $width;
+}
+, set_width:function(tmp$0){
+  $width = tmp$0;
 }
 , setUpFileLoader:function(){
   {
@@ -611,10 +750,13 @@ var ip = Kotlin.Namespace.create({initialize:function(){
               var image = new Image;
               image.onload = function(){
                 {
-                  getCanvas().height = image.height;
-                  getCanvas().width = image.width;
+                  ip.set_height(image.height);
+                  ip.set_width(image.width);
+                  getCanvas().height = Kotlin.sure(ip.get_height());
+                  getCanvas().width = Kotlin.sure(ip.get_width());
                   var context = getContext();
-                  context.drawImage(image, 0, 0, image.width, image.height);
+                  context.drawImage(image, 0, 0, ip.get_width(), ip.get_height());
+                  ip.setDialogSize($('#image'), ip.get_width() + 40, ip.get_height() + 80);
                   ip.get_History().clean();
                   new ip.HistoryEntry('Loaded file', 0);
                 }
@@ -635,21 +777,26 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 }
 , setUpSaveImage:function(){
   {
-    var tmp$2;
-    var tmp$1;
-    var tmp$0;
     var format = 'png';
-    $('#save_as_button').click(function(it){
+    $(function(){
       {
-        var data = getCanvas().toDataURL('image/' + format);
-        ip.html_0($('#result'), ip.resultingImageHtml(data)).dialog();
+        $('#result').dialog(Kotlin.jsonFromTuples([['autoOpen', false]]));
+        $('#save_as_button').click(function(it){
+          {
+            var data = getCanvas().toDataURL('image/' + format);
+            ip.html_0($('#result'), ip.resultingImageHtml(data)).dialog('open');
+          }
+        }
+        );
       }
     }
     );
     var formats = ip.array(['png', 'bmp', 'jpeg']);
+    var tmp$0;
+    var tmp$1;
+    var tmp$2;
     {
-      tmp$0 = formats;
-      tmp$1 = tmp$0.length;
+      tmp$0 = formats , tmp$1 = tmp$0.length;
       for (var tmp$2 = 0; tmp$2 != tmp$1; ++tmp$2) {
         var f = tmp$0[tmp$2];
         {
@@ -675,34 +822,48 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
 }
-, resultingImageHtml:function(data){
-  {
-    return html.htmlFragment(new html.IMG, function(){
-      {
-        this.set_src(data);
-        this.plus("Right click the image and choose 'Save Image As...'");
-      }
-    }
-    );
-  }
-}
 , setUpButtons:function(){
   {
     $(function(){
       {
-        var tmp$0;
         $('button').button();
         $('input').button();
         $('#format_options').buttonset();
+        var tmp$0;
+        var tmp$1;
+        var tmp$2;
         {
-          tmp$0 = ip.get_Filters().get_all().iterator();
-          while (tmp$0.hasNext()) {
-            var filter = tmp$0.next();
+          tmp$0 = ip.get_predefSimpleFilters() , tmp$1 = tmp$0.length;
+          for (var tmp$2 = 0; tmp$2 != tmp$1; ++tmp$2) {
+            var filter = tmp$0[tmp$2];
             {
               (function(){
                 {
                   var f = filter;
                   return $('#filter_' + filter.get_name()).button().click(function(it){
+                    {
+                      ip.get_Filters().apply(f);
+                    }
+                  }
+                  );
+                }
+              }
+              ());
+            }
+          }
+        }
+        var tmp$3;
+        var tmp$4;
+        var tmp$5;
+        {
+          tmp$3 = ip.get_predefLinearFilters() , tmp$4 = tmp$3.length;
+          for (var tmp$5 = 0; tmp$5 != tmp$4; ++tmp$5) {
+            var filter$0 = tmp$3[tmp$5];
+            {
+              (function(){
+                {
+                  var f = filter$0;
+                  return $('#filter_' + filter$0.get_name()).button().click(function(it){
                     {
                       ip.get_Filters().apply(f);
                     }
@@ -720,12 +881,23 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     );
   }
 }
-, main:function(args){
+, get_Tools:function(){
+  return $Tools;
+}
+, setupForm3:function(){
   {
-    ip.setUpFileLoader();
-    ip.setUpSaveImage();
-    ip.setUpButtons();
-    ip.get_History().render();
+    $('#form3').dialog(ip.button_0(ip.initialHeight(ip.fixedWidth(ip.doNotOpenYet(ip.modal(ip.defaultParams())), 500), 400), 'Cancel', function(){
+      {
+        $(this).dialog('close');
+      }
+    }
+    ));
+    $('#add_filter_3x3').button().click(function(it){
+      {
+        $('#form3').dialog('open');
+      }
+    }
+    );
   }
 }
 , array:function(items){
@@ -747,10 +919,131 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     return end.getTime() - start.getTime();
   }
 }
+, to:function(receiver, value){
+  {
+    return [receiver, value];
+  }
+}
+, resultingImageHtml:function(data){
+  {
+    return html.htmlFragment(new html.IMG, function(){
+      {
+        this.set_src(data);
+      }
+    }
+    );
+  }
+}
+, main:function(args){
+  {
+    $(function(){
+      {
+        ip.setupHistoryToolbar();
+        ip.setupToolsToolbar();
+        ip.get_History().render();
+        ip.setupImageToolbar(Kotlin.sure(ip.get_height()), Kotlin.sure(ip.get_width()));
+        $('#showAll').button().click(function(it){
+          {
+            $('#history').dialog('open');
+            $('#image').dialog('open');
+            $('#tools').dialog('open');
+          }
+        }
+        );
+        ip.setupForm3();
+      }
+    }
+    );
+  }
+}
+, setupHistoryToolbar:function(){
+  {
+    $('#history').dialog(ip.title(ip.position(ip.fixedWidth(ip.initialHeight(ip.defaultParams(), 500), 300), 'right top'), 'History'));
+  }
+}
+, setupToolsToolbar:function(){
+  {
+    $('#tools').dialog(ip.initialHeight(ip.position$0(ip.title(ip.fixedWidth(ip.defaultParams(), 300), 'Tools'), 0, 120), 600));
+  }
+}
+, setupImageToolbar:function(width, height){
+  {
+    $('#image').dialog(ip.initialHeight(ip.position$0(ip.title(ip.defaultParams(), 'Image'), 350, 120), 100));
+  }
+}
+, corners_d:function(oldData, newData, width, height, offset){
+  {
+    newData[offset] = Math.max(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
+    var x = width - 1;
+    var y = 0;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
+    x = 0;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+    x = width - 1;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
+  }
+}
+, sides_d:function(oldData, newData, width, height, offset){
+  {
+    var x = 0;
+    var tmp$0;
+    {
+      tmp$0 = height - 2 + 1;
+      for (var y = 1; y != tmp$0; ++y) {
+        newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+      }
+    }
+    x = width - 1;
+    var tmp$1;
+    {
+      tmp$1 = height - 2 + 1;
+      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
+        newData[(y$0 * width + x) * 4 + offset] = Math.max(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
+      }
+    }
+    var y$1 = 0;
+    var tmp$2;
+    {
+      tmp$2 = width - 2 + 1;
+      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
+        newData[(y$1 * width + x$0) * 4 + offset] = Math.max(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
+      }
+    }
+    y$1 = height - 1;
+    var tmp$3;
+    {
+      tmp$3 = width - 2 + 1;
+      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
+        newData[(y$1 * width + x$1) * 4 + offset] = Math.max(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
+      }
+    }
+  }
+}
+, LinearFilter$0:function(name_0, size, matrix, divider){
+  {
+    return new ip.LinearFilter(name_0, size, Kotlin.arrayFromFun(size * size, function(it){
+      {
+        return matrix[it] / divider;
+      }
+    }
+    ));
+  }
+}
+, get_integrating3:function(){
+  return $integrating3;
+}
+, get_integrating5:function(){
+  return $integrating5;
+}
+, get_predefLinearFilters:function(){
+  return $predefLinearFilters;
+}
 , get_History:function(){
   return $History;
 }
-}, {HistoryEntry:classes.HistoryEntry, Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter});
+}, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, HistoryEntry:classes.HistoryEntry, LinearFilter:classes.LinearFilter});
 html.initialize();
 ip.initialize();
 
