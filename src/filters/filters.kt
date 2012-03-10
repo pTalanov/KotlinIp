@@ -14,7 +14,7 @@ object Filters {
 
     fun apply(filter : Filter) {
         val time = measureTimeInMillis {
-            jq("#canvas").pixastic(filter.name)
+            filter.apply()
         }
         HistoryEntry(filter.name, time)
     }
@@ -22,6 +22,7 @@ object Filters {
 
 trait Filter {
     val name : String;
+    fun apply();
 }
 
 class StandardFilter(override val name : String, val process : (Array<Int>, Array<Int>, Int, Int)->Unit) : Filter {
@@ -29,9 +30,15 @@ class StandardFilter(override val name : String, val process : (Array<Int>, Arra
         addAction(name, process)
         Filters.all.add(this)
     }
+    override fun apply() {
+        jq("#canvas").pixastic(name)
+    }
 }
 
 class PredefinedFilter(override val name : String) : Filter {
+    override fun apply() {
+        jq("#canvas").pixastic(name)
+    }
 }
 
 
@@ -85,7 +92,7 @@ fun sides_d(oldData : Array<Int>, newData : Array<Int>, width : Int, height : In
         oldData[(y * width + x) * 4 + offset],
         oldData[((y + 1) * width + x) * 4 + offset]);
     }
-   // var y = 0
+    // var y = 0
     var y = 0
     for (x in 1..width - 2) {
         newData[(y * width + x) * 4 + offset] = Math.max(
@@ -205,8 +212,8 @@ val erosion = StandardFilter("erosion") {
 
     for (offset in 0..2) {
 
-       corners_e(oldData, newData, width, height, offset)
-       sides_e(oldData, newData, width, height, offset)
+        corners_e(oldData, newData, width, height, offset)
+        sides_e(oldData, newData, width, height, offset)
 
         for (x in 1..width - 2) {
             for (y in 1..height - 2) {

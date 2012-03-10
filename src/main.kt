@@ -15,6 +15,7 @@ import js.Math
 import java.util.Collections
 import js.*
 import html.*
+import html5.localstorage.localStorage;
 
 import html.htmlFragment
 import jquery.*
@@ -53,6 +54,5 @@ fun setupToolsToolbar() {
 }
 
 fun setupImageToolbar(width : Int, height : Int) {
-
     jq("#image").dialog(defaultParams().title("Image").position(350, 120).initialHeight(100))
 }
