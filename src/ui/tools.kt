@@ -78,6 +78,7 @@ fun setUpButtons() {
         jq("#format_options").buttonset()
         for (filter in Filters.all) {
                 {
+                //TODO:
                     val f = filter
                     jq("#filter_${filter.name}").button().click {
                         Filters.apply(f)
