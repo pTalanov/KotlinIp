@@ -11,10 +11,9 @@ object Filters {
 
     val allFilters : List<Filter> = ArrayList()
 
-    val nameToFilter : Map<String, Filter> = HashMap();
-    {
-        registerFilter(PredefinedFilter("invert"))
-    }
+    //    val nameToFilter : Map<String, Filter> = HashMap();
+    //    {
+    //    }
     val all : Collection<Filter>
     get() {
         return allFilters
@@ -29,7 +28,7 @@ object Filters {
 
     fun registerFilter(filter : Filter) {
         allFilters.add(filter)
-        nameToFilter.put(filter.name, filter)
+        //    nameToFilter.put(filter.name, filter)
     }
 }
 
@@ -48,4 +47,8 @@ class StandardFilter(override val name : String, val process : (Array<Int>, Arra
 }
 
 class PredefinedFilter(override val name : String) : Filter {
+    {
+        Filters.registerFilter(this)
+    }
 }
+

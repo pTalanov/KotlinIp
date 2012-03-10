@@ -43,8 +43,11 @@ import jquery.ui.*
 //});
 
 fun setupForm3() {
-    jq("#form3").dialog(defaultParams().modal().doNotOpenYet().fixedWidth(500).initialHeight(400)
-    .button("Cancel") {
+    jq("#form3").dialog(defaultParams().modal().doNotOpenYet().fixedWidth(500).initialHeight(350)
+            .button("Cancel") {
+        jq(this).dialog("close")
+    }
+            .button("Add") {
         jq(this).dialog("close")
     })
     jq("#add_filter_3x3").button().click {

@@ -79,7 +79,17 @@ fun setUpButtons() {
         jq("button").button()
         jq("input").button()
         jq("#format_options").buttonset()
-        for (filter in Filters.all) {
+        //TODO:
+        for (filter in predefSimpleFilters) {
+                {
+                //TODO:
+                    val f = filter
+                    jq("#filter_${filter.name}").button().click {
+                        Filters.apply(f)
+                    }
+                }()
+        }
+        for (filter in predefLinearFilters) {
                 {
                 //TODO:
                     val f = filter

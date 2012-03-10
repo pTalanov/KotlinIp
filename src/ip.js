@@ -103,6 +103,9 @@ var classes = function(){
   });
   var tmp$3 = Kotlin.Class.create(tmp$1, {initialize:function(name_0){
     this.$name = name_0;
+    {
+      ip.get_Filters().registerFilter(this);
+    }
   }
   , get_name:function(){
     return this.$name;
@@ -378,16 +381,9 @@ var html = Kotlin.Namespace.create({initialize:function(){
 var ip = Kotlin.Namespace.create({initialize:function(){
   $Filters = Kotlin.object.create({initialize:function(){
     this.$allFilters = new Kotlin.ArrayList;
-    this.$nameToFilter = new Kotlin.HashMap;
-    {
-      this.registerFilter(new ip.PredefinedFilter('invert'));
-    }
   }
   , get_allFilters:function(){
     return this.$allFilters;
-  }
-  , get_nameToFilter:function(){
-    return this.$nameToFilter;
   }
   , get_all:function(){
     {
@@ -409,7 +405,6 @@ var ip = Kotlin.Namespace.create({initialize:function(){
   , registerFilter:function(filter){
     {
       this.get_allFilters().add(filter);
-      this.get_nameToFilter().put(filter.get_name(), filter);
     }
   }
   });
@@ -439,16 +434,6 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   );
-  $height = 0;
-  $width = 0;
-  $Tools = Kotlin.object.create({initialize:function(){
-    {
-      ip.setUpButtons();
-      ip.setUpFileLoader();
-      ip.setUpSaveImage();
-    }
-  }
-  });
   $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
     {
       var tmp$0;
@@ -475,12 +460,30 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   );
-  $integrating = new ip.LinearFilter('integrating', 3, Kotlin.arrayFromFun(9, function(it){
+  $predefSimpleFilters = ip.array([new ip.PredefinedFilter('invert'), ip.get_dilation(), ip.get_erosion()]);
+  $height = 0;
+  $width = 0;
+  $Tools = Kotlin.object.create({initialize:function(){
+    {
+      ip.setUpButtons();
+      ip.setUpFileLoader();
+      ip.setUpSaveImage();
+    }
+  }
+  });
+  $integrating3 = new ip.LinearFilter('integrating_3x3', 3, Kotlin.arrayFromFun(9, function(it){
     {
       return 1 / 9;
     }
   }
   ));
+  $integrating5 = new ip.LinearFilter('integrating_5x5', 5, Kotlin.arrayFromFun(25, function(it){
+    {
+      return 1 / 25;
+    }
+  }
+  ));
+  $predefLinearFilters = ip.array([ip.get_integrating3(), ip.get_integrating5()]);
   $History = Kotlin.object.create({initialize:function(){
     this.$entries = new Kotlin.ArrayList;
     this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0_2 = this , function(){
@@ -715,6 +718,12 @@ var ip = Kotlin.Namespace.create({initialize:function(){
 , get_erosion:function(){
   return $erosion;
 }
+, get_dilation:function(){
+  return $dilation;
+}
+, get_predefSimpleFilters:function(){
+  return $predefSimpleFilters;
+}
 , get_height:function(){
   return $height;
 }
@@ -821,15 +830,40 @@ var ip = Kotlin.Namespace.create({initialize:function(){
         $('input').button();
         $('#format_options').buttonset();
         var tmp$0;
+        var tmp$1;
+        var tmp$2;
         {
-          tmp$0 = ip.get_Filters().get_all().iterator();
-          while (tmp$0.hasNext()) {
-            var filter = tmp$0.next();
+          tmp$0 = ip.get_predefSimpleFilters() , tmp$1 = tmp$0.length;
+          for (var tmp$2 = 0; tmp$2 != tmp$1; ++tmp$2) {
+            var filter = tmp$0[tmp$2];
             {
               (function(){
                 {
                   var f = filter;
                   return $('#filter_' + filter.get_name()).button().click(function(it){
+                    {
+                      ip.get_Filters().apply(f);
+                    }
+                  }
+                  );
+                }
+              }
+              ());
+            }
+          }
+        }
+        var tmp$3;
+        var tmp$4;
+        var tmp$5;
+        {
+          tmp$3 = ip.get_predefLinearFilters() , tmp$4 = tmp$3.length;
+          for (var tmp$5 = 0; tmp$5 != tmp$4; ++tmp$5) {
+            var filter$0 = tmp$3[tmp$5];
+            {
+              (function(){
+                {
+                  var f = filter$0;
+                  return $('#filter_' + filter$0.get_name()).button().click(function(it){
                     {
                       ip.get_Filters().apply(f);
                     }
@@ -987,11 +1021,24 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
 }
-, get_dilation:function(){
-  return $dilation;
+, LinearFilter$0:function(name_0, size, matrix, divider){
+  {
+    return new ip.LinearFilter(name_0, size, Kotlin.arrayFromFun(size * size, function(it){
+      {
+        return matrix[it] / divider;
+      }
+    }
+    ));
+  }
 }
-, get_integrating:function(){
-  return $integrating;
+, get_integrating3:function(){
+  return $integrating3;
+}
+, get_integrating5:function(){
+  return $integrating5;
+}
+, get_predefLinearFilters:function(){
+  return $predefLinearFilters;
 }
 , get_History:function(){
   return $History;

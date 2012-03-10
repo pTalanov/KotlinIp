@@ -39,4 +39,6 @@ class LinearFilter(override val name : String, val size : Int, val matrix : Arra
     }
 }
 
-val integrating = LinearFilter("integrating", 3, Array(9) {1.0 / 9})
+val integrating3 = LinearFilter("integrating_3x3", 3, Array(9) {1.0 / 9})
+val integrating5 = LinearFilter("integrating_5x5", 5, Array(25) {1.0 / 25})
+val predefLinearFilters = array(integrating3, integrating5)
