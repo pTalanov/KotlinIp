@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>Image processor</title>
@@ -13,43 +13,44 @@
 <body>
 
 <div>
-
+    <div id="views">
+        <button id="showAll">Restore all views</button>
+    </div>
     <div id="header">
         <h1>Kotlin image processor</h1>
     </div>
 
-    <div id="views">
-        <input type="checkbox" id="check" /><label for="check">Toggle</label>
+</div>
+
+
+<div id="tools" class="fill_parent">
+    <div class="toolbar">
+        <button id="save_as_button">Save to:</button>
+
+        <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
+        <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
+        <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
     </div>
 
-
-    <div id="tools" class="fill_parent">
-
-
-
-            <div class="toolbar">
-                <button id="save_as_button">Save to:</button>
-
-                <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
-                <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
-                <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
-            </div>
-
-            <div id="load_file" class="toolbar">
-                <h3>Load file</h3>
-                <input type='file' id="file_loader" size="10"/>
-            </div>
-            <div class="toolbar">
-                <h3>Simple filters</h3>
-                <button id="filter_invert">Invert</button>
-                <button id="filter_dilation">Dilation</button>
-                <button id="filter_erosion">Erosion</button>
-
-            </div>
+    <div id="load_file" class="toolbar">
+        <h3>Load file</h3>
+        <input type='file' id="file_loader" size="10"/>
     </div>
-
-    <div id="image">
-        <canvas id="canvas"></canvas>
+    <div class="toolbar">
+        <h3>Simple filters</h3>
+        <button id="filter_invert">Invert</button>
+        <button id="filter_dilation">Dilation</button>
+        <button id="filter_erosion">Erosion</button>
+        <button id="filter_integrating">Integrating</button>
+    </div>
+    <div class="toolbar">
+        <h3>Add custom linear filters</h3>
+        <button id="add_filter_3">Add 3x3 filter</button>
+        <button id="add_filter_5">Add 5x5 filter</button>
+    </div>
+    <div class="toolbar">
+        <h3>Custom linear filters</h3>
+        <button id="clear_filters">Clear custom linear filters</button>
     </div>
 </div>
 
@@ -58,6 +59,77 @@
 </div>
 
 <div id="result" title="Result"></div>
+
+<div id="image">
+    <canvas id="canvas"></canvas>
+</div>
+
+
+<div id="form3" class="form" title="Enter filter data.">
+
+    <form>
+        <fieldset>
+            <input type="text" id="f1_1" value="0" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_2" value="0" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_3" value="0" class="ui-widget-content ui-corner-all"/>
+            <hr>
+            <input type="text" id="f1_4" value="0" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_5" value="1" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_6" value="0" class="ui-widget-content ui-corner-all"/>
+            <hr>
+            <input type="text" id="f1_7" value="0" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_8" value="0" class="ui-widget-content ui-corner-all"/>
+            <input type="text" id="f1_9" value="0" class="ui-widget-content ui-corner-all"/>
+            <hr>
+            <label for="f1_name">Name:</label>
+            <input type="text" id="f1_name" value="filter" class="ui-widget-content ui-corner-all"/>
+            <label for="f1_divider">Divider:</label>
+            <input type="text" id="f1_divider" value="1" class="ui-widget-content ui-corner-all"/>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    $(function() {
+
+
+    $( "#form3" ).dialog({
+    autoOpen: false,
+    height: 400,
+    width: 500,
+    modal: true,
+    buttons: {
+    "Enter data": function() {
+    $( this ).dialog( "close" );
+
+    },
+    Cancel: function() {
+    $( this ).dialog( "close" );
+    }
+    },
+    close: function() {
+    allFields.val( "" ).removeClass( "ui-state-error" );
+    }
+    });
+
+    $( "#add_filter_3" )
+    .button()
+    .click(function() {
+
+    var name = $("#f1_name").val()
+    var divider = $("f1_name").val()
+    divider = parseInt(divider)
+    divider = divider != 0 ? divider : 9
+    var matrix = []
+    for (var i = 0; i < 9; ++i) {
+    matrix[i] = parseInt($("f1_" + (i + 1)))
+    }
+    new ip.LinearFilter(name, 3, matrix)
+    $( "#form3" ).dialog( "open" );
+    });
+    });
+</script>
+
 </body>
 
 <script src="js/pixastic/pixastic.custom.js" type="text/javascript"></script>

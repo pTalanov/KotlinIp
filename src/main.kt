@@ -23,7 +23,6 @@ import jquery.*
 fun resultingImageHtml(data : String) =
 htmlFragment(IMG()) {
     src = data
-    + "Right click the image and choose 'Save Image As...'"
 }
 
 fun main(args : Array<String>) {
@@ -32,6 +31,13 @@ fun main(args : Array<String>) {
         setupToolsToolbar()
         History.render()
         setupImageToolbar(height.sure(), width.sure())
+
+        jq("#showAll").button().click {
+        //TODO:
+            jq("#history").dialog("open")
+            jq("#image").dialog("open")
+            jq("#tools").dialog("open")
+        }
     }
 }
 
@@ -49,7 +55,7 @@ fun setupToolsToolbar() {
     defaultParams()
             .fixedWidth(300)
             .title("Tools")
-            .position("left top")
+            .position(0, 120)
             .initialHeight(600))
 }
 

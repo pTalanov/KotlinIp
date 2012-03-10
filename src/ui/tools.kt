@@ -53,9 +53,12 @@ fun setUpFileLoader() {
 fun setUpSaveImage() {
     var format = "png"
 
-    jq("#save_as_button").click {
-        var data = getCanvas().toDataURL("image/$format")
-        jq("#result").html(resultingImageHtml(data)).dialog()
+    jq() {
+        jq("#result").dialog(json(#("autoOpen", false)))
+        jq("#save_as_button").click {
+            var data = getCanvas().toDataURL("image/$format")
+            jq("#result").html(resultingImageHtml(data)).dialog("open")
+        }
     }
 
     val formats = array("png", "bmp", "jpeg")

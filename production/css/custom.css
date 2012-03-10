@@ -39,9 +39,13 @@ h3 {
 }
 
 #views {
-    float:right
+    float: left
 }
 
 ul li {
     list-style-type: none;
+}
+
+.form input {
+    width : 40px;
 }
