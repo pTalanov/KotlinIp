@@ -42,4 +42,4 @@ val dilation = StandardFilter("dilation") {
     }
 }
 
-val predefSimpleFilters = array(PredefinedFilter("invert"), dilation, erosion)
+val invert = PredefinedFilter("invert")

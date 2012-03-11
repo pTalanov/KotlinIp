@@ -44,16 +44,9 @@ fun Json.modal() : Json {
     return add(json("modal" to true))
 }
 
-fun Json.button(name : String, handler : JQuery.()->Unit) : Json {
-    var buttons  : Json? = get("buttons") as Json?
-    val button = json(name to handler)
-    if (buttons == null) {
-        buttons = button
-    } else {
-        buttons?.add(button)
-    }
-    set("buttons", buttons)
-    return this
+fun Json.buttons(vararg buttons : #(String, JQuery.()->Unit)) : Json {
+    //TODO: workaround
+    return add(json("buttons" to json2(buttons as Array<Tuple2<String, Any?>>)))
 }
 
 fun JQuery.setDialogSize(width : Int, height : Int) {

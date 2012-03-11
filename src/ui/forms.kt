@@ -1,56 +1,62 @@
 package ip
 
-
 import jquery.*
 import jquery.ui.*
+import js.parseInt
+import js.debug.console
 
-//$(function() {
-//
-//
-//$( "#form3" ).dialog({
-//    autoOpen: false,
-//    height: 400,
-//    width: 500,
-//    modal: true,
-//    buttons: {
-//    "Enter data": function() {
-//    $( this ).dialog( "close" );
-//
-//},
-//Cancel: function() {
-//$( this ).dialog( "close" );
-//}
-//},
-//close: function() {
-//}
-//});
-//
-//$( "#add_filter_3" )
-//.button()
-//.click(function() {
-//
-//    var name = $("#f1_name").val()
-//    var divider = $("f1_name").val()
-//    divider = parseInt(divider)
-//    divider = divider != 0 ? divider : 9
-//    var matrix = []
-//    for (var i = 0; i < 9; ++i) {
-//    matrix[i] = parseInt($("f1_" + (i + 1)))
-//}
-//new ip.LinearFilter(name, 3, matrix)
-//$( "#form3" ).dialog( "open" );
-//});
-//});
+class Form(val formId : String, val size : Int) {
 
-fun setupForm3() {
-    jq("#form3").dialog(defaultParams().modal().doNotOpenYet().fixedWidth(500).initialHeight(350)
-            .button("Cancel") {
-        jq(this).dialog("close")
+    {
+        jq {
+            init()
+        }
     }
-            .button("Add") {
-        jq(this).dialog("close")
-    })
-    jq("#add_filter_3x3").button().click {
-        jq("#form3").dialog("open")
+
+    fun init() {
+        val closeHandler : JQuery.()->Unit = {
+            jq(this).dialog("close")
+        }
+        val addHandler : JQuery.()->Unit = {
+            if (validateForm()) {
+                val matrix = getMatrixDataFromForm()
+                val name = getFilterNameFromForm()
+                val divider = getDividerFromForm()
+                Filters.registerCustomFilter(LinearFilter(name, size, matrix, divider))
+                renderCustomFilters()
+                jq(this).dialog("close")
+            }
+        }
+        jq(formId).dialog(defaultParams().modal().doNotOpenYet().fixedWidth(500).initialHeight(350)
+                .buttons(
+        "Cancel" to closeHandler,
+        "Add" to addHandler
+        ));
+
+        jq("#add_filter_${size}x${size}").button().click {
+            jq(formId).dialog("open")
+        }
     }
+
+    fun validateForm() : Boolean {
+        return (!Filters.exists(getFilterNameFromForm()))
+    }
+
+    fun getMatrixDataFromForm() : Array<Int> {
+        return Array(size * size) {
+            val data : Int? = parseInt(jq("${formId}_${it + 1}").`val`().sure())
+            if (data != null) data as Int else 0
+        }
+    }
+
+    fun  getFilterNameFromForm() = jq("${formId}_name").`val`().sure()
+    fun  getDividerFromForm() : Int {
+        val data = parseInt(jq("${formId}_divider").`val`().sure())
+        return if (data != null) data as Int else 1
+    }
+
+    fun setupForFilter(filter : LinearFilter) {
+
+    }
+
 }

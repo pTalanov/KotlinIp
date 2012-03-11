@@ -4,19 +4,14 @@ import ip.Filter
 import jquery.pixastic.*
 import js.*
 
-fun LinearFilter(name : String, size : Int, matrix : Array<Double>, divider : Double) : LinearFilter {
-    return LinearFilter(name, size, Array(size * size) {
-        matrix[it] / divider
-    })
-}
-
-class LinearFilter(override val name : String, val size : Int, val matrix : Array<Double>) : Filter {
+class LinearFilter(override val name : String, val size : Int, val intMatrix : Array<Int>, val divider : Int) : Filter {
     {
-        Filters.registerFilter(this)
         addAction(name, {
         (oldData, newData, width, height)->
             val offset : Int = Math.floor((size / 2).toDouble())
-
+            val matrix = Array(size * size) {
+                intMatrix[it].toDouble() / divider
+            }
             for (u in offset..(height - offset - 1)) {
                 for (v in offset..(width - offset - 1)) {
                     var sumR = 0
@@ -39,6 +34,5 @@ class LinearFilter(override val name : String, val size : Int, val matrix : Arra
     }
 }
 
-val integrating3 = LinearFilter("integrating_3x3", 3, Array(9) {1.0 / 9})
-val integrating5 = LinearFilter("integrating_5x5", 5, Array(25) {1.0 / 25})
-val predefLinearFilters = array(integrating3, integrating5)
+val integrating3 = LinearFilter("integrating_3x3", 3, Array(9) {1}, 9)
+val integrating5 = LinearFilter("integrating_5x5", 5, Array(25) {1}, 25)

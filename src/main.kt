@@ -27,18 +27,20 @@ htmlFragment(IMG()) {
 
 fun main(args : Array<String>) {
     jq() {
+        setUpButtons()
         setupHistoryToolbar()
         setupToolsToolbar()
         History.render()
         setupImageToolbar(height.sure(), width.sure())
-
-        jq("#showAll").button().click {
-        //TODO:
-            jq("#history").dialog("open")
-            jq("#image").dialog("open")
-            jq("#tools").dialog("open")
+        jq("#clear_custom_filters").button().click {
+            Filters.clearCustom()
+            renderCustomFilters()
         }
-        setupForm3()
+
+        val forms3x3 = Form("#form3x3", 3)
+        val forms5x5 = Form("#form5x5", 5)
+        Filters.loadCustom()
+        renderCustomFilters()
     }
 }
 

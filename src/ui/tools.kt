@@ -36,7 +36,7 @@ fun setUpFileLoader() {
                     getCanvas().height = height.sure()
                     getCanvas().width = width.sure()
                     val context = getContext()
-                    context.drawImage(image, 0.0, 0.0, width as Double, height as Double)
+                    context.drawImage(image, 0.0, 0.0, width.toDouble(), height.toDouble())
                     jq("#image").setDialogSize(width + 40, height + 80)
                     History.clean()
                     HistoryEntry("Loaded file", 0)
@@ -79,17 +79,8 @@ fun setUpButtons() {
         jq("button").button()
         jq("input").button()
         jq("#format_options").buttonset()
-        //TODO:
-        for (filter in predefSimpleFilters) {
-                {
-                //TODO:
-                    val f = filter
-                    jq("#filter_${filter.name}").button().click {
-                        Filters.apply(f)
-                    }
-                }()
-        }
-        for (filter in predefLinearFilters) {
+        Filters.addPredefined(invert, dilation, erosion, integrating3, integrating5)
+        for (filter in Filters.predefined) {
                 {
                 //TODO:
                     val f = filter
@@ -102,10 +93,41 @@ fun setUpButtons() {
     }
 }
 
+fun renderCustomFilters() {
+    jq() {
+        val customLinearFiltersDiv = jq("#custom_linear_filters")
+        customLinearFiltersDiv.html("")
+        for (filter in Filters.custom) {
+            customLinearFiltersDiv.append("""
+<button id = ${filter.name}>${filter.name}</button>
+            """);
+                {
+                //TODO
+                    val f = filter
+                    jq("#${filter.name}").button().click {
+                        Filters.apply(f)
+                    }
+                }()
+        }
+    }
+}
+
+fun setupShowAllButton() {
+    val mainToolbarsNames = array("#history", "#image", "#tools")
+    jq("#showAll").button().click {
+        for (toolbarName in mainToolbarsNames) {
+            jq(toolbarName).dialog("open")
+        }
+    }
+}
+
+
 object Tools {
     {
-        setUpButtons()
-        setUpFileLoader()
-        setUpSaveImage()
+        jq {
+            setUpFileLoader()
+            setUpSaveImage()
+            setupShowAllButton()
+        }
     }
 }

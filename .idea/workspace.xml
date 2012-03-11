@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db140d2-9557-4e7b-a361-aa88642aaa9b" name="Default" comment="Reorganised project structure.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/filters/simple.kt" />
+    <list default="true" id="4db140d2-9557-4e7b-a361-aa88642aaa9b" name="Default" comment="Added forms to enter matrix. And basic local storage support.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/production/js/stringify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/debug.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/css/custom.css" afterPath="$PROJECT_DIR$/production/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/index.html" afterPath="$PROJECT_DIR$/production/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production/js/kotlin_lib.js" afterPath="$PROJECT_DIR$/production/js/kotlin_lib.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters/LinearFilter.kt" afterPath="$PROJECT_DIR$/src/filters/LinearFilter.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters/dilation.kt" afterPath="$PROJECT_DIR$/src/filters/dilation.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters/erosion.kt" afterPath="$PROJECT_DIR$/src/filters/erosion.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters/filters.kt" afterPath="$PROJECT_DIR$/src/filters/filters.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/filters/simple.kt" afterPath="$PROJECT_DIR$/src/filters/simple.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip.js" afterPath="$PROJECT_DIR$/src/ip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.kt" afterPath="$PROJECT_DIR$/src/main.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/forms.kt" afterPath="$PROJECT_DIR$/src/ui/forms.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/parameterHelpers.kt" afterPath="$PROJECT_DIR$/src/ui/parameterHelpers.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/tools.kt" afterPath="$PROJECT_DIR$/src/ui/tools.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/util.kt" afterPath="$PROJECT_DIR$/src/utils/util.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/core.kt" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/core.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/json.kt" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/json.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/math.kt" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/math.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/ui.kt" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/ui.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/common.kt" afterPath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/common.kt" />
     </list>
     <ignored path="kotlin-image-processor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,40 +92,13 @@
     <favorites_list name="kotlin-image-processor" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38885018">
+    <splitter split-orientation="horizontal" split-proportion="0.41330647">
       <split-first>
         <leaf>
-          <file leaf-file-name="filters.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/filters/filters.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="42" selection-start="363" selection-end="363" vertical-scroll-proportion="-12.2">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="simple.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/filters/simple.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="19" selection-start="1401" selection-end="1401" vertical-scroll-proportion="-27.2">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="dilation.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/filters/dilation.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="1" selection-start="2343" selection-end="2343" vertical-scroll-proportion="-19.32">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ui/history.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="36" selection-start="1583" selection-end="1583" vertical-scroll-proportion="-11.04">
+                <state line="73" column="1" selection-start="2343" selection-end="2343" vertical-scroll-proportion="-18.32">
                   <folding />
                 </state>
               </provider>
@@ -128,7 +107,7 @@
           <file leaf-file-name="ip.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/native_defs.helper/ip.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="66" selection-start="126" selection-end="126" vertical-scroll-proportion="-4.08">
+                <state line="6" column="66" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -146,25 +125,43 @@
           <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="17" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+                <state line="28" column="16" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/example/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="141" column="11" selection-start="5004" selection-end="5004" vertical-scroll-proportion="-7.1153846">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tools.kt" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="tools.kt" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ui/tools.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="94" column="8" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.65656567">
+                <state line="20" column="14" selection-start="398" selection-end="398" vertical-scroll-proportion="0.57239056">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="history.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ui/history.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="-7.92">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="date.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/date.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="-2.04">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="files.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/html5/files.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="8" selection-start="184" selection-end="184" vertical-scroll-proportion="-5.44">
                   <folding />
                 </state>
               </provider>
@@ -173,7 +170,7 @@
           <file leaf-file-name="ui.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/ui.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="41" selection-start="372" selection-end="372" vertical-scroll-proportion="-11.56">
+                <state line="17" column="41" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -183,46 +180,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="33" selection-start="602" selection-end="602" vertical-scroll-proportion="-10.68">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="parameterHelpers.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ui/parameterHelpers.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="64" selection-start="667" selection-end="667" vertical-scroll-proportion="-4.56">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/production/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="35" column="34" selection-start="1149" selection-end="1149" vertical-scroll-proportion="-1.9615384">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="forms.kt" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ui/forms.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="58" selection-start="426" selection-end="426" vertical-scroll-proportion="0.13179572">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="common.rnc" pinned="false" current="false" current-in-tab="false">
-            <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/common.rnc">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="123" column="23" selection-start="3271" selection-end="3271" vertical-scroll-proportion="0.0">
+                <state line="144" column="31" selection-start="6637" selection-end="6637" vertical-scroll-proportion="-14.807693">
                   <folding />
                 </state>
               </provider>
@@ -231,7 +192,25 @@
           <file leaf-file-name="erosion.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/filters/erosion.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="75" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="-20.2">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.24">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="kotlin_lib.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="921" column="44" selection-start="28866" selection-end="28872" vertical-scroll-proportion="-18.038462">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ui/forms.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="41" column="20" selection-start="1103" selection-end="1103" vertical-scroll-proportion="-11.56">
                   <folding />
                 </state>
               </provider>
@@ -240,34 +219,52 @@
           <file leaf-file-name="LinearFilter.kt" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/filters/LinearFilter.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="14" selection-start="1625" selection-end="1625" vertical-scroll-proportion="-16.12">
+                <state line="6" column="6" selection-start="73" selection-end="73" vertical-scroll-proportion="-4.08">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ip.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ip.js">
+          <file leaf-file-name="filters.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/filters/filters.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1046" column="150" selection-start="29645" selection-end="29645" vertical-scroll-proportion="-14.961538">
+                <state line="63" column="22" selection-start="1502" selection-end="1502" vertical-scroll-proportion="-37.4">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="math.kt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/math.kt">
+          <file leaf-file-name="stringify.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/production/js/stringify.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="32" selection-start="868" selection-end="868" vertical-scroll-proportion="-18.36">
+                <state line="27" column="20" selection-start="784" selection-end="784" vertical-scroll-proportion="0.72626585">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="linear-filter.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/example/js/linear-filter.js">
+          <file leaf-file-name="core.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/core.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="122" selection-start="1745" selection-end="2094" vertical-scroll-proportion="0.0">
+                <state line="19" column="43" selection-start="324" selection-end="324" vertical-scroll-proportion="-8.08">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="42" column="29" selection-start="982" selection-end="982" vertical-scroll-proportion="-16.28">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="debug.kt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/debug.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="27" selection-start="156" selection-end="156" vertical-scroll-proportion="-6.8">
                   <folding />
                 </state>
               </provider>
@@ -288,27 +285,24 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/htmlBuilder.kt" />
-        <option value="$PROJECT_DIR$/src/ip.js" />
-        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/ui.kt" />
-        <option value="$PROJECT_DIR$/production/css/custom.css" />
-        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/math.kt" />
-        <option value="$PROJECT_DIR$/src/ui/toolbarHelpers.kt" />
+        <option value="$PROJECT_DIR$/src/utils/util.kt" />
+        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/json.kt" />
         <option value="$PROJECT_DIR$/src/ui/parameterHelpers.kt" />
-        <option value="$PROJECT_DIR$/src/main.kt" />
-        <option value="$PROJECT_DIR$/src/filters/erosion.kt" />
-        <option value="$PROJECT_DIR$/src/filters/dilation.kt" />
-        <option value="$PROJECT_DIR$/src/filters/simple.kt" />
-        <option value="$PROJECT_DIR$/src/filters/filters.kt" />
-        <option value="$PROJECT_DIR$/production/index.html" />
-        <option value="$PROJECT_DIR$/src/ui/tools.kt" />
-        <option value="$PROJECT_DIR$/src/filters/LinearFilter.kt" />
+        <option value="$PROJECT_DIR$/src/ip.js" />
+        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/jquery/common.kt" />
+        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/debug2.kt" />
+        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/debug.kt" />
+        <option value="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/core.kt" />
+        <option value="$PROJECT_DIR$/production/js/kotlin_lib.js" />
         <option value="$PROJECT_DIR$/src/ui/forms.kt" />
+        <option value="$PROJECT_DIR$/src/filters/LinearFilter.kt" />
+        <option value="$PROJECT_DIR$/src/ui/tools.kt" />
+        <option value="$PROJECT_DIR$/src/main.kt" />
+        <option value="$PROJECT_DIR$/production/index.html" />
+        <option value="$PROJECT_DIR$/src/filters/filters.kt" />
+        <option value="$PROJECT_DIR$/production/js/stringify.js" />
       </list>
     </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="#JAVA_INTERNAL" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -376,6 +370,28 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="All">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kotlin-image-processor">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -432,28 +448,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="All">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kotlin-image-processor">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -503,10 +497,6 @@
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools.kt" />
-              <option name="myItemType" value="org.jetbrains.jet.plugin.projectView.JetFileTreeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -524,6 +514,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="history.kt" />
+              <option name="myItemType" value="org.jetbrains.jet.plugin.projectView.JetFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -636,24 +630,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="KotlinIp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kotlin-image-processor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js.libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -686,8 +662,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html5" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kotlin-image-processor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js.libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="debug.kt" />
+              <option name="myItemType" value="org.jetbrains.jet.plugin.projectView.JetFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -976,26 +974,45 @@
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.49385357" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.48743987" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5024051" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.49812934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.67027557" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.49812934" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22928914" sideWeight="0.67027557" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20470336" sideWeight="0.67027557" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="ExceptionAnalyzer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1006,6 +1023,7 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1045,7 +1063,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrote forms to kotlin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added forms to enter matrix. And basic local storage support." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1069,119 +1087,120 @@
     <MESSAGE value="Changed filter structure." />
     <MESSAGE value="Added basic form code." />
     <MESSAGE value="Rewrote forms to kotlin." />
+    <MESSAGE value="Added forms to enter matrix. And basic local storage support." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/js/linear-filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="122" selection-start="1745" selection-end="2094" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1046" column="150" selection-start="29645" selection-end="29645" vertical-scroll-proportion="-14.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="17" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/math.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="32" selection-start="868" selection-end="868" vertical-scroll-proportion="-18.36">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/htmlBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="69" selection-start="1165" selection-end="1165" vertical-scroll-proportion="-14.28">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/parameterHelpers.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="64" selection-start="667" selection-end="667" vertical-scroll-proportion="-4.56">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="23" selection-start="3271" selection-end="3271" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/filters/dilation.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="1" selection-start="2343" selection-end="2343" vertical-scroll-proportion="-19.32">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/filters/erosion.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="-20.2">
+        <state line="73" column="1" selection-start="2343" selection-end="2343" vertical-scroll-proportion="-18.32">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/filters/simple.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="19" selection-start="1401" selection-end="1401" vertical-scroll-proportion="-27.2">
+        <state line="44" column="39" selection-start="1450" selection-end="1450" vertical-scroll-proportion="-20.2">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production/index.html">
+    <entry file="file://$PROJECT_DIR$/src/ui/history.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="34" selection-start="1149" selection-end="1149" vertical-scroll-proportion="-1.9615384">
+        <state line="12" column="7" selection-start="177" selection-end="177" vertical-scroll-proportion="-7.92">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/filters/filters.kt">
+    <entry file="file://$PROJECT_DIR$/example/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="42" selection-start="363" selection-end="363" vertical-scroll-proportion="-12.2">
+        <state line="55" column="58" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.25463745">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.kt">
+    <entry file="file://$PROJECT_DIR$/production/js/kotlin_lib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="602" selection-end="602" vertical-scroll-proportion="-10.68">
+        <state line="921" column="44" selection-start="28866" selection-end="28872" vertical-scroll-proportion="-18.038462">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/filters/LinearFilter.kt">
+    <entry file="file://$PROJECT_DIR$/src/filters/erosion.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="14" selection-start="1625" selection-end="1625" vertical-scroll-proportion="-16.12">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="12.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="16" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/debug.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="27" selection-start="156" selection-end="156" vertical-scroll-proportion="-6.8">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/forms.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="58" selection-start="426" selection-end="426" vertical-scroll-proportion="0.13179572">
+        <state line="41" column="20" selection-start="1103" selection-end="1103" vertical-scroll-proportion="-11.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="29" selection-start="982" selection-end="982" vertical-scroll-proportion="-16.28">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/tools.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="8" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.65656567">
+        <state line="20" column="14" selection-start="398" selection-end="398" vertical-scroll-proportion="0.57239056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/filters/LinearFilter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="73" selection-end="73" vertical-scroll-proportion="-4.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/src/core/core.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="43" selection-start="324" selection-end="324" vertical-scroll-proportion="-8.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="31" selection-start="6637" selection-end="6637" vertical-scroll-proportion="-14.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/filters/filters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="22" selection-start="1502" selection-end="1502" vertical-scroll-proportion="-37.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/js/stringify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="20" selection-start="784" selection-end="784" vertical-scroll-proportion="0.72626585">
           <folding />
         </state>
       </provider>

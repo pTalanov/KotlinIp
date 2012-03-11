@@ -348,7 +348,8 @@ var Kotlin;
 
     Kotlin.parseInt =
     function (str) {
-        return parseInt(str, 10);
+        var result = parseInt(str, 10);
+        return isNaN(result) ? null : result;
     }
     ;
 

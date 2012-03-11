@@ -18,4 +18,4 @@ fun measureTimeInMillis(f : ()->Unit) : Int {
     return end.getTime() - start.getTime()
 }
 
-fun String.to(value : Any?) = #(this, value)
+fun <T> String.to(value : T) = #(this, value)
