@@ -1,14 +1,19 @@
-package ip
+package ip.ui
 
 
 import html5.Image
 import html5.files.FileReader
 import html5.getCanvas
 import html5.getContext
+import ip.filters.getPredefinedFilters
 import ip.helper.getInputElement
+import ip.ui.history.HistoryEntry
+import ip.utils.*
 import jquery.*
 import jquery.ui.*
 import js.json
+import ip.ui.history.History
+import ip.filters.Filters
 
 var height : Int = 0
 var width : Int = 0
@@ -71,7 +76,7 @@ fun setUpButtons() {
         jq("button").button()
         jq("input").button()
         jq("#format_options").buttonset()
-        Filters.addPredefined(invert, dilation, erosion, integrating3, integrating5)
+        Filters.addPredefined(getPredefinedFilters())
         for (filter in Filters.predefined) {
             jq("#filter_${filter.name}").button().click {
                 Filters.apply(filter)

@@ -1,4 +1,4 @@
-package ip
+package ip.filters
 
 import jquery.pixastic.addAction
 import java.util.ArrayList
@@ -7,6 +7,9 @@ import jquery.pixastic.*
 import js.*
 import java.util.*
 import html5.localstorage.*
+import ip.ui.history.HistoryEntry
+import ip.utils.measureTimeInMillis
+import ip.utils.array
 
 object Filters {
 
@@ -20,7 +23,7 @@ object Filters {
         localStorage.setItem(localStorageKey, null)
     }
 
-    fun addPredefined(vararg filters : Filter) {
+    fun addPredefined(filters : Array<Filter>) {
         for (filter in filters) {
             predefined.add(filter)
         }
@@ -93,9 +96,12 @@ class PredefinedFilter(override val name : String) : Filter {
     }
 }
 
+fun getPredefinedFilters() = array(invert, dilation, erosion, integrating3, integrating5)
+
+
 native
 fun stringifyFilters(filters : Array<#(String, Int, Array<Int>, Int)>) : String = js.noImpl
 
 native
-fun filtersFromString(string : String): Array<#(String, Int, Array<Int>, Int)> = js.noImpl
+fun filtersFromString(string : String) : Array<#(String, Int, Array<Int>, Int)> = js.noImpl
 

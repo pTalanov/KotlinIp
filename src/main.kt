@@ -1,24 +1,17 @@
-package ip
+package ip.ui
 
-import ip.helper
-import ip.helper.getInputElement
-import html5.Image
-import html5.getCanvas
-import html5.files.FileReader
-import html5.getContext
-import jquery.jq
-import jquery.ui.*
-import jquery.pixastic.*
-import java.util.List
-import java.util.ArrayList
-import js.Math
-import java.util.Collections
-import js.*
+
 import html.*
-import html5.localstorage.localStorage;
-
-import html.htmlFragment
+import ip.Form
+import ip.utils.defaultParams
+import ip.utils.fixedWidth
+import ip.utils.initialHeight
+import ip.utils.position
+import ip.utils.title
 import jquery.*
+import jquery.ui.*
+import ip.ui.history.History
+import ip.filters.Filters
 
 fun resultingImageHtml(data : String) =
 htmlFragment(IMG()) {

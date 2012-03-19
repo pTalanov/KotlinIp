@@ -1,8 +1,10 @@
-package ip
+package ip.utils
 
-import js.*
+
+import ip.utils.*
 import jquery.*
 import jquery.ui.*
+import js.*
 
 fun defaultParams() : Json {
     return json(

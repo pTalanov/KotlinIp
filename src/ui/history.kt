@@ -1,14 +1,12 @@
-package ip
+package ip.ui.history
 
-import java.util.List
-import java.util.ArrayList
 
 import html.*
+import html5.*
+import ip.utils.*
+import java.util.ArrayList
 import jquery.*
 import jquery.ui.*
-import html5.getCanvas
-import html5.*
-import js.Exception
 
 object History {
     val entries = ArrayList<HistoryEntry>
@@ -27,18 +25,16 @@ object History {
         panel.html(entriesHtml())
         var i = 0
         for (entry in entries) {
-                {
-                    val index = i
-                    jq("#history_item_$index").button().click {
-                            {
 
-                                val correspondingEntry = entries.get(index)
-                                getContext().putImageData(correspondingEntry.savedData, 0, 0)
-                                removeAllLaterEntries(index)
-                                render()
-                            }()
-                    }
-                }()
+            jq("#history_item_$i").button().click {
+                    {
+
+                        val correspondingEntry = entries.get(i)
+                        getContext().putImageData(correspondingEntry.savedData, 0, 0)
+                        removeAllLaterEntries(i)
+                        render()
+                    }()
+            }
             i++
         }
     }
@@ -50,7 +46,7 @@ object History {
     }
 
     fun clean() {
-        removeAllLaterEntries(-1)
+        removeAllLaterEntries(- 1)
         render()
     }
 

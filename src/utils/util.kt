@@ -1,7 +1,8 @@
-package ip
+package ip.utils
 
-import jquery.JQuery
+
 import html.BodyTag
+import jquery.JQuery
 import js.*
 
 fun <T> array(vararg items : T) : Array<T> = items

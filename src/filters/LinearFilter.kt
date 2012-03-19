@@ -1,8 +1,7 @@
-package ip
+package ip.filters
 
-import ip.Filter
-import jquery.pixastic.*
 import js.*
+import jquery.pixastic.*
 
 class LinearFilter(override val name : String, val size : Int, val intMatrix : Array<Int>, val divider : Int) : Filter {
     {
@@ -17,8 +16,8 @@ class LinearFilter(override val name : String, val size : Int, val intMatrix : A
                     var sumR = 0
                     var sumG = 0
                     var sumB = 0
-                    for (i in -offset..offset) {
-                        for (j in -offset..offset) {
+                    for (i in - offset..offset) {
+                        for (j in - offset..offset) {
                             val weight = matrix[(i + offset) * size + j + offset]
                             sumR += oldData[((u + i) * width + (v + j)) * 4] * weight
                             sumG += oldData[((u + i) * width + (v + j)) * 4 + 1] * weight

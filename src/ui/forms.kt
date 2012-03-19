@@ -1,9 +1,13 @@
 package ip
 
+
+import ip.filters.LinearFilter
+import ip.ui.renderCustomFilters
+import ip.utils.*
 import jquery.*
 import jquery.ui.*
 import js.parseInt
-import js.debug.console
+import ip.filters.Filters
 
 class Form(val formId : String, val size : Int) {
 

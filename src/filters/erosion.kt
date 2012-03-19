@@ -1,11 +1,10 @@
-package ip
+package ip.filters
 
 import js.*
 
-
 fun corners_e(oldData : Array<Int>, newData : Array<Int>, width : Int, height : Int, offset : Int) {
     // x = 0; y = 0
-    newData[offset] =  Math.min(
+    newData[offset] = Math.min(
     oldData[offset],
     oldData[width * 4 + offset],
     oldData[4 + offset]);
