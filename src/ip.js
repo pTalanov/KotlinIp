@@ -227,14 +227,33 @@ var classes = function(){
     }
   }
   });
-  var tmp$17 = Kotlin.Class.create({initialize:function(formId, size){
+  var tmp$17 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
+    this.$filterName = filterName;
+    this.$timeInMs = timeInMs;
+    this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
+    {
+      ip.get_History().get_entries().add(this);
+      ip.get_History().render();
+    }
+  }
+  , get_filterName:function(){
+    return this.$filterName;
+  }
+  , get_timeInMs:function(){
+    return this.$timeInMs;
+  }
+  , get_savedData:function(){
+    return this.$savedData;
+  }
+  });
+  var tmp$18 = Kotlin.Class.create({initialize:function(formId, size){
     this.$formId = formId;
     this.$size = size;
     {
-      var tmp$0_0;
-      $((tmp$0_0 = this , function(){
+      var tmp$0;
+      $((tmp$0 = this , function(){
         {
-          tmp$0_0.init();
+          tmp$0.init();
         }
       }
       ));
@@ -318,25 +337,6 @@ var classes = function(){
   , setupForFilter:function(filter){
     {
     }
-  }
-  });
-  var tmp$18 = Kotlin.Class.create({initialize:function(filterName, timeInMs){
-    this.$filterName = filterName;
-    this.$timeInMs = timeInMs;
-    this.$savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
-    {
-      ip.get_History().get_entries().add(this);
-      ip.get_History().render();
-    }
-  }
-  , get_filterName:function(){
-    return this.$filterName;
-  }
-  , get_timeInMs:function(){
-    return this.$timeInMs;
-  }
-  , get_savedData:function(){
-    return this.$savedData;
   }
   });
   var tmp$19 = Kotlin.Trait.create({get_name:function(){
@@ -455,27 +455,11 @@ var classes = function(){
     return this.$process;
   }
   });
-  return {LinearFilter:tmp$20, UL:tmp$11, IMG:tmp$10, StandardFilter:tmp$22, Title:tmp$13, PredefinedFilter:tmp$21, Body:tmp$12, Head:tmp$14, B:tmp$9, HTML:tmp$15, TextElement:tmp$16, Form_0:tmp$17, HistoryEntry:tmp$18, A:tmp$5, Filter:tmp$19, H1:tmp$6, P:tmp$7, LI:tmp$8, Tag:tmp$1, TagWithText:tmp$2, BodyTag:tmp$3, Button:tmp$4, Element_0:tmp$0};
+  return {LinearFilter:tmp$20, UL:tmp$11, IMG:tmp$10, StandardFilter:tmp$22, Title:tmp$13, PredefinedFilter:tmp$21, Body:tmp$12, Head:tmp$14, B:tmp$9, HTML:tmp$15, TextElement:tmp$16, HistoryEntry:tmp$17, Form_0:tmp$18, A:tmp$5, Filter:tmp$19, H1:tmp$6, P:tmp$7, LI:tmp$8, Tag:tmp$1, TagWithText:tmp$2, BodyTag:tmp$3, Button:tmp$4, Element_0:tmp$0};
 }
 ();
 var ip = Kotlin.Namespace.create({initialize:function(){
-  $height = 0;
-  $width = 0;
-  $Tools = Kotlin.object.create({initialize:function(){
-    {
-      var tmp$0;
-      $((tmp$0 = this , function(){
-        {
-          ip.setUpFileLoader();
-          ip.setUpSaveImage();
-          ip.setupShowAllButton();
-        }
-      }
-      ));
-    }
-  }
-  });
-  $Filters = Kotlin.object.create({initialize:function(){
+  this.$Filters = Kotlin.object.create({initialize:function(){
     this.$predefined = new Kotlin.ArrayList;
     this.$custom = new Kotlin.ArrayList;
     this.$localStorageKey = 'KotlinIpFilters3';
@@ -596,74 +580,10 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   });
-  $integrating3 = new ip.LinearFilter('integrating_3x3', 3, Kotlin.arrayFromFun(9, function(it){
-    {
-      return 1;
-    }
-  }
-  ), 9);
-  $integrating5 = new ip.LinearFilter('integrating_5x5', 5, Kotlin.arrayFromFun(25, function(it){
-    {
-      return 1;
-    }
-  }
-  ), 25);
-  $erosion = new ip.StandardFilter('erosion', function(oldData, newData, width, height){
-    {
-      var tmp$0;
-      {
-        tmp$0 = 2 + 1;
-        for (var offset = 0; offset != tmp$0; ++offset) {
-          ip.corners_e(oldData, newData, width, height, offset);
-          ip.sides_e(oldData, newData, width, height, offset);
-          var tmp$1;
-          {
-            tmp$1 = width - 2 + 1;
-            for (var x = 1; x != tmp$1; ++x) {
-              var tmp$2;
-              {
-                tmp$2 = height - 2 + 1;
-                for (var y = 1; y != tmp$2; ++y) {
-                  newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  );
-  $dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
-    {
-      var tmp$0;
-      {
-        tmp$0 = 2 + 1;
-        for (var offset = 0; offset != tmp$0; ++offset) {
-          ip.corners_d(oldData, newData, width, height, offset);
-          ip.sides_d(oldData, newData, width, height, offset);
-          var tmp$1;
-          {
-            tmp$1 = width - 2 + 1;
-            for (var x = 1; x != tmp$1; ++x) {
-              var tmp$2;
-              {
-                tmp$2 = height - 2 + 1;
-                for (var y = 1; y != tmp$2; ++y) {
-                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  );
-  $invert = new ip.PredefinedFilter('invert');
-  $History = Kotlin.object.create({initialize:function(){
+  this.$History = Kotlin.object.create({initialize:function(){
+    var tmp$0;
     this.$entries = new Kotlin.ArrayList;
-    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0_2 = this , function(){
+    this.$emptyHistoryHtml = html.htmlFragment(new html.P, (tmp$0 = this , function(){
       {
         this.plus('No history');
       }
@@ -754,21 +674,27 @@ var ip = Kotlin.Namespace.create({initialize:function(){
               var entry = tmp$0_0.next();
               {
                 var tmp$1;
-                this.li((tmp$1 = tmp$0_1 , function(){
-                  {
-                    var tmp$0;
-                    this.button((tmp$0 = tmp$1 , function(){
-                      {
-                        this.set_id('history_item_' + i);
-                        this.set_cssClass('fill_parent');
-                        this.plus(entry.get_filterName() + '(' + entry.get_timeInMs() + ')');
-                        i++;
+                this.li(function(entry, entry){
+                  return tmp$1 = tmp$0_1 , function(){
+                    {
+                      var tmp$0;
+                      this.button(function(entry, entry){
+                        return tmp$0 = tmp$1 , function(){
+                          {
+                            this.set_id('history_item_' + i);
+                            this.set_cssClass('fill_parent');
+                            this.plus(entry.get_filterName() + '(' + entry.get_timeInMs() + ')');
+                            i++;
+                          }
+                        }
+                        ;
                       }
+                      (entry, entry));
                     }
-                    ));
                   }
+                  ;
                 }
-                ));
+                (entry, entry));
               }
             }
           }
@@ -778,6 +704,217 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
   });
+  this.$integrating3 = new ip.LinearFilter('integrating_3x3', 3, Kotlin.arrayFromFun(9, function(it){
+    {
+      return 1;
+    }
+  }
+  ), 9);
+  this.$integrating5 = new ip.LinearFilter('integrating_5x5', 5, Kotlin.arrayFromFun(25, function(it){
+    {
+      return 1;
+    }
+  }
+  ), 25);
+  this.$height = 0;
+  this.$width = 0;
+  this.$Tools = Kotlin.object.create({initialize:function(){
+    {
+      var tmp$0;
+      $((tmp$0 = this , function(){
+        {
+          ip.setUpFileLoader();
+          ip.setUpSaveImage();
+          ip.setupShowAllButton();
+        }
+      }
+      ));
+    }
+  }
+  });
+  this.$erosion = new ip.StandardFilter('erosion', function(oldData, newData, width, height){
+    {
+      var tmp$0;
+      {
+        tmp$0 = 2 + 1;
+        for (var offset = 0; offset != tmp$0; ++offset) {
+          ip.corners_e(oldData, newData, width, height, offset);
+          ip.sides_e(oldData, newData, width, height, offset);
+          var tmp$1;
+          {
+            tmp$1 = width - 2 + 1;
+            for (var x = 1; x != tmp$1; ++x) {
+              var tmp$2;
+              {
+                tmp$2 = height - 2 + 1;
+                for (var y = 1; y != tmp$2; ++y) {
+                  newData[(y * width + x) * 4 + offset] = Math.min(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  );
+  this.$dilation = new ip.StandardFilter('dilation', function(oldData, newData, width, height){
+    {
+      var tmp$0;
+      {
+        tmp$0 = 2 + 1;
+        for (var offset = 0; offset != tmp$0; ++offset) {
+          ip.corners_d(oldData, newData, width, height, offset);
+          ip.sides_d(oldData, newData, width, height, offset);
+          var tmp$1;
+          {
+            tmp$1 = width - 2 + 1;
+            for (var x = 1; x != tmp$1; ++x) {
+              var tmp$2;
+              {
+                tmp$2 = height - 2 + 1;
+                for (var y = 1; y != tmp$2; ++y) {
+                  newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  );
+  this.$invert = new ip.PredefinedFilter('invert');
+}
+, array:function(items){
+  {
+    return items;
+  }
+}
+, html_0:function(receiver, tag){
+  {
+    receiver.html(Kotlin.sure(tag.toString()));
+    return receiver;
+  }
+}
+, measureTimeInMillis:function(f){
+  {
+    var start = new Date;
+    f();
+    var end = new Date;
+    return end.getTime() - start.getTime();
+  }
+}
+, to:function(receiver, value){
+  {
+    return [receiver, value];
+  }
+}
+, resultingImageHtml:function(data){
+  {
+    return html.htmlFragment(new html.IMG, function(){
+      {
+        this.set_src(data);
+      }
+    }
+    );
+  }
+}
+, main:function(args){
+  {
+    $(function(){
+      {
+        ip.setUpButtons();
+        ip.setupHistoryToolbar();
+        ip.setupToolsToolbar();
+        ip.get_History().render();
+        ip.setupImageToolbar(Kotlin.sure(ip.get_height()), Kotlin.sure(ip.get_width()));
+        $('#clear_custom_filters').button().click(function(it){
+          {
+            ip.get_Filters().clearCustom();
+            ip.renderCustomFilters();
+          }
+        }
+        );
+        var forms3x3 = new ip.Form_0('#form3x3', 3);
+        var forms5x5 = new ip.Form_0('#form5x5', 5);
+        ip.get_Filters().loadCustom();
+        ip.renderCustomFilters();
+      }
+    }
+    );
+  }
+}
+, setupHistoryToolbar:function(){
+  {
+    $('#history').dialog(ip.title(ip.position(ip.fixedWidth(ip.initialHeight(ip.defaultParams(), 500), 300), 'right top'), 'History'));
+  }
+}
+, setupToolsToolbar:function(){
+  {
+    $('#tools').dialog(ip.initialHeight(ip.position$0(ip.title(ip.fixedWidth(ip.defaultParams(), 300), 'Tools'), 0, 120), 600));
+  }
+}
+, setupImageToolbar:function(width, height){
+  {
+    $('#image').dialog(ip.initialHeight(ip.position$0(ip.title(ip.defaultParams(), 'Image'), 350, 120), 100));
+  }
+}
+, get_Filters:function(){
+  return this.$Filters;
+}
+, get_History:function(){
+  return this.$History;
+}
+, corners_d:function(oldData, newData, width, height, offset){
+  {
+    newData[offset] = Math.max(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
+    var x = width - 1;
+    var y = 0;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
+    x = 0;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+    x = width - 1;
+    y = height - 1;
+    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
+  }
+}
+, sides_d:function(oldData, newData, width, height, offset){
+  {
+    var x = 0;
+    var tmp$0;
+    {
+      tmp$0 = height - 2 + 1;
+      for (var y = 1; y != tmp$0; ++y) {
+        newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
+      }
+    }
+    x = width - 1;
+    var tmp$1;
+    {
+      tmp$1 = height - 2 + 1;
+      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
+        newData[(y$0 * width + x) * 4 + offset] = Math.max(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
+      }
+    }
+    var y$1 = 0;
+    var tmp$2;
+    {
+      tmp$2 = width - 2 + 1;
+      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
+        newData[(y$1 * width + x$0) * 4 + offset] = Math.max(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
+      }
+    }
+    y$1 = height - 1;
+    var tmp$3;
+    {
+      tmp$3 = width - 2 + 1;
+      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
+        newData[(y$1 * width + x$1) * 4 + offset] = Math.max(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
+      }
+    }
+  }
 }
 , defaultParams:function(){
   {
@@ -829,17 +966,23 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     receiver.dialog('option', 'width', width).dialog('option', 'height', height);
   }
 }
+, get_integrating3:function(){
+  return this.$integrating3;
+}
+, get_integrating5:function(){
+  return this.$integrating5;
+}
 , get_height:function(){
-  return $height;
+  return this.$height;
 }
 , set_height:function(tmp$0){
-  $height = tmp$0;
+  this.$height = tmp$0;
 }
 , get_width:function(){
-  return $width;
+  return this.$width;
 }
 , set_width:function(tmp$0){
-  $width = tmp$0;
+  this.$width = tmp$0;
 }
 , setUpFileLoader:function(){
   {
@@ -905,23 +1048,26 @@ var ip = Kotlin.Namespace.create({initialize:function(){
       for (var tmp$2 = 0; tmp$2 != tmp$1; ++tmp$2) {
         var f = tmp$0[tmp$2];
         {
-          (function(){
-            {
-              var curF = f;
-              return $(function(){
-                {
-                  $('#format_' + curF).click(function(it){
-                    {
-                      format = curF;
+          (function(f){
+            return function(){
+              {
+                var curF = f;
+                return $(function(){
+                  {
+                    $('#format_' + curF).click(function(it){
+                      {
+                        format = curF;
+                      }
                     }
+                    );
                   }
-                  );
                 }
+                );
               }
-              );
             }
+            ;
           }
-          ());
+          (f)());
         }
       }
     }
@@ -941,18 +1087,15 @@ var ip = Kotlin.Namespace.create({initialize:function(){
           while (tmp$0.hasNext()) {
             var filter = tmp$0.next();
             {
-              (function(){
-                {
-                  var f = filter;
-                  return $('#filter_' + filter.get_name()).button().click(function(it){
-                    {
-                      ip.get_Filters().apply(f);
-                    }
+              $('#filter_' + filter.get_name()).button().click(function(filter){
+                return function(it){
+                  {
+                    ip.get_Filters().apply(filter);
                   }
-                  );
                 }
+                ;
               }
-              ());
+              (filter));
             }
           }
         }
@@ -975,18 +1118,15 @@ var ip = Kotlin.Namespace.create({initialize:function(){
             var filter = tmp$0.next();
             {
               customLinearFiltersDiv.append('\n' + '<button id = ' + filter.get_name() + '>' + filter.get_name() + '<\/button>' + '\n' + '            ');
-              (function(){
-                {
-                  var f = filter;
-                  return $('#' + filter.get_name()).button().click(function(it){
-                    {
-                      ip.get_Filters().apply(f);
-                    }
+              $('#' + filter.get_name()).button().click(function(filter){
+                return function(it){
+                  {
+                    ip.get_Filters().apply(filter);
                   }
-                  );
                 }
+                ;
               }
-              ());
+              (filter));
             }
           }
         }
@@ -1018,10 +1158,16 @@ var ip = Kotlin.Namespace.create({initialize:function(){
   }
 }
 , get_Tools:function(){
-  return $Tools;
+  return this.$Tools;
 }
-, get_Filters:function(){
-  return $Filters;
+, get_erosion:function(){
+  return this.$erosion;
+}
+, get_dilation:function(){
+  return this.$dilation;
+}
+, get_invert:function(){
+  return this.$invert;
 }
 , corners_e:function(oldData, newData, width, height, offset){
   {
@@ -1073,149 +1219,9 @@ var ip = Kotlin.Namespace.create({initialize:function(){
     }
   }
 }
-, get_integrating3:function(){
-  return $integrating3;
+}, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, LinearFilter:classes.LinearFilter, Form_0:classes.Form_0, HistoryEntry:classes.HistoryEntry, helper:Kotlin.Namespace.create({initialize:function(){
 }
-, get_integrating5:function(){
-  return $integrating5;
-}
-, array:function(items){
-  {
-    return items;
-  }
-}
-, html_0:function(receiver, tag){
-  {
-    receiver.html(Kotlin.sure(tag.toString()));
-    return receiver;
-  }
-}
-, measureTimeInMillis:function(f){
-  {
-    var start = new Date;
-    f();
-    var end = new Date;
-    return end.getTime() - start.getTime();
-  }
-}
-, to:function(receiver, value){
-  {
-    return [receiver, value];
-  }
-}
-, corners_d:function(oldData, newData, width, height, offset){
-  {
-    newData[offset] = Math.max(oldData[offset], oldData[width * 4 + offset], oldData[4 + offset]);
-    var x = width - 1;
-    var y = 0;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset]);
-    x = 0;
-    y = height - 1;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-    x = width - 1;
-    y = height - 1;
-    newData[(y * width + x) * 4 + offset] = Math.max(oldData[(y * width + x - 1) * 4 + offset], oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset]);
-  }
-}
-, sides_d:function(oldData, newData, width, height, offset){
-  {
-    var x = 0;
-    var tmp$0;
-    {
-      tmp$0 = height - 2 + 1;
-      for (var y = 1; y != tmp$0; ++y) {
-        newData[(y * width + x) * 4 + offset] = Math.max(oldData[((y - 1) * width + x) * 4 + offset], oldData[(y * width + x) * 4 + offset], oldData[((y + 1) * width + x) * 4 + offset], oldData[(y * width + x + 1) * 4 + offset]);
-      }
-    }
-    x = width - 1;
-    var tmp$1;
-    {
-      tmp$1 = height - 2 + 1;
-      for (var y$0 = 1; y$0 != tmp$1; ++y$0) {
-        newData[(y$0 * width + x) * 4 + offset] = Math.max(oldData[(y$0 * width + x - 1) * 4 + offset], oldData[((y$0 - 1) * width + x) * 4 + offset], oldData[(y$0 * width + x) * 4 + offset], oldData[((y$0 + 1) * width + x) * 4 + offset]);
-      }
-    }
-    var y$1 = 0;
-    var tmp$2;
-    {
-      tmp$2 = width - 2 + 1;
-      for (var x$0 = 1; x$0 != tmp$2; ++x$0) {
-        newData[(y$1 * width + x$0) * 4 + offset] = Math.max(oldData[(y$1 * width + x$0 - 1) * 4 + offset], oldData[(y$1 * width + x$0) * 4 + offset], oldData[((y$1 + 1) * width + x$0) * 4 + offset], oldData[(y$1 * width + x$0 + 1) * 4 + offset]);
-      }
-    }
-    y$1 = height - 1;
-    var tmp$3;
-    {
-      tmp$3 = width - 2 + 1;
-      for (var x$1 = 1; x$1 != tmp$3; ++x$1) {
-        newData[(y$1 * width + x$1) * 4 + offset] = Math.max(oldData[(y$1 * width + x$1 - 1) * 4 + offset], oldData[((y$1 - 1) * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1) * 4 + offset], oldData[(y$1 * width + x$1 + 1) * 4 + offset]);
-      }
-    }
-  }
-}
-, get_erosion:function(){
-  return $erosion;
-}
-, get_dilation:function(){
-  return $dilation;
-}
-, get_invert:function(){
-  return $invert;
-}
-, resultingImageHtml:function(data){
-  {
-    return html.htmlFragment(new html.IMG, function(){
-      {
-        this.set_src(data);
-      }
-    }
-    );
-  }
-}
-, main:function(args){
-  {
-    $(function(){
-      {
-        ip.setUpButtons();
-        ip.setupHistoryToolbar();
-        ip.setupToolsToolbar();
-        ip.get_History().render();
-        ip.setupImageToolbar(Kotlin.sure(ip.get_height()), Kotlin.sure(ip.get_width()));
-        $('#clear_custom_filters').button().click(function(it){
-          {
-            ip.get_Filters().clearCustom();
-            ip.renderCustomFilters();
-          }
-        }
-        );
-        var forms3x3 = new ip.Form_0('#form3x3', 3);
-        var forms5x5 = new ip.Form_0('#form5x5', 5);
-        ip.get_Filters().loadCustom();
-        ip.renderCustomFilters();
-      }
-    }
-    );
-  }
-}
-, setupHistoryToolbar:function(){
-  {
-    $('#history').dialog(ip.title(ip.position(ip.fixedWidth(ip.initialHeight(ip.defaultParams(), 500), 300), 'right top'), 'History'));
-  }
-}
-, setupToolsToolbar:function(){
-  {
-    $('#tools').dialog(ip.initialHeight(ip.position$0(ip.title(ip.fixedWidth(ip.defaultParams(), 300), 'Tools'), 0, 120), 600));
-  }
-}
-, setupImageToolbar:function(width, height){
-  {
-    $('#image').dialog(ip.initialHeight(ip.position$0(ip.title(ip.defaultParams(), 'Image'), 350, 120), 100));
-  }
-}
-, get_History:function(){
-  return $History;
-}
-}, {Filter:classes.Filter, StandardFilter:classes.StandardFilter, PredefinedFilter:classes.PredefinedFilter, HistoryEntry:classes.HistoryEntry, LinearFilter:classes.LinearFilter, Form_0:classes.Form_0});
+}, {})});
 var html = Kotlin.Namespace.create({initialize:function(){
 }
 , html_1:function(init){

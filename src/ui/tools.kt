@@ -1,22 +1,14 @@
 package ip
 
-import ip.helper
-import ip.helper.getInputElement
+
 import html5.Image
-import html5.getCanvas
 import html5.files.FileReader
+import html5.getCanvas
 import html5.getContext
-import jquery.jq
-import jquery.ui.*
-import jquery.pixastic.*
-import java.util.List
-import java.util.ArrayList
-import js.Math;
-import java.util.Collections
-import js.json
-import html.*
-import html.htmlFragment
+import ip.helper.getInputElement
 import jquery.*
+import jquery.ui.*
+import js.json
 
 var height : Int = 0
 var width : Int = 0
@@ -81,13 +73,9 @@ fun setUpButtons() {
         jq("#format_options").buttonset()
         Filters.addPredefined(invert, dilation, erosion, integrating3, integrating5)
         for (filter in Filters.predefined) {
-                {
-                //TODO:
-                    val f = filter
-                    jq("#filter_${filter.name}").button().click {
-                        Filters.apply(f)
-                    }
-                }()
+            jq("#filter_${filter.name}").button().click {
+                Filters.apply(filter)
+            }
         }
         jq(".toolbar").draggable(json(#("containment", "parent")))
     }
@@ -101,13 +89,9 @@ fun renderCustomFilters() {
             customLinearFiltersDiv.append("""
 <button id = ${filter.name}>${filter.name}</button>
             """);
-                {
-                //TODO
-                    val f = filter
-                    jq("#${filter.name}").button().click {
-                        Filters.apply(f)
-                    }
-                }()
+            jq("#${filter.name}").button().click {
+                Filters.apply(filter)
+            }
         }
     }
 }
