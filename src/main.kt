@@ -1,12 +1,8 @@
 package ip
 
+
 import html.*
-import ip.filters.Filters
-import ip.ui.height
-import ip.ui.history.History
-import ip.ui.renderCustomFilters
-import ip.ui.setUpButtons
-import ip.ui.width
+import ip.Form
 import ip.utils.defaultParams
 import ip.utils.fixedWidth
 import ip.utils.initialHeight
@@ -14,6 +10,10 @@ import ip.utils.position
 import ip.utils.title
 import jquery.*
 import jquery.ui.*
+import ip.ui.history.History
+import ip.filters.Filters
+import ip.ui.renderCustomFilters
+import ip.ui.setUpButtons
 
 fun resultingImageHtml(data : String) =
 htmlFragment(IMG()) {
@@ -26,7 +26,7 @@ fun main(args : Array<String>) {
         setupHistoryToolbar()
         setupToolsToolbar()
         History.render()
-        setupImageToolbar(height.sure(), width.sure())
+        setupImageToolbar(200, 200)
         jq("#clear_custom_filters").button().click {
             Filters.clearCustom()
             renderCustomFilters()
