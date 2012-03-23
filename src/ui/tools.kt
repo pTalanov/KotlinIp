@@ -1,19 +1,19 @@
 package ip.ui
 
-
 import html5.Image
 import html5.files.FileReader
 import html5.getCanvas
 import html5.getContext
+import ip.filters.Filters
 import ip.filters.getPredefinedFilters
 import ip.helper.getInputElement
+import ip.resultingImageHtml
+import ip.ui.history.History
 import ip.ui.history.HistoryEntry
 import ip.utils.*
 import jquery.*
 import jquery.ui.*
 import js.json
-import ip.ui.history.History
-import ip.filters.Filters
 
 var height : Int = 0
 var width : Int = 0

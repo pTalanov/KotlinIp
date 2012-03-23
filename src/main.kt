@@ -1,8 +1,12 @@
-package ip.ui
-
+package ip
 
 import html.*
-import ip.Form
+import ip.filters.Filters
+import ip.ui.height
+import ip.ui.history.History
+import ip.ui.renderCustomFilters
+import ip.ui.setUpButtons
+import ip.ui.width
 import ip.utils.defaultParams
 import ip.utils.fixedWidth
 import ip.utils.initialHeight
@@ -10,8 +14,6 @@ import ip.utils.position
 import ip.utils.title
 import jquery.*
 import jquery.ui.*
-import ip.ui.history.History
-import ip.filters.Filters
 
 fun resultingImageHtml(data : String) =
 htmlFragment(IMG()) {

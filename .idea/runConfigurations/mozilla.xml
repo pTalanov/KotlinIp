@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="mozilla" type="K2JSConfigurationType" factoryName="K2JS">
+    <K2JSConfigurationSettings>
+      <option name="browserFamily" value="FIREFOX" />
+      <option name="generatedFilePath" value="$PROJECT_DIR$/production/js" />
+      <option name="pageToOpenFilePath" value="$PROJECT_DIR$/production/index.html" />
+      <option name="shouldOpenInBrowserAfterTranslation" value="true" />
+    </K2JSConfigurationSettings>
+    <RunnerSettings RunnerId="K2JSBrowserRunner" />
+    <ConfigurationWrapper RunnerId="K2JSBrowserRunner" />
+    <method>
+      <option name="Make" enabled="false" />
+    </method>
+  </configuration>
+</component>
