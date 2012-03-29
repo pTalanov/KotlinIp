@@ -13,6 +13,7 @@ import ip.utils.*
 import jquery.*
 import jquery.ui.*
 import js.*
+import native_defs.helper.getColorsFromColorPicker
 
 var height : Int = 0
 var width : Int = 0
@@ -59,14 +60,11 @@ fun setUpSaveImage() {
 
     val formats = array("png", "bmp", "jpeg")
     for (f in formats) {
-            {
-                val curF = f
-                jq {
-                    jq("#format_$curF").click {
-                        format = curF
-                    }
-                }
-            }()
+        jq {
+            jq("#format_$f").click {
+                format = f
+            }
+        }
     }
 }
 
@@ -95,6 +93,29 @@ fun setUpProbabilityFilters() {
                 Math.min(Math.max(0, m), 255)
             } else 0
             Filters.apply(Dust(probability, min))
+        }
+
+        jq("#filter_wn").button().click {
+            val p = js.safeParseDouble(jq("#wn_p").`val`() as String)
+            val probability : Double = if (p != null) p else 0.5
+            val d = js.safeParseInt(jq("#wn_d").`val`() as String)
+            val diff : Int = if (d != null) {
+                Math.min(Math.max(0, d), 255)
+            } else 0
+            Filters.apply(WhiteNoise(probability, diff))
+        }
+
+        jq("#filter_grid").button().click {
+            val w = js.safeParseInt(jq("#grid_w").`val`() as String)
+            val width : Int = if (w != null) {
+                Math.max(5, w)
+            } else 10
+            val h = js.safeParseInt(jq("#grid_h").`val`() as String)
+            val height : Int = if (h != null) {
+                Math.max(5, h)
+            } else 10
+            val rgb = getColorsFromColorPicker()
+            Filters.apply(Grid(width, height, rgb.r, rgb.g, rgb.b))
         }
     }
 }

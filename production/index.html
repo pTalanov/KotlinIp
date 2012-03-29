@@ -5,9 +5,11 @@
     <title>Image processor</title>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.17.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css"/>
 </head>
 
 <script src="js/jquery/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/colorpicker.js"></script>
 <script src="js/jquery/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
 
 <body>
@@ -19,7 +21,6 @@
     <div id="header">
         <h1>Kotlin image processor</h1>
     </div>
-
 </div>
 
 
@@ -66,8 +67,30 @@
         <input type="text" id="dust_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
         <label for="form3x3_divider">Min:</label>
         <input type="text" id="dust_min" value="0" class="ui-widget-content ui-corner-all filter-param"/>
+        <button id="filter_wn">White noise</button>
+        <label for="wn_p">P:</label>
+        <input type="text" id="wn_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
+        <label for="wn_d">D:</label>
+        <input type="text" id="wn_d" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+        <button id="filter_grid">Grid</button>
+        <label for="grid_w">W:</label>
+        <input type="text" id="grid_w" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+        <label for="grid_h">H:</label>
+        <input type="text" id="grid_h" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+        <button id="colorpicker">Color</button>
     </div>
 </div>
+
+<script type="text/javascript">
+    var _colors
+
+    function getColorsFromColorPicker() {
+    return _colors;
+    }
+    $('#colorpicker').ColorPicker({onSubmit: function(hsb, hex, rgb, el) {
+    _colors = rgb;
+    }});
+</script>
 
 
 <div id="history">

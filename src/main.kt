@@ -54,7 +54,7 @@ fun setupToolsToolbar() {
             .fixedWidth(300)
             .title("Tools")
             .position(0, 120)
-            .initialHeight(600))
+            .initialHeight(900))
 }
 
 fun setupImageToolbar(width : Int, height : Int) {

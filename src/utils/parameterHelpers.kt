@@ -14,8 +14,8 @@ fun defaultParams() : Json {
 
 fun Json.initialHeight(height : Int) : Json {
     return add(json(
-    "minHeight" to 500,
-    "height" to 500))
+    "minHeight" to height,
+    "height" to height))
 }
 
 fun Json.fixedWidth(width : Int) : Json {

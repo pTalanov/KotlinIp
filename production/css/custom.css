@@ -53,3 +53,7 @@ ul li {
 .filter-param {
     width : 30px;
 }
+
+.colorpicker {
+    z-index : 1000000;
+}
