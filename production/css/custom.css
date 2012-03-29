@@ -49,3 +49,7 @@ ul li {
 .form input {
     width : 40px;
 }
+
+.filter-param {
+    width : 30px;
+}

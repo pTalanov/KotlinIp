@@ -1,6 +1,5 @@
 package ip.ui.history
 
-
 import html.*
 import html5.*
 import ip.utils.*
@@ -25,16 +24,18 @@ object History {
         panel.html(entriesHtml())
         var i = 0
         for (entry in entries) {
+                {
+                    val index = i
+                    jq("#history_item_$index").button().click {
+                            {
 
-            jq("#history_item_$i").button().click {
-                    {
-
-                        val correspondingEntry = entries.get(i)
-                        getContext().putImageData(correspondingEntry.savedData, 0, 0)
-                        removeAllLaterEntries(i)
-                        render()
-                    }()
-            }
+                                val correspondingEntry = entries.get(index)
+                                getContext().putImageData(correspondingEntry.savedData, 0, 0)
+                                removeAllLaterEntries(index)
+                                render()
+                            }()
+                    }
+                }()
             i++
         }
     }

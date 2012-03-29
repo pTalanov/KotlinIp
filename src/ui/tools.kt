@@ -1,20 +1,18 @@
 package ip.ui
 
-
 import html5.Image
 import html5.files.FileReader
 import html5.getCanvas
 import html5.getContext
-import ip.filters.getPredefinedFilters
+import ip.filters.*
 import ip.helper.getInputElement
+import ip.resultingImageHtml
+import ip.ui.history.History
 import ip.ui.history.HistoryEntry
 import ip.utils.*
 import jquery.*
 import jquery.ui.*
-import js.json
-import ip.ui.history.History
-import ip.filters.Filters
-import ip.resultingImageHtml
+import js.*
 
 var height : Int = 0
 var width : Int = 0
@@ -87,6 +85,20 @@ fun setUpButtons() {
     }
 }
 
+fun setUpProbabilityFilters() {
+    jq {
+        jq("#filter_dust").button().click {
+            val p = js.safeParseDouble(jq("#dust_p").`val`() as String)
+            val probability : Double = if (p != null) p else 0.5
+            val m = js.safeParseInt(jq("#dust_min").`val`() as String)
+            val min : Int = if (m != null) {
+                Math.min(Math.max(0, m), 255)
+            } else 0
+            Filters.apply(Dust(probability, min))
+        }
+    }
+}
+
 fun renderCustomFilters() {
     jq() {
         val customLinearFiltersDiv = jq("#custom_linear_filters")
@@ -118,6 +130,7 @@ object Tools {
             setUpFileLoader()
             setUpSaveImage()
             setupShowAllButton()
+            setUpProbabilityFilters()
         }
     }
 }

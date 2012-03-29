@@ -233,7 +233,6 @@ var Kotlin;
         }
 
         function create() {
-
             var result = {};
             for (var i = 0, length = arguments.length; i < length; i++) {
                 add(result, arguments[i]);
@@ -348,10 +347,19 @@ var Kotlin;
 
     Kotlin.parseInt =
     function (str) {
-        var result = parseInt(str, 10);
-        return isNaN(result) ? null : result;
+        return parseInt(str, 10);
     }
     ;
+
+    Kotlin.safeParseInt = function(str) {
+        var r = parseInt(str, 10);
+        return isNaN(r) ? null : r;
+    };
+
+    Kotlin.safeParseDouble = function(str) {
+        var r = parseFloat(str, 10);
+        return isNaN(r) ? null : r;
+    };
 
     Kotlin.System = function () {
         var output = "";
