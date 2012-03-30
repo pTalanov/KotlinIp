@@ -124,6 +124,3 @@ fun <T : BodyTag> htmlFragment(rootTag : T, init : T.()->Unit) : T {
     rootTag.init()
     return rootTag
 }
-
-// An excerpt from the Standard Library
-fun <K, V> Map<K, V>.set(key : K, value : V) = this.put(key, value)

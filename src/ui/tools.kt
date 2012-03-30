@@ -33,7 +33,7 @@ fun setUpFileLoader() {
                     getCanvas().height = height.sure()
                     getCanvas().width = width.sure()
                     val context = getContext()
-                    context.drawImage(image, 0.0, 0.0, width.toDouble(), height.toDouble())
+                    context.drawImage(image, 0, 0, width, height)
                     jq("#image").setDialogSize(width + 40, height + 80)
                     History.clean()
                     HistoryEntry("Loaded file", 0)

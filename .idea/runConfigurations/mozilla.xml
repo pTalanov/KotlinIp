@@ -8,8 +8,6 @@
     </K2JSConfigurationSettings>
     <RunnerSettings RunnerId="K2JSBrowserRunner" />
     <ConfigurationWrapper RunnerId="K2JSBrowserRunner" />
-    <method>
-      <option name="Make" enabled="false" />
-    </method>
+    <method />
   </configuration>
 </component>
