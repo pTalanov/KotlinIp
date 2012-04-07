@@ -49,3 +49,11 @@ ul li {
 .form input {
     width : 40px;
 }
+
+.filter-param {
+    width : 30px;
+}
+
+.colorpicker {
+    z-index : 1000000;
+}

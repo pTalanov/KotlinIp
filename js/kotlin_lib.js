@@ -233,7 +233,6 @@ var Kotlin;
         }
 
         function create() {
-
             var result = {};
             for (var i = 0, length = arguments.length; i < length; i++) {
                 add(result, arguments[i]);
@@ -325,7 +324,15 @@ var Kotlin;
                 this.add(it.next());
             }
         },
-        remove:function (index) {
+        remove:function(value) {
+            for (var i = 0; i < this.$size; ++i) {
+                if (this.array[i] == value) {
+                    this.removeByIndex(i);
+                    return;
+                }
+            }
+        },
+        removeByIndex:function (index) {
             for (var i = index; i < this.$size - 1; ++i) {
                 this.array[i] = this.array[i + 1];
             }
@@ -348,10 +355,19 @@ var Kotlin;
 
     Kotlin.parseInt =
     function (str) {
-        var result = parseInt(str, 10);
-        return isNaN(result) ? null : result;
+        return parseInt(str, 10);
     }
     ;
+
+    Kotlin.safeParseInt = function(str) {
+        var r = parseInt(str, 10);
+        return isNaN(r) ? null : r;
+    };
+
+    Kotlin.safeParseDouble = function(str) {
+        var r = parseFloat(str, 10);
+        return isNaN(r) ? null : r;
+    };
 
     Kotlin.System = function () {
         var output = "";
@@ -395,16 +411,16 @@ var Kotlin;
         Kotlin.System.out().print(s);
     };
 
-    Kotlin.AbstractFunctionInvokationError = Class.create();
+    Kotlin.AbstractFunctionInvocationError = Class.create();
 
     Kotlin.Iterator = Class.create({
         initialize:function () {
         },
         next:function () {
-            throw new Kotlin.AbstractFunctionInvokationError();
+            throw new Kotlin.AbstractFunctionInvocationError();
         },
         hasNext:function () {
-            throw new Kotlin.AbstractFunctionInvokationError();
+            throw new Kotlin.AbstractFunctionInvocationError();
         }
     });
 
@@ -488,7 +504,7 @@ var Kotlin;
                 initialize:function () {
                 },
                 compare:function (el1, el2) {
-                    throw new Kotlin.AbstractFunctionInvokationError();
+                    throw new Kotlin.AbstractFunctionInvocationError();
                 }
             }
     );
