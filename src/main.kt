@@ -41,22 +41,22 @@ fun main(args : Array<String>) {
 
 fun setupHistoryToolbar() {
     jq("#history").dialog(
-    defaultParams()
-            .initialHeight(500)
-            .fixedWidth(300)
-            .position("right top")
-            .title("History"))
+            defaultParams()
+                    .initialHeight(500)
+                    .fixedWidth(300)
+                    .position("right top")
+                    .title("History"))
 }
 
 fun setupToolsToolbar() {
     jq("#tools").dialog(
-    defaultParams()
-            .fixedWidth(300)
-            .title("Tools")
-            .position(0, 120)
-            .initialHeight(900))
+            defaultParams()
+                    .fixedWidth(350)
+                    .title("Tools")
+                    .position(0, 120)
+                    .initialHeight(800))
 }
 
 fun setupImageToolbar(width : Int, height : Int) {
-    jq("#image").dialog(defaultParams().title("Image").position(350, 120).initialHeight(100))
+    jq("#image").dialog(defaultParams().title("Image").position(350, 120).initialHeight(height))
 }

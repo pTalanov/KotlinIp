@@ -6,6 +6,7 @@ import ip.utils.*
 import java.util.ArrayList
 import jquery.*
 import jquery.ui.*
+import ip.helper.*
 
 object History {
     val entries = ArrayList<HistoryEntry>
@@ -14,7 +15,7 @@ object History {
     }
 
     val panel : JQuery
-    get() = jq("#history")
+        get() = jq("#history")
 
     fun render() {
         if (entries.isEmpty()) {
@@ -30,7 +31,8 @@ object History {
                             {
 
                                 val correspondingEntry = entries.get(index)
-                                getContext().putImageData(correspondingEntry.savedData, 0, 0)
+                                getContextForCanvas(getCanvasById("canvas"))
+                                        .putImageData(correspondingEntry.savedData, 0, 0)
                                 removeAllLaterEntries(index)
                                 render()
                             }()
@@ -67,7 +69,8 @@ object History {
 }
 
 class HistoryEntry(val filterName : String, val timeInMs : Int) {
-    val savedData = getContext().getImageData(0, 0, getCanvas().width, getCanvas().height);
+    val savedData = getContextForCanvas(getCanvasById("canvas")).getImageData(0, 0,
+            getCanvasById("canvas").width, getCanvasById("canvas").height);
     {
         History.entries.add(this)
         History.render()

@@ -13,13 +13,15 @@ import ip.utils.*
 import jquery.*
 import jquery.ui.*
 import js.*
-import native_defs.helper.getColorsFromColorPicker
+import native_defs.helper.*
+import ip.helper.*
+import js.debug.*
 
 var height : Int = 0
 var width : Int = 0
 
 fun setUpFileLoader() {
-    val input = getInputElement()
+    val input = getInputElement("file_loader")
     input.onchange = {
         val fileList = input.files
         if (fileList.length > 0) {
@@ -30,13 +32,43 @@ fun setUpFileLoader() {
                 image.onload = {
                     height = image.height
                     width = image.width
-                    getCanvas().height = height.sure()
-                    getCanvas().width = width.sure()
-                    val context = getContext()
-                    context.drawImage(image, 0, 0, width, height)
+                    val canvas = getCanvasById("canvas")
+                    canvas.height = height.sure()
+                    canvas.width = width.sure()
                     jq("#image").setDialogSize(width + 40, height + 80)
+                    val context = getContextForCanvas(canvas)
+                    context.drawImage(image, 0, 0, width, height)
                     History.clean()
                     HistoryEntry("Loaded file", 0)
+                }
+                image.src = fileReader.result as String
+            }
+            if (file != null) {
+                fileReader.readAsDataURL(file)
+            }
+        }
+    }
+}
+
+fun setUpCompareTo() {
+    val input = getInputElement("compare_to_loader")
+    input.onchange = {
+        console.log("onchange called")
+        val fileList = input.files
+        if (fileList.length > 0) {
+            val fileReader = FileReader()
+            val file = fileList.item(0);
+            fileReader.onloadend = {
+                val image = Image()
+                image.onload = {
+                    console.log("loaded")
+                    val dummyCanvas = getCanvasById("dummy_canvas")
+                    dummyCanvas.height = image.height
+                    dummyCanvas.width = image.width
+                    val context = getContextForCanvas(dummyCanvas)
+                    context.drawImage(image, 0, 0, width, height)
+                    val data = context.getImageData(0, 0, image.width, image.height).data
+                    Filters.apply(Difference(data))
                 }
                 image.src = fileReader.result as String
             }
@@ -117,6 +149,11 @@ fun setUpProbabilityFilters() {
             val rgb = getColorsFromColorPicker()
             Filters.apply(Grid(width, height, rgb.r, rgb.g, rgb.b))
         }
+
+        jq("#filter_median").button().click {
+            val radius = jq("#select_radius").`val`() as Int
+            Filters.apply(Median(radius))
+        }
     }
 }
 
@@ -152,6 +189,7 @@ object Tools {
             setUpSaveImage()
             setupShowAllButton()
             setUpProbabilityFilters()
+            setUpCompareTo()
         }
     }
 }
