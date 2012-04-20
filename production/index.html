@@ -25,77 +25,96 @@
 
 
 <div id="tools" class="fill_parent">
-    <div class="toolbar">
-        <button id="save_as_button">Save to:</button>
-        <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
-        <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
-        <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
-    </div>
+    <ul>
+        <li><a href="#tabs-1">File</a></li>
+        <li><a href="#tabs-2">Simple</a></li>
+        <li><a href="#tabs-3">Advanced</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="toolbar">
+            <button id="save_as_button">Save to:</button>
+            <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
+            <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
+            <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
+        </div>
 
-    <div id="load_file" class="toolbar">
-        <h3>Load file</h3>
-        <input type='file' id="file_loader" size="10"/>
-    </div>
-    <div class="toolbar">
-        <h3>Simple filters</h3>
-        <button id="filter_invert">Invert</button>
-        <button id="filter_dilation">Dilation</button>
-        <button id="filter_erosion">Erosion</button>
-    </div>
-    <div class="toolbar">
-        <h3>Predefined linear filters</h3>
-        <button id="filter_integrating_3x3">Integrating 3x3</button>
-        <button id="filter_integrating_5x5">Integrating 5x5</button>
-    </div>
-    <div class="toolbar">
-        <h3>Add custom linear filters</h3>
-        <button id="add_filter_3x3">Add 3x3 filter</button>
-        <button id="add_filter_5x5">Add 5x5 filter</button>
-        <button id="clear_custom_filters">Clear custom linear filters</button>
-    </div>
-    <div class="toolbar">
-        <h3>Custom linear filters</h3>
-
-        <div id="custom_linear_filters">
+        <div id="load_file" class="toolbar">
+            <h3>Load file</h3>
+            <input type='file' id="file_loader" size="10"/>
         </div>
     </div>
-    <div class="toolbar">
-        <h3>Probability filters</h3>
-        <button id="filter_dust">Dust</button>
-        <label for="dust_p">P:</label>
-        <input type="text" id="dust_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
-        <label for="form3x3_divider">Min:</label>
-        <input type="text" id="dust_min" value="0" class="ui-widget-content ui-corner-all filter-param"/>
-        <br/>
-        <button id="filter_wn">White noise</button>
-        <label for="wn_p">P:</label>
-        <input type="text" id="wn_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
-        <label for="wn_d">D:</label>
-        <input type="text" id="wn_d" value="10" class="ui-widget-content ui-corner-all filter-param"/>
-        <br/>
-        <button id="filter_grid">Grid</button>
-        <label for="grid_w">W:</label>
-        <input type="text" id="grid_w" value="10" class="ui-widget-content ui-corner-all filter-param"/>
-        <label for="grid_h">H:</label>
-        <input type="text" id="grid_h" value="10" class="ui-widget-content ui-corner-all filter-param"/>
-        <button id="colorpicker">Color</button>
+
+    <div id="tabs-2">
+        <div class="toolbar">
+            <h3>Simple filters</h3>
+            <button id="filter_invert">Invert</button>
+            <button id="filter_dilation">Dilation</button>
+            <button id="filter_erosion">Erosion</button>
+        </div>
+        <div class="toolbar">
+            <h3>Predefined linear filters</h3>
+            <button id="filter_integrating_3x3">Integrating 3x3</button>
+            <button id="filter_integrating_5x5">Integrating 5x5</button>
+        </div>
+        <div class="toolbar">
+            <h3>Add custom linear filters</h3>
+            <button id="add_filter_3x3">Add 3x3 filter</button>
+            <button id="add_filter_5x5">Add 5x5 filter</button>
+            <button id="clear_custom_filters">Clear custom linear filters</button>
+        </div>
+        <div class="toolbar">
+            <h3>Custom linear filters</h3>
+
+            <div id="custom_linear_filters">
+            </div>
+        </div>
     </div>
 
-    <div class="toolbar">
-        <h3>Median</h3>
-        <button id="filter_median">Median</button>
-        Radius:
-        <select id="select_radius">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
+    <div id="tabs-3">
+        <div class="toolbar">
+            <h3>Probability filters</h3>
+            <button id="filter_dust">Dust</button>
+            <label for="dust_p">P:</label>
+            <input type="text" id="dust_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="form3x3_divider">Min:</label>
+            <input type="text" id="dust_min" value="0" class="ui-widget-content ui-corner-all filter-param"/>
+            <br/>
+            <button id="filter_wn">White noise</button>
+            <label for="wn_p">P:</label>
+            <input type="text" id="wn_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="wn_d">D:</label>
+            <input type="text" id="wn_d" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <br/>
+            <button id="filter_grid">Grid</button>
+            <label for="grid_w">W:</label>
+            <input type="text" id="grid_w" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="grid_h">H:</label>
+            <input type="text" id="grid_h" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <button id="colorpicker">Color</button>
+        </div>
+
+        <div class="toolbar">
+            <h3>Median</h3>
+            <button id="filter_median">Median</button>
+            Radius:
+            <select id="select_radius">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="toolbar">
+            <h3>Comparison</h3>
+            <input type='file' id="compare_to_loader" size="10"/>
+        </div>
+        <div class="toolbar">
+            <h3>Additional mean filters</h3>
+            <button id="filter_geometric_mean">Geometric</button>
+            <button id="filter_contraharmonic_mean">Contraharmonic</button>
+        </div>
     </div>
 
-    <div class="toolbar">
-        <h3>Comparison</h3>
-        <input type='file' id="compare_to_loader" size="10"/>
-    </div>
 </div>
 
 <script type="text/javascript">

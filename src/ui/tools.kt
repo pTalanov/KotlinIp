@@ -154,6 +154,14 @@ fun setUpProbabilityFilters() {
             val radius = jq("#select_radius").`val`() as Int
             Filters.apply(Median(radius))
         }
+
+        jq("#filter_geometric_mean").button().click {
+            Filters.apply(geometricMean)
+        }
+
+        jq("#filter_contraharmonic_mean").button().click {
+            Filters.apply(contraharmonicMean)
+        }
     }
 }
 

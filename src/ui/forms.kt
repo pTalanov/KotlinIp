@@ -21,6 +21,7 @@ class Form(val formId : String, val size : Int) {
         val closeHandler : JQuery.()->Unit = {
             jq(this).dialog("close")
         }
+
         val addHandler : JQuery.()->Unit = {
             if (validateForm()) {
                 val matrix = getMatrixDataFromForm()
@@ -33,8 +34,8 @@ class Form(val formId : String, val size : Int) {
         }
         jq(formId).dialog(defaultParams().modal().doNotOpenYet().fixedWidth(500).initialHeight(350)
                 .buttons(
-        "Cancel" to closeHandler,
-        "Add" to addHandler
+                "Cancel" to closeHandler,
+                "Add" to addHandler
         ));
 
         jq("#add_filter_${size}x${size}").button().click {

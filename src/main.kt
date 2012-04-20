@@ -22,6 +22,7 @@ htmlFragment(IMG()) {
 
 fun main(args : Array<String>) {
     jq() {
+        jq("#tools").tabs()
         setUpButtons()
         setupHistoryToolbar()
         setupToolsToolbar()

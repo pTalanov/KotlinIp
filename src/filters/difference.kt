@@ -13,7 +13,7 @@ class Difference(val data : Array<Int>) : Filter {
                 for (y in 0..height - 1) {
                     for (offset in 0..2) {
                         val newValue = oldData[(y * width + x) * 4 + offset] - otherData[(y * width + x) * 4 + offset]
-                        newData[(y * width + x) * 4 + offset] = Math.abs(newValue)
+                        newData[(y * width + x) * 4 + offset] = Math.abs(newValue.toDouble()).toInt()
                     }
                 }
             }

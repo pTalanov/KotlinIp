@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../kotlin/js/js.libraries/js.libraries.iml" filepath="$PROJECT_DIR$/../kotlin/js/js.libraries/js.libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/js.libraries.iml" filepath="$PROJECT_DIR$/../Kotlin/clean_jet/js/js.libraries/js.libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlin-image-processor.iml" filepath="$PROJECT_DIR$/kotlin-image-processor.iml" />
     </modules>
