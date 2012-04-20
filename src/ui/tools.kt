@@ -162,6 +162,22 @@ fun setUpProbabilityFilters() {
         jq("#filter_contraharmonic_mean").button().click {
             Filters.apply(contraharmonicMean)
         }
+
+        jq("#filter_sobel_operator").button().click {
+            Filters.apply(sobelOperator)
+        }
+
+        jq("#filter_harmonic_mean").button().click {
+            Filters.apply(harmonicMean)
+        }
+
+        jq("#filter_prewitt_operator").button().click {
+            Filters.apply(prewittOperator)
+        }
+
+        jq("#filter_roberts_operator").button().click {
+            Filters.apply(robertsOperator)
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="mozilla" type="K2JSConfigurationType" factoryName="K2JS">
+  <configuration default="false" name="Firefox" type="K2JSConfigurationType" factoryName="Kotlin (JavaScript)">
     <K2JSConfigurationSettings>
       <option name="browserFamily" value="FIREFOX" />
       <option name="generatedFilePath" value="$PROJECT_DIR$/production/js" />

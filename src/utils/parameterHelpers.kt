@@ -8,21 +8,21 @@ import js.*
 
 fun defaultParams() : Json {
     return json(
-    "show" to "slide",
-    "hide" to "slide")
+            "show" to "slide",
+            "hide" to "slide")
 }
 
 fun Json.initialHeight(height : Int) : Json {
     return add(json(
-    "minHeight" to height,
-    "height" to height))
+            "minHeight" to height,
+            "height" to height))
 }
 
 fun Json.fixedWidth(width : Int) : Json {
     return add(json(
-    "maxWidth" to width,
-    "minWidth" to width,
-    "width" to width
+            "maxWidth" to width,
+            "minWidth" to width,
+            "width" to width
     ))
 }
 

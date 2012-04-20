@@ -30,6 +30,7 @@ object History {
                     jq("#history_item_$index").button().click {
                             {
 
+
                                 val correspondingEntry = entries.get(index)
                                 getContextForCanvas(getCanvasById("canvas"))
                                         .putImageData(correspondingEntry.savedData, 0, 0)
