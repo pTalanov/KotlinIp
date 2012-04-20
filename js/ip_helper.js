@@ -1,5 +1,5 @@
-function getInputElement() {
-    return document.getElementById('file_loader')
+function getInputElement(id) {
+    return document.getElementById(id)
 }
 
 function addAction(actionName, processFun) {
@@ -21,4 +21,11 @@ function addAction(actionName, processFun) {
     };
 }
 
-          //netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+
+function getContextForCanvas(c) {
+    return c.getContext('2d');
+}
+
+function getCanvasById(id) {
+    return document.getElementById(id)
+}

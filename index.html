@@ -5,9 +5,11 @@
     <title>Image processor</title>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.17.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css"/>
 </head>
 
 <script src="js/jquery/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/colorpicker.js"></script>
 <script src="js/jquery/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
 
 <body>
@@ -19,48 +21,119 @@
     <div id="header">
         <h1>Kotlin image processor</h1>
     </div>
-
 </div>
 
 
 <div id="tools" class="fill_parent">
-    <div class="toolbar">
-        <button id="save_as_button">Save to:</button>
+    <ul>
+        <li><a href="#tabs-1">File</a></li>
+        <li><a href="#tabs-2">Simple</a></li>
+        <li><a href="#tabs-3">Advanced</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="toolbar">
+            <button id="save_as_button">Save to:</button>
+            <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
+            <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
+            <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
+        </div>
 
-        <input type="radio" id="format_png" name="radio" checked="checked"/><label for="format_png">Png</label>
-        <input type="radio" id="format_bmp" name="radio"/><label for="format_bmp">Bmp</label>
-        <input type="radio" id="format_jpeg" name="radio"/><label for="format_jpeg">Jpeg</label>
-    </div>
-
-    <div id="load_file" class="toolbar">
-        <h3>Load file</h3>
-        <input type='file' id="file_loader" size="10"/>
-    </div>
-    <div class="toolbar">
-        <h3>Simple filters</h3>
-        <button id="filter_invert">Invert</button>
-        <button id="filter_dilation">Dilation</button>
-        <button id="filter_erosion">Erosion</button>
-    </div>
-    <div class="toolbar">
-        <h3>Predefined linear filters</h3>
-        <button id="filter_integrating_3x3">Integrating 3x3</button>
-        <button id="filter_integrating_5x5">Integrating 5x5</button>
-    </div>
-    <div class="toolbar">
-        <h3>Add custom linear filters</h3>
-        <button id="add_filter_3x3">Add 3x3 filter</button>
-        <button id="add_filter_5x5">Add 5x5 filter</button>
-        <button id="clear_custom_filters">Clear custom linear filters</button>
-    </div>
-    <div class="toolbar">
-        <h3>Custom linear filters</h3>
-
-        <div id="custom_linear_filters">
-
+        <div id="load_file" class="toolbar">
+            <h3>Load file</h3>
+            <input type='file' id="file_loader" size="10"/>
         </div>
     </div>
+
+    <div id="tabs-2">
+        <div class="toolbar">
+            <h3>Simple filters</h3>
+            <button id="filter_invert">Invert</button>
+            <button id="filter_dilation">Dilation</button>
+            <button id="filter_erosion">Erosion</button>
+        </div>
+        <div class="toolbar">
+            <h3>Predefined linear filters</h3>
+            <button id="filter_integrating_3x3">Integrating 3x3</button>
+            <button id="filter_integrating_5x5">Integrating 5x5</button>
+        </div>
+        <div class="toolbar">
+            <h3>Add custom linear filters</h3>
+            <button id="add_filter_3x3">Add 3x3 filter</button>
+            <button id="add_filter_5x5">Add 5x5 filter</button>
+            <button id="clear_custom_filters">Clear custom linear filters</button>
+        </div>
+        <div class="toolbar">
+            <h3>Custom linear filters</h3>
+
+            <div id="custom_linear_filters">
+            </div>
+        </div>
+    </div>
+
+    <div id="tabs-3">
+        <div class="toolbar">
+            <h3>Probability filters</h3>
+            <button id="filter_dust">Dust</button>
+            <label for="dust_p">P:</label>
+            <input type="text" id="dust_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="form3x3_divider">Min:</label>
+            <input type="text" id="dust_min" value="0" class="ui-widget-content ui-corner-all filter-param"/>
+            <br/>
+            <button id="filter_wn">White noise</button>
+            <label for="wn_p">P:</label>
+            <input type="text" id="wn_p" value="0.5" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="wn_d">D:</label>
+            <input type="text" id="wn_d" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <br/>
+            <button id="filter_grid">Grid</button>
+            <label for="grid_w">W:</label>
+            <input type="text" id="grid_w" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <label for="grid_h">H:</label>
+            <input type="text" id="grid_h" value="10" class="ui-widget-content ui-corner-all filter-param"/>
+            <button id="colorpicker">Color</button>
+        </div>
+
+        <div class="toolbar">
+            <h3>Median</h3>
+            <button id="filter_median">Median</button>
+            Radius:
+            <select id="select_radius">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="toolbar">
+            <h3>Comparison</h3>
+            <input type='file' id="compare_to_loader" size="10"/>
+        </div>
+        <div class="toolbar">
+            <h3>Additional mean filters</h3>
+            <button id="filter_geometric_mean">Geometric</button>
+            <button id="filter_contraharmonic_mean">Contraharmonic</button>
+            <button id="filter_harmonic_mean">Harmonic</button>
+        </div>
+        <div class="toolbar">
+            <h3>Edge detection</h3>
+            <button id="filter_roberts_operator">Roberts operator</button>
+            <button id="filter_prewitt_operator">Prewitt operator</button>
+            <button id="filter_sobel_operator">Sobel operator</button>
+        </div>
+    </div>
+
 </div>
+
+<script type="text/javascript">
+    var _colors
+
+    function getColorsFromColorPicker() {
+    return _colors;
+    }
+    $('#colorpicker').ColorPicker({onSubmit: function(hsb, hex, rgb, el) {
+    _colors = rgb;
+    }});
+</script>
 
 
 <div id="history">
@@ -140,6 +213,7 @@
     </form>
 </div>
 
+<canvas id="dummy_canvas" hidden="true"></canvas>
 </body>
 
 <script src="js/pixastic/pixastic.custom.js" type="text/javascript"></script>
@@ -147,7 +221,9 @@
 <script src="js/canvas_helper.js" type="text/javascript"></script>
 <script src="js/ip_helper.js" type="text/javascript"></script>
 <script src="js/stringify.js" type="text/javascript"></script>
-<script type="text/javascript" src="ip.js"></script>
+<script src="js/hack/median-filter.js" type="text/javascript"></script>
+<script src="js/hack/utils.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/kotlin-image-processor.js"></script>
 
 
 </html>
