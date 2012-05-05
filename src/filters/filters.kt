@@ -13,10 +13,10 @@ import ip.utils.array
 
 object Filters {
 
-    val predefined = ArrayList<Filter>()
-    val custom = ArrayList<LinearFilter>()
+    val predefined : ArrayList<Filter> = ArrayList<Filter>()
+    val custom : ArrayList<LinearFilter> = ArrayList<LinearFilter>()
 
-    val localStorageKey = "KotlinIpFilters3"
+    val localStorageKey : String = "KotlinIpFilters3"
 
     fun clearCustom() {
         custom.clear()
@@ -96,7 +96,7 @@ class PredefinedFilter(override val name : String) : Filter {
     }
 }
 
-fun getPredefinedFilters() = array(invert, dilation, erosion, integrating3, integrating5)
+fun getPredefinedFilters() : Array<Filter> = array(invert, dilation, erosion, integrating3, integrating5)
 
 
 native

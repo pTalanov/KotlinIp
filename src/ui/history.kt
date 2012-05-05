@@ -9,8 +9,8 @@ import jquery.ui.*
 import ip.helper.*
 
 object History {
-    val entries = ArrayList<HistoryEntry>
-    val emptyHistoryHtml = htmlFragment(P()) {
+    val entries : ArrayList<HistoryEntry> = ArrayList<HistoryEntry>
+    val emptyHistoryHtml : P = htmlFragment(P()) {
         + "No history"
     }
 
@@ -54,7 +54,7 @@ object History {
         render()
     }
 
-    fun entriesHtml() = htmlFragment(UL()) {
+    fun entriesHtml() : UL = htmlFragment(UL()) {
         var i = 0
         for (entry in entries) {
             li {
@@ -70,7 +70,8 @@ object History {
 }
 
 class HistoryEntry(val filterName : String, val timeInMs : Int) {
-    val savedData = getContextForCanvas(getCanvasById("canvas")).getImageData(0, 0,
+    val savedData : ImageData =
+    getContextForCanvas(getCanvasById("canvas")).getImageData(0, 0,
             getCanvasById("canvas").width, getCanvasById("canvas").height);
     {
         History.entries.add(this)

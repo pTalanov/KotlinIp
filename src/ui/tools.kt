@@ -6,7 +6,7 @@ import html5.getCanvas
 import html5.getContext
 import ip.filters.*
 import ip.helper.getInputElement
-import ip.resultingImageHtml
+import ip.ui.resultingImageHtml
 import ip.ui.history.History
 import ip.ui.history.HistoryEntry
 import ip.utils.*

@@ -1,8 +1,8 @@
-package ip
+package ip.ui
 
 
 import html.*
-import ip.Form
+import ip.ui.Form
 import ip.utils.defaultParams
 import ip.utils.fixedWidth
 import ip.utils.initialHeight

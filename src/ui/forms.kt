@@ -1,4 +1,4 @@
-package ip
+package ip.ui
 
 
 import ip.filters.LinearFilter

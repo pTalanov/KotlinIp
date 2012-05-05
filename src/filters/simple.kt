@@ -3,7 +3,7 @@ package ip.filters
 import js.*
 import js.debug.*
 
-val erosion = StandardFilter("erosion") {
+val erosion : Filter = StandardFilter("erosion") {
 (oldData, newData, width, height) ->
     for (offset in 0..2) {
         corners_e(oldData, newData, width, height, offset)
@@ -23,7 +23,7 @@ val erosion = StandardFilter("erosion") {
 }
 
 
-val dilation = StandardFilter("dilation") {
+val dilation : Filter = StandardFilter("dilation") {
 (oldData, newData, width, height) ->
     for (offset in 0..2) {
 
@@ -43,9 +43,9 @@ val dilation = StandardFilter("dilation") {
     }
 }
 
-val invert = PredefinedFilter("invert")
+val invert : Filter = PredefinedFilter("invert")
 
-val geometricMean = StandardFilter("geometric mean") {
+val geometricMean : Filter = StandardFilter("geometric mean") {
 (oldData, newData, width, height) ->
     for (offset in 0..2) {
 
@@ -67,7 +67,7 @@ val geometricMean = StandardFilter("geometric mean") {
     }
 }
 
-val harmonicMean = StandardFilter("harmonic mean") {
+val harmonicMean : Filter = StandardFilter("harmonic mean") {
 (oldData, newData, width, height) ->
     for (offset in 0..2) {
         for (x in 1..width - 2) {
@@ -89,7 +89,7 @@ val harmonicMean = StandardFilter("harmonic mean") {
     }
 }
 
-val contraharmonicMean = StandardFilter("contraharmonic mean") {
+val contraharmonicMean : Filter = StandardFilter("contraharmonic mean") {
 (oldData, newData, width, height) ->
     for (offset in 0..2) {
 
@@ -133,7 +133,7 @@ val contraharmonicMean = StandardFilter("contraharmonic mean") {
     }
 }
 
-val sobelOperator = StandardFilter("Sobel operator") {
+val sobelOperator : Filter = StandardFilter("Sobel operator") {
 (oldData, newData, width, height) ->
 
     for (x in 1..width - 2) {
@@ -180,7 +180,7 @@ val sobelOperator = StandardFilter("Sobel operator") {
     }
 }
 
-val prewittOperator = StandardFilter("Prewitt operator") {
+val prewittOperator : Filter = StandardFilter("Prewitt operator") {
 (oldData, newData, width, height) ->
 
     for (x in 1..width - 2) {
@@ -227,7 +227,7 @@ val prewittOperator = StandardFilter("Prewitt operator") {
     }
 }
 
-val robertsOperator = StandardFilter("RobertsOperator") {
+val robertsOperator : Filter = StandardFilter("RobertsOperator") {
 (oldData, newData, width, height) ->
 
     for (x in 1..width - 2) {

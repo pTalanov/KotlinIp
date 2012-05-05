@@ -20,8 +20,8 @@ class TextElement(val text : String) : Element {
 }
 
 abstract class Tag(val name : String) : Element {
-    val children = ArrayList<Element>()
-    val attributes = HashMap<String, String>()
+    val children : ArrayList<Element> = ArrayList<Element>()
+    val attributes : HashMap<String, String> = HashMap<String, String>()
 
     protected fun initTag<T : Element>(tag : T, init : T.() -> Unit) : T {
         tag.init()
@@ -53,33 +53,33 @@ abstract class TagWithText(name : String) : Tag(name) {
 }
 
 class HTML() : TagWithText("html") {
-    fun head(init : Head.() -> Unit) = initTag(Head(), init)
+    fun head(init : Head.() -> Unit) : Head = initTag(Head(), init)
 
-    fun body(init : Body.() -> Unit) = initTag(Body(), init)
+    fun body(init : Body.() -> Unit) : Body = initTag(Body(), init)
 }
 
 class Head() : TagWithText("head") {
-    fun title(init : Title.() -> Unit) = initTag(Title(), init)
+    fun title(init : Title.() -> Unit) : Title = initTag(Title(), init)
 }
 
 class Title() : TagWithText("title")
 
 abstract class BodyTag(name : String) : TagWithText(name) {
     var cssClass : String
-    get() = attributes["class"]
-    set(value) {
-        attributes["class"] = value
-    }
+        get() = attributes["class"]
+        set(value) {
+            attributes["class"] = value
+        }
     var id : String
-    get() = attributes["id"]
-    set(value) {
-        attributes["id"] = value
-    }
-    fun b(init : B.() -> Unit) = initTag(B(), init)
-    fun p(init : P.() -> Unit) = initTag(P(), init)
-    fun h1(init : H1.() -> Unit) = initTag(H1(), init)
-    fun ul(init : UL.() -> Unit) = initTag(UL(), init)
-    fun button(init : Button.() -> Unit) = initTag(Button(), init)
+        get() = attributes["id"]
+        set(value) {
+            attributes["id"] = value
+        }
+    fun b(init : B.() -> Unit) : B = initTag(B(), init)
+    fun p(init : P.() -> Unit) : P = initTag(P(), init)
+    fun h1(init : H1.() -> Unit) : H1 = initTag(H1(), init)
+    fun ul(init : UL.() -> Unit) : UL = initTag(UL(), init)
+    fun button(init : Button.() -> Unit) : Button = initTag(Button(), init)
     fun a(href : String, init : A.() -> Unit) {
         val a = initTag(A(), init)
         a.href = href
@@ -89,15 +89,15 @@ abstract class BodyTag(name : String) : TagWithText(name) {
 class Body() : BodyTag("body")
 
 class UL() : BodyTag("ul") {
-    fun li(init : LI.() -> Unit) = initTag(LI(), init)
+    fun li(init : LI.() -> Unit) : LI = initTag(LI(), init)
 }
 
 class IMG() : BodyTag("img") {
     public var src : String
-    get() = attributes["src"]
-    set(value) {
-        attributes["src"] = value
-    }
+        get() = attributes["src"]
+        set(value) {
+            attributes["src"] = value
+        }
 }
 
 class B() : BodyTag("b")
@@ -106,10 +106,10 @@ class P() : BodyTag("p")
 class H1() : BodyTag("h1")
 class A() : BodyTag("a") {
     public var href : String
-    get() = attributes["href"]
-    set(value) {
-        attributes["href"] = value
-    }
+        get() = attributes["href"]
+        set(value) {
+            attributes["href"] = value
+        }
 }
 
 class Button() : BodyTag("button")
